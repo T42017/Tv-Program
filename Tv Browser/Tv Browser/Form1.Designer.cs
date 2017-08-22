@@ -34,6 +34,10 @@
             this.previousTime = new System.Windows.Forms.Button();
             this.nextTime = new System.Windows.Forms.Button();
             this.airingTime = new System.Windows.Forms.TextBox();
+            this.subTitleBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.episodeNumberBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -94,11 +98,53 @@
             this.airingTime.TabIndex = 5;
             this.airingTime.TextChanged += new System.EventHandler(this.airingTime_TextChanged);
             // 
+            // subTitleBox
+            // 
+            this.subTitleBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subTitleBox.Location = new System.Drawing.Point(253, 56);
+            this.subTitleBox.Name = "subTitleBox";
+            this.subTitleBox.Size = new System.Drawing.Size(592, 30);
+            this.subTitleBox.TabIndex = 6;
+            this.subTitleBox.TextChanged += new System.EventHandler(this.subTitleBox_TextChanged);
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTextBox.Location = new System.Drawing.Point(253, 130);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(592, 393);
+            this.descriptionTextBox.TabIndex = 7;
+            this.descriptionTextBox.TextChanged += new System.EventHandler(this.descriptionTextBox_TextChanged);
+            // 
+            // episodeNumberBox
+            // 
+            this.episodeNumberBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.episodeNumberBox.Location = new System.Drawing.Point(582, 94);
+            this.episodeNumberBox.Name = "episodeNumberBox";
+            this.episodeNumberBox.Size = new System.Drawing.Size(263, 30);
+            this.episodeNumberBox.TabIndex = 8;
+            this.episodeNumberBox.TextChanged += new System.EventHandler(this.episodeNumberBox_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(253, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 31);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1377, 638);
+            this.ClientSize = new System.Drawing.Size(1315, 638);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.episodeNumberBox);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(this.subTitleBox);
             this.Controls.Add(this.airingTime);
             this.Controls.Add(this.nextTime);
             this.Controls.Add(this.previousTime);
@@ -120,6 +166,10 @@
         private System.Windows.Forms.Button previousTime;
         private System.Windows.Forms.Button nextTime;
         private System.Windows.Forms.TextBox airingTime;
+        private System.Windows.Forms.TextBox subTitleBox;
+        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.TextBox episodeNumberBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

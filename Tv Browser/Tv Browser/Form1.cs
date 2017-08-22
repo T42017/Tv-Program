@@ -70,13 +70,22 @@ namespace Tv_Browser
             var url = "http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + dayChooser.SelectedItem + ".xml.gz";
             XDocument tvList = XDocument.Load(url);
             var tempData = tvList.Descendants("tv");
-            var title = tempData.Elements("programme").ElementAt(timeIndex).Element("title");
+            var title = tempData.Elements("programme").ElementAt(timeIndex).Element("title").Value;
+            var description = tempData.Elements("programme").ElementAt(timeIndex).Element("desc").Value;
+            var subTitle = tempData.Elements("programme").ElementAt(timeIndex).Element("sub-title").Value;
+            var episodeNumber = tempData.Elements("programme").ElementAt(timeIndex).Elements("episode-num").ElementAt(1).Value;
             var airingTimeDataStart = tempData.Elements("programme").ElementAt(timeIndex).Attribute("start").Value;
             DateTime start = DateTimeOffset.ParseExact(airingTimeDataStart, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
             var airingTimeDataStop = tempData.Elements("programme").ElementAt(timeIndex).Attribute("stop").Value;
             DateTime stop = DateTimeOffset.ParseExact(airingTimeDataStop, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
+            
+            
+
+            subTitleBox.Text = subTitle;
+            descriptionTextBox.Text = description;
+            episodeNumberBox.Text = episodeNumber;
             amountOfShows = tempData.Elements("programme").Count();
-            titlebox.Text = title.Value;
+            titlebox.Text = title;
             airingTime.Text = start.TimeOfDay + " - " + stop.TimeOfDay;
 
 
@@ -90,9 +99,13 @@ namespace Tv_Browser
 
         private void nextTime_Click(object sender, EventArgs e)
         {
-            if (timeIndex < amountOfShows -1)
+            if (timeIndex < amountOfShows - 1)
             {
                 timeIndex++;
+            }
+            else
+            {
+                timeIndex = 0;
             }
 
             LoadContent();
@@ -104,7 +117,26 @@ namespace Tv_Browser
             {
                 timeIndex--;
             }
+            else
+            {
+                timeIndex = amountOfShows - 1;
+            }
             LoadContent();
+        }
+
+        private void episodeNumberBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subTitleBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void descriptionTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
