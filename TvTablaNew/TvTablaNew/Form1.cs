@@ -58,9 +58,10 @@ namespace TvTablaNew
                 lbl_date.Text = DateToday;
 
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                MessageBox.Show("No older tablues to show");
+                string message = "No older tablues to show";
+                MessageBox.Show(message, exception.ToString());
                 Counter++;
             }
         }
