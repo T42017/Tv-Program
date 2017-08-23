@@ -1,0 +1,11 @@
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\bin\Debug\TvTablaNew.exe.config
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\bin\Debug\TvTablaNew.exe
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\bin\Debug\TvTablaNew.pdb
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\bin\Debug\Newtonsoft.Json.dll
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\bin\Debug\Newtonsoft.Json.xml
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.csprojResolveAssemblyReference.cache
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.Form1.resources
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.Properties.Resources.resources
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.csproj.GenerateResource.Cache
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.exe
+c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.pdb
