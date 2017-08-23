@@ -61,7 +61,7 @@ namespace TVTableau
 
         public string Header
         {
-            get { return $"{Title} \r\n({ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm")} - {ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm")})"; }
+            get { return $"{ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm")} - {ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm")} {Title}"; }
         }
 
         private static DateTime ConvertFromUnixTimestampToDateTime(string timestamp)
@@ -71,7 +71,7 @@ namespace TVTableau
                 var unixStartTime = new DateTime(1970, 1, 1, 1, 0, 0, 0);
                 return unixStartTime.AddSeconds(double.Parse(timestamp));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 const string message = "Error converting the date";
                 const string title = "Error";
