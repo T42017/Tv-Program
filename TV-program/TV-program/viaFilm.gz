@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+
+<tv generator-info-name="Taiga XMLTV" generator-info-url="http://xmltv.se">
+  <programme start="20170825030000 +0200" stop="20170825050000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">The Confirmation</title>
+    <desc lang="sv">Walt (Clive Owen) är snickare och alkoholist som måste ta hand om sin åttaåriga son Anthony (Jaeden Liebrher), som han har en skakig relation till, när hans före detta fru Bonnie (Maria Bello) och hennes nya make (Kyle) reser till en katolsk ort. Både Walt och Anthony är ängsliga över att tillbringa tid tillsammans, i synnerhet efter den första dagen när hans bil går sönder, han blir utelåst från hemmet av hyresvärden (vilket leder till att Anthony krossar ett fönster för att ta sig in) och hans viktiga verktygslåda blir stulen. Walt och Anthony börjar jakten på den stulna verktygslådan och tar hjälp av reparatören och narkomanen Drake (Patton Oswalt). Den osannolika trion får handskas med motgångar och oväntade katastrofer. Under resans gång stöter de på gatusmarta Vaughn (Tim Blake Nelson) och den vänliga gubben Otto (Robert Forster). Genom missöden och missförstånd kommer Anthony och Walt närmare varandra, och hans son får en glimt av den man som hans pappa har potential att bli.</desc>
+    <credits>
+      <director>Bob Nelson</director>
+      <actor role="Walt">Clive Owen</actor>
+      <actor role="Anthony">Jaeden Lieberher</actor>
+      <actor role="Bonnie">Maria Bello</actor>
+      <actor role="Vaughn">Tim Blake Nelson</actor>
+      <actor role="Drake">Patton Oswalt</actor>
+      <actor role="Kyle">Matthew Modine</actor>
+      <actor role="Father Lyons">Stephen Tobolowsky</actor>
+      <actor role="Otto">Robert Forster</actor>
+      <actor role="Garry">Javad Ramezani</actor>
+      <actor role="Allen">Spencer Drever</actor>
+      <actor role="Tucker">Michael Eklund</actor>
+      <actor role="Trout">Ryan Robbins</actor>
+    </credits>
+    <date>2016</date>
+    <category lang="en">movie</category>
+    <category lang="en">Comedy</category>
+    <url>http://www.themoviedb.org/movie/347881</url>
+    <episode-num system="themoviedb.org">movie/347881</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>6.3 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825050000 +0200" stop="20170825070000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Drömmarnas fält</title>
+    <desc lang="sv">Ray Kinsella (Kevin Costner) är en bonde i Iowa som hör en gåtfull röst säga att "om du bygger det, så kommer han." Han tolkar meddelandet som att han måste bygga en basebollplan på gården, möjligtvis som en undermedveten hyllning till sin pappas besatthet av "Shoeless" Joe Jackson och de vanhedrade Chicago White Sox som dömdes för att avsiktligt ha förlorat 1919 års World Series. Ett år går innan flertalet avlidna White Sox-spelare börjar träna på basebollplanen. Rays svåger Mark (Timothy Busfield), som inte kan se de spöken som spelar baseboll, berättar att gården riskerar att ruineras om han inte gör sig av med planen. När han hör rösten en gång till övertygar den honom om att söka upp den radikala författaren Terence Mann (James Earl Jones), berömd för att ha skrivit om basebollens gyllene ålder. Som barn drömde Mann om att spela för Brooklyn Dodgers. Ray hittar honom på en Boston Red Sox-match, där resultattavlan visar en bild som instruerar honom att härnäst leta rätt på basebollspelaren Archibald "Moonlight" Graham som var aktiv på 20-talet. Han och Mann reser till Minnesota i jakten på honom, men får där reda på att han dog 1972. Ray tar en promenad för att rensa tankarna, men blir då magiskt transporterad till 70-talet där han får syn på "Moonlight" Graham (Burt Lancaster). Han erbjuder honom en chans att spela på hans basebollplan, men han tackar artigt nej och förklarar att han gav upp basebollen för att bli läkare och rädda liv. Ray återvänder till verkligheten, och tillsammans med Mann ger de sig tillbaka till Iowa. På vägen dit plockar de upp en liftare. Efter ett kort samtal berättar liftaren att han är en aspirerande basebollspelare som säger att han heter Archie Graham (Frank Whaley), återfödelsen av "Moonlight." Han börjar spela baseboll med spökena som lättsamt skojar med honom om hans ungdomliga otålighet. Ray och Mark börjar återigen bråka om framtiden för gården när Karin (Gaby Hoffmann) ramlar ner från läktaren. De rusar fram och märker att hon inte andas. "Moonlight" kliver försiktigt ut på basebollplanen, då han plötsligt förvandlas till den äldre läkaren som Ray träffade i Minnesota. Han räddar livet på henne genom att få bort det som blockerar luftvägarna. Ray inser att "Moonlight" inte kan bli den unga man som de plockade upp från vägen igen och ber innerligt om ursäkt. Graham försäkrar honom om att han är tacksam över att ha fått en andra chans och beger sig till majsfältet. Spelarna tilltalar honom med dämpade och förbluffade röster. Snart lämnar spelarna också planen och beger sig till majsfältet. Jackson stannar till och frågar Mann om han vill följa med dem. Ray begär att få följa med spelarna, men Mann uppmanar honom att ta tiden med sin familj till vara. Innan "Shoeless" Jackson ger sig iväg går han fram till en fångare och säger att "om du bygger det, så kommer han." Fångaren lyfter på masken, och där under döljer sig hans pappa som en yngre man. De kastar några bollar, och under tiden stannar åskådare till med bilen för att titta på.</desc>
+    <credits>
+      <director>Phil Alden Robinson</director>
+      <actor role="Ray Kinsella">Kevin Costner</actor>
+      <actor role="Annie Kinsella">Amy Madigan</actor>
+      <actor role="Karin Kinsella">Gaby Hoffmann</actor>
+      <actor role="&quot;Shoeless&quot; Joe Jackson">Ray Liotta</actor>
+      <actor role="Mark">Timothy Busfield</actor>
+      <actor role="Terrence Mann">James Earl Jones</actor>
+      <actor role="Doc &quot;Moonlight&quot; Graham">Burt Lancaster</actor>
+      <actor role="Archie Graham">Frank Whaley</actor>
+      <actor role="John Kinsella">Dwier Brown</actor>
+      <actor role="Feed Store Farmer">James Andelin</actor>
+      <actor role="Annie's Mother">Fern Persons</actor>
+      <actor role="Dee, Mark's Wife">Kelly Coffield Park</actor>
+      <actor role="Buck Weaver - 3B">Michael Milhoan</actor>
+      <actor role="Eddie Cicotte - P">Steve Eastin</actor>
+      <actor role="Swede Risberg - C">Charles Hoyes</actor>
+      <actor role="Chick Gandil - 1B">Art LaFleur</actor>
+      <actor role="Beulah Gasnick">Lee Garlington</actor>
+      <actor role="Principal">Mike Nussbaum</actor>
+      <actor role="PTA Heckler">Larry Brandenburg</actor>
+      <actor role="PTA Heckler">Robert Kurcz</actor>
+      <actor role="Boston Pump Jockey">Geoffrey Nauffts</actor>
+      <actor role="Chisolm Newspaper Publisher">Anne Seymour</actor>
+      <actor role="Clean-Shaven Umpire">Brian E. Frankish</actor>
+      <actor role="Boston Yenta">Beatrice Fredman</actor>
+      <actor role="Baseball Fan at Fenway Park (uncredited)">Ben Affleck</actor>
+      <actor role="Baseball Fan at Fenway Park (uncredited)">Matt Damon</actor>
+      <actor role="Baseball Fan (uncredited)">Kevin Fennessy</actor>
+      <writer>Phil Alden Robinson</writer>
+      <producer>Lawrence Gordon</producer>
+      <producer>Charles Gordon</producer>
+    </credits>
+    <date>1989</date>
+    <category lang="en">movie</category>
+    <category lang="en">Drama</category>
+    <category lang="en">Fantasy</category>
+    <url>http://www.themoviedb.org/movie/2323</url>
+    <episode-num system="themoviedb.org">movie/2323</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>7.1 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825070000 +0200" stop="20170825090000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Resan till Amerika: Fievel i vilda västern [Dubbade Versionen]</title>
+    <desc lang="sv">[Dubbade Versionen]. När familjen Mousekewitz har funnit sig till rätta i Amerika upptäcker de att de fortfarande har stora problem med katter. Därför vill de prova att bo längre västerut, där de har hört att möss och katter lever i fred... Svenska röster. Text-TV s. 690.</desc>
+    <credits>
+      <director>Simon Wells</director>
+      <director>Phil Nibbelink</director>
+      <actor role="Fievel Mousekewitz (voice)">Phillip Glasser</actor>
+      <actor role="Wylie Burp (voice)">James Stewart</actor>
+      <actor role="Mama Mousekewitz (voice)">Erica Yohn</actor>
+      <actor role="Tanya Mousekewitz (voice)">Catherine Cavadini</actor>
+      <actor role="Papa Mousekewitz (voice)">Nehemiah Persoff</actor>
+      <actor role="Miss Kitty (voice)">Amy Irving</actor>
+      <actor role="Cat R. Waul (voice)">John Cleese</actor>
+      <actor role="Tiger (voice)">Dom DeLuise</actor>
+      <writer>Flint Dille</writer>
+      <producer>Steven Spielberg</producer>
+      <producer>Robert Watts</producer>
+    </credits>
+    <date>1991</date>
+    <category lang="en">movie</category>
+    <category lang="en">Adventure</category>
+    <category lang="en">Animation</category>
+    <category lang="en">Family</category>
+    <url>http://www.themoviedb.org/movie/10380</url>
+    <episode-num system="themoviedb.org">movie/10380</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>6.3 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825090000 +0200" stop="20170825110000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Djungelboken</title>
+    <desc lang="sv">Mowgli (Neel Sethi) är ett föräldralöst barn som omhändertas av en vargflock. Ihop med den förnäma pantern Bagheera (Ben Kinglsey) och den avslappnade björnen Baloo (Bill Murray) försöker de uppfostra vilden och ge honom värdefulla insikter om livet, men djungeln kryllar av hot. Mowgli riskerar att drabbas av den charmerande ormen Kaa (Scarlett Johansson) och kung Louies (Christopher Walken) önskan att lära sig göra upp eld. De är dock ingenting i jämförelse med rovdjuret Shere Khan (Idris Elba) och hans törst efter Mowgli.</desc>
+    <date>2016</date>
+    <category lang="en">movie</category>
+    <category lang="en">Adventure</category>
+    <category lang="en">Family</category>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+  </programme>
+  <programme start="20170825110000 +0200" stop="20170825130000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Dudley Do Right</title>
+    <desc lang="sv">Filmen Dudley Do-Right handlar om en plikttrogen, men klantig, ung beriden polis och hans vansinnigt roliga upplevelser medan han kämpar för att överlista den onde Snidely Whiplash (Alfred Malina). Snidely har fått århundradets lömskaste idé, vilket har skapat den största guldfebern sedan Klondikes tid. Guldgrävaren Kim J. Darling (Eric Idle) är en godtrogen tönt som sällar sig till den flock äventyrare med miljonärsdrömmar, som strömmar till den stad som kallas Whiplash City. Det är upp till den ovanligt godhjärtade och lätt korkade Dudley att styra slaget, besegra skurken, vinna Nell Fenwicks (Sarah Jessica Parker) hjärta och bringa freden tillbaka till Semi-Happy Valley. Man får hoppas att han inte klantar till det allt för mycket...</desc>
+    <credits>
+      <director>Hugh Wilson</director>
+      <actor role="Dudley Do-Right">Brendan Fraser</actor>
+      <actor role="Nell Fenwick">Sarah Jessica Parker</actor>
+      <actor role="Snidely Whiplash">Alfred Molina</actor>
+      <actor role="Prospector">Eric Idle</actor>
+      <actor role="Inspector Fenwick">Robert Prosky</actor>
+      <actor role="Howard">Jack Kehler</actor>
+      <actor role="Chief">Alex Rocco</actor>
+      <actor role="Standing Room Only">Louis Mustillo</actor>
+      <actor role="Kenneth">Don Yesso</actor>
+      <actor role="Lavar">Jed Rees</actor>
+      <actor role="Barry">Brant von Hoffman</actor>
+      <actor role="The Announcer (voice)">Corey Burton</actor>
+      <actor role="Young Dudley">Dyllan Christopher</actor>
+      <actor role="Young Nell">Ashley Yarman</actor>
+      <actor role="Young Snidely">Jeremy Bergman</actor>
+      <actor role="Bank President">Douglas Newell</actor>
+      <actor role="Teller">Haig Sutherland</actor>
+      <actor role="Local Banker">Michael McCarty</actor>
+      <actor role="Townsperson">Rondel Reynoldson</actor>
+      <actor role="Townsperson">Rick Poltaruk</actor>
+      <actor role="Townsperson">Kevin Blatch</actor>
+      <actor role="Himself">Regis Philbin</actor>
+      <actor role="Herself">Kathie Lee Gifford</actor>
+      <actor role="Customs Officer">Ernie Grunwald</actor>
+      <actor role="Customs Officer">Jennifer Clement</actor>
+      <actor role="Anchor">Brian Arnold</actor>
+      <actor role="Caitlin">Paul Barsanti</actor>
+      <actor role="Lefty">Eddie Moore</actor>
+      <actor role="Husband">Eric Breker</actor>
+      <actor role="Wife">Jennifer Rockett</actor>
+      <actor role="Another Guy">Robert Saunders</actor>
+      <actor role="Shane">C. Ernst Harth</actor>
+      <actor role="Spinworthy">Gerard Plunkett</actor>
+      <actor role="10-Year Old Boy">Michal Suchánek</actor>
+      <actor role="A Bad Guy in Back">Brent Butt</actor>
+      <actor role="Another Bad Guy">John Destry</actor>
+      <actor role="Yet Another Bad Guy">David Fredericks</actor>
+      <actor role="In the Back">William MacDonald</actor>
+      <actor role="Indian">Oscar Goncalves</actor>
+      <actor role="Mrs. Darling">Jessica Schreier</actor>
+      <actor role="Jim Darling">Kevin Mundy</actor>
+      <actor role="Chad Darling">Justen Harcourt</actor>
+      <actor role="Mother's Kid">Nathan Bennett</actor>
+      <actor role="Mother's Kid">Isis Johnson</actor>
+      <actor role="Asian Golfer">Art Irizawa</actor>
+      <actor role="Dancer">Bryan Anthony</actor>
+      <actor role="Dancer">Adrian Armas</actor>
+      <actor role="Dancer">Jennifer Armstrong</actor>
+      <actor role="Dancer">Scott Augustine</actor>
+      <actor role="Dancer">Linda Bernath</actor>
+      <actor role="Dancer">Jeffrey Broadhurst</actor>
+      <actor role="Dancer">Dominic Carbone</actor>
+      <actor role="Dancer">Kelsey Chace</actor>
+      <actor role="Dancer">Michael Chambers</actor>
+      <actor role="Dancer">Anne Fletcher</actor>
+      <actor role="Dancer">Scott Fowler</actor>
+      <actor role="Dancer">Amber Funk</actor>
+      <actor role="Dancer">Bob Gaynor</actor>
+      <actor role="Dancer">Leigh Hilary</actor>
+      <actor role="Dancer">Sarah Hofmann</actor>
+      <actor role="Dancer">Erik Hyler</actor>
+      <actor role="Dancer">Russ Jones</actor>
+      <actor role="Dancer">Eleu Kruse</actor>
+      <actor role="Dancer">Lance MacDonald</actor>
+      <actor role="Dancer">Jocelyn Peden</actor>
+      <actor role="Dancer">Cindi Poe</actor>
+      <actor role="Dancer">Lisa Ratzin</actor>
+      <actor role="Bad Guy">Artine Brown</actor>
+      <actor role="Snidely's Bodyguard">Erick Kaffka</actor>
+      <actor role="In the Way Back">Robin Mossley</actor>
+      <actor role="Snidely's Man Overboard">Gerald Scarr</actor>
+      <actor role="A Particularly Idiotic Bad Guy">Tony Willett</actor>
+      <actor role="Mother">Nicole Robert</actor>
+      <producer>John Davis</producer>
+      <producer>Joseph Singer</producer>
+      <producer>J. Todd Harris</producer>
+    </credits>
+    <date>1999</date>
+    <category lang="en">movie</category>
+    <category lang="en">Comedy</category>
+    <category lang="en">Family</category>
+    <category lang="en">Romance</category>
+    <url>http://www.themoviedb.org/movie/17709</url>
+    <episode-num system="themoviedb.org">movie/17709</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>3.8 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825130000 +0200" stop="20170825150000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Gladiators of Rome</title>
+    <desc lang="sv">[Dubbade Versionen]. En ny hjälte blir till i denna animerade film av mytologiska proportioner. Timo (Luca Argentero) är en elev på gladiatorakademin i Rom, men han har ingen önskan om att bli gladiator som sin styvfar. I alla fall inte förrän den förtrollande Lucilla (Laura Chiatti) ger honom ett skäl att träda in på arenan. Han och en grupp vänner hjälps åt för att göra Timo till hennes drömmars gladiator. Det hela är början på ett spännande äventyr mot att bli Colosseums främsta mästare.</desc>
+    <credits>
+      <director>Iginio Straffi</director>
+      <actor role="Timo">Luca Argentero</actor>
+      <actor role="Lucilla">Laura Chiatti</actor>
+      <actor role="Diana">Belén Rodríguez</actor>
+      <actor role="Lucilla">Julianne Hough</actor>
+      <actor role="Diana">Flaminia Fegarotti</actor>
+      <actor role="Circe">Emma Tate</actor>
+      <actor role="Lucilla">Jo Wyatt</actor>
+      <actor role="Diane">Emanuela Postacchini</actor>
+      <writer>Michael J. Wilson</writer>
+      <producer>Iginio Straffi</producer>
+    </credits>
+    <date>2012</date>
+    <category lang="en">movie</category>
+    <category lang="en">Animation</category>
+    <url>http://www.themoviedb.org/movie/137548</url>
+    <episode-num system="themoviedb.org">movie/137548</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>4.8 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825150000 +0200" stop="20170825170000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">The Angry Birds Movie</title>
+    <desc lang="sv">[Dubbade versionen] Red (Jason Sudeikis) är en fågel som inte kan behärska sitt humör och flippar ut vid minsta lilla provokation. Han blir ivägskickad för att lära sig att tygla sin ilska och träffar samtidigt Chuck (Josh Gad) och Bomb (Danny McBride) som är lika instabila som honom. När en grupp grisar, med Leonard (Bill Hader) i täten, intar fåglarnas ö tar fåglarna hjälp av Den mäktiga örnen (Peter Dinklage) för att ta tillbaka sitt hem från de elaka svinen!</desc>
+    <credits>
+      <director>Fergal Reilly</director>
+      <director>Clay Kaytis</director>
+      <actor role="Red (voice)">Jason Sudeikis</actor>
+      <actor role="Chuck (voice)">Josh Gad</actor>
+      <actor role="Bomb (voice)">Danny McBride</actor>
+      <actor role="Matilda (voice)">Maya Rudolph</actor>
+      <actor role="Leonard (voice)">Bill Hader</actor>
+      <actor role="Mighty Eagle (voice)">Peter Dinklage</actor>
+      <actor role="Terence (voice)">Sean Penn</actor>
+      <actor role="Judge Peckinpah (voice)">Keegan-Michael Key</actor>
+      <actor role="Stella / Eva the Birthday Mom (voice)">Kate McKinnon</actor>
+      <actor role="Ross / Cyrus / Mime (voice)">Tony Hale</actor>
+      <actor role="Edward the Birthday Dad (voice)">Hannibal Buress</actor>
+      <actor role="Tiny (voice)">Ike Barinholtz</actor>
+      <actor role="Photog (voice)">Tituss Burgess</actor>
+      <actor role="Bubbles (voice)">Ian Hecox</actor>
+      <actor role="Hal (voice)">Anthony Padilla</actor>
+      <actor role="Helen the Lunch Mom / Yoga Instructor (voice)">Jillian Bell</actor>
+      <actor role="Chef Pig / Phillip (voice)">Billy Eichner</actor>
+      <actor role="Earl Pig (voice)">Blake Shelton</actor>
+      <actor role="Willow (voice)">Charli XCX</actor>
+      <actor role="Betty Bird (voice)">Ali Wong</actor>
+      <actor role="Ella Bird (voice)">Mckenna Grace</actor>
+      <actor role="Timothy the Birthday Bird (voice)">Ava Acres</actor>
+      <actor role="Day Care Teacher (voice)">Geoffrey Arend</actor>
+      <actor role="Sophie Bird / Peggy Bird (voice)">Alex Borstein</actor>
+      <actor role="Bobby Bird (voice)">Max Charles</actor>
+      <actor role="Foreman Pig (voice)">Fergal Reilly</actor>
+      <actor role="Greg Blue (voice)">Kevin Bigley</actor>
+      <actor role="Monty Pig (voice)">Fred Tatasciore</actor>
+      <actor role="Bill Beakins (voice)">Judah Friedlander</actor>
+      <actor role="Olive Blue / Monica the Crossing Guard (voice)">Danielle Brooks</actor>
+      <actor role="Early Bird (voice)">Romeo Santos</actor>
+      <actor role="Shirley the Old Lady Bird (voice)">Cristela Alonzo</actor>
+      <producer>John Cohen</producer>
+    </credits>
+    <date>2016</date>
+    <category lang="en">movie</category>
+    <category lang="en">Animation</category>
+    <url>http://www.themoviedb.org/movie/153518</url>
+    <episode-num system="themoviedb.org">movie/153518</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>5.9 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825170000 +0200" stop="20170825190000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Varning för vilda djur</title>
+    <desc lang="sv">Fastighetsutvecklaren Dan Sanders (Brendan Fraser) flyttar med sin familj till Oregons vildmark för att övervaka en galleria som håller på att ta form. Det dröjer dock inte länge förrän han är under belägring av djuren och måste ta itu med deras sabotage. Dans fru Tammy (Brooke Shields) börjar känna sig orolig för hans förstånd, men han får lära sig att vissa saker är bättre att låta vara. Medverkar gör även L'il Jimmy Norton och Patrice O'Neal.</desc>
+    <credits>
+      <director>Roger Kumble</director>
+      <actor role="Dan Sanders">Brendan Fraser</actor>
+      <actor role="Neal Lyman">Ken Jeong</actor>
+      <actor role="Tammy Sanders">Brooke Shields</actor>
+      <actor role="Felder">Angela Kinsey</actor>
+      <actor role="Riggs">Rob Riggle</actor>
+      <actor role="Tyler Sanders">Matt Prokop</actor>
+      <actor role="Amber">Skyler Samuels</actor>
+      <actor role="Mrs. Martin">Alice Drummond</actor>
+      <actor role="Frank">Ricky Garcia</actor>
+      <actor role="Cheese">Eugene Cordero</actor>
+      <actor role="Gus">Patrice O'Neal</actor>
+      <actor role="Hank">Jim Norton</actor>
+      <actor role="Drill Sergeant">Billy Bush</actor>
+      <actor role="Principal Baker">Samantha Bee</actor>
+      <actor role="Wilson">Toby Huss</actor>
+      <actor role="Mr. Gupta">Gerry Bednob</actor>
+      <writer>Michael Carnes</writer>
+      <writer>Josh Gilbert</writer>
+      <producer>Robert Simonds</producer>
+      <producer>Keith Goldberg</producer>
+      <producer>Terri Goddard</producer>
+      <producer>Molly O'Keefe</producer>
+    </credits>
+    <date>2010</date>
+    <category lang="en">movie</category>
+    <category lang="en">Comedy</category>
+    <url>http://www.themoviedb.org/movie/35169</url>
+    <episode-num system="themoviedb.org">movie/35169</episode-num>
+    <video>
+      <aspect>16:9</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>4.5 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825190000 +0200" stop="20170825210000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Drömmarnas fält</title>
+    <desc lang="sv">Ray Kinsella (Kevin Costner) är en bonde i Iowa som hör en gåtfull röst säga att "om du bygger det, så kommer han." Han tolkar meddelandet som att han måste bygga en basebollplan på gården, möjligtvis som en undermedveten hyllning till sin pappas besatthet av "Shoeless" Joe Jackson och de vanhedrade Chicago White Sox som dömdes för att avsiktligt ha förlorat 1919 års World Series. Ett år går innan flertalet avlidna White Sox-spelare börjar träna på basebollplanen. Rays svåger Mark (Timothy Busfield), som inte kan se de spöken som spelar baseboll, berättar att gården riskerar att ruineras om han inte gör sig av med planen. När han hör rösten en gång till övertygar den honom om att söka upp den radikala författaren Terence Mann (James Earl Jones), berömd för att ha skrivit om basebollens gyllene ålder. Som barn drömde Mann om att spela för Brooklyn Dodgers. Ray hittar honom på en Boston Red Sox-match, där resultattavlan visar en bild som instruerar honom att härnäst leta rätt på basebollspelaren Archibald "Moonlight" Graham som var aktiv på 20-talet. Han och Mann reser till Minnesota i jakten på honom, men får där reda på att han dog 1972. Ray tar en promenad för att rensa tankarna, men blir då magiskt transporterad till 70-talet där han får syn på "Moonlight" Graham (Burt Lancaster). Han erbjuder honom en chans att spela på hans basebollplan, men han tackar artigt nej och förklarar att han gav upp basebollen för att bli läkare och rädda liv. Ray återvänder till verkligheten, och tillsammans med Mann ger de sig tillbaka till Iowa. På vägen dit plockar de upp en liftare. Efter ett kort samtal berättar liftaren att han är en aspirerande basebollspelare som säger att han heter Archie Graham (Frank Whaley), återfödelsen av "Moonlight." Han börjar spela baseboll med spökena som lättsamt skojar med honom om hans ungdomliga otålighet. Ray och Mark börjar återigen bråka om framtiden för gården när Karin (Gaby Hoffmann) ramlar ner från läktaren. De rusar fram och märker att hon inte andas. "Moonlight" kliver försiktigt ut på basebollplanen, då han plötsligt förvandlas till den äldre läkaren som Ray träffade i Minnesota. Han räddar livet på henne genom att få bort det som blockerar luftvägarna. Ray inser att "Moonlight" inte kan bli den unga man som de plockade upp från vägen igen och ber innerligt om ursäkt. Graham försäkrar honom om att han är tacksam över att ha fått en andra chans och beger sig till majsfältet. Spelarna tilltalar honom med dämpade och förbluffade röster. Snart lämnar spelarna också planen och beger sig till majsfältet. Jackson stannar till och frågar Mann om han vill följa med dem. Ray begär att få följa med spelarna, men Mann uppmanar honom att ta tiden med sin familj till vara. Innan "Shoeless" Jackson ger sig iväg går han fram till en fångare och säger att "om du bygger det, så kommer han." Fångaren lyfter på masken, och där under döljer sig hans pappa som en yngre man. De kastar några bollar, och under tiden stannar åskådare till med bilen för att titta på.</desc>
+    <credits>
+      <director>Phil Alden Robinson</director>
+      <actor role="Ray Kinsella">Kevin Costner</actor>
+      <actor role="Annie Kinsella">Amy Madigan</actor>
+      <actor role="Karin Kinsella">Gaby Hoffmann</actor>
+      <actor role="&quot;Shoeless&quot; Joe Jackson">Ray Liotta</actor>
+      <actor role="Mark">Timothy Busfield</actor>
+      <actor role="Terrence Mann">James Earl Jones</actor>
+      <actor role="Doc &quot;Moonlight&quot; Graham">Burt Lancaster</actor>
+      <actor role="Archie Graham">Frank Whaley</actor>
+      <actor role="John Kinsella">Dwier Brown</actor>
+      <actor role="Feed Store Farmer">James Andelin</actor>
+      <actor role="Annie's Mother">Fern Persons</actor>
+      <actor role="Dee, Mark's Wife">Kelly Coffield Park</actor>
+      <actor role="Buck Weaver - 3B">Michael Milhoan</actor>
+      <actor role="Eddie Cicotte - P">Steve Eastin</actor>
+      <actor role="Swede Risberg - C">Charles Hoyes</actor>
+      <actor role="Chick Gandil - 1B">Art LaFleur</actor>
+      <actor role="Beulah Gasnick">Lee Garlington</actor>
+      <actor role="Principal">Mike Nussbaum</actor>
+      <actor role="PTA Heckler">Larry Brandenburg</actor>
+      <actor role="PTA Heckler">Robert Kurcz</actor>
+      <actor role="Boston Pump Jockey">Geoffrey Nauffts</actor>
+      <actor role="Chisolm Newspaper Publisher">Anne Seymour</actor>
+      <actor role="Clean-Shaven Umpire">Brian E. Frankish</actor>
+      <actor role="Boston Yenta">Beatrice Fredman</actor>
+      <actor role="Baseball Fan at Fenway Park (uncredited)">Ben Affleck</actor>
+      <actor role="Baseball Fan at Fenway Park (uncredited)">Matt Damon</actor>
+      <actor role="Baseball Fan (uncredited)">Kevin Fennessy</actor>
+      <writer>Phil Alden Robinson</writer>
+      <producer>Lawrence Gordon</producer>
+      <producer>Charles Gordon</producer>
+    </credits>
+    <date>1989</date>
+    <category lang="en">movie</category>
+    <category lang="en">Drama</category>
+    <category lang="en">Fantasy</category>
+    <url>http://www.themoviedb.org/movie/2323</url>
+    <episode-num system="themoviedb.org">movie/2323</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>7.1 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825210000 +0200" stop="20170825230000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Sisters</title>
+    <desc lang="sv">Systrarna Kate (Tina Fey) och Maura (Amy Poehler) Ellis blir ombedda att åka hem till sina föräldrar för att städa ut rummet de bodde i som barn innan deras föräldrar, till deras förfäran, ska sälja familjehemmet. I ett försök att uppleva den gamla goda tiden igen anordnar de en sista hemmafest för sina tidigare klasskamrater. Festen visar sig bli en förlösning som en grupp vuxna verkligen behöver.</desc>
+    <credits>
+      <director>Jason Moore</director>
+      <actor role="Kate Ellis">Tina Fey</actor>
+      <actor role="Maura Ellis">Amy Poehler</actor>
+      <actor role="Dave">John Leguizamo</actor>
+      <actor role="James">Ike Barinholtz</actor>
+      <actor role="Brinda">Maya Rudolph</actor>
+      <actor role="Hayley">Madison Davenport</actor>
+      <actor role="Hae Won">Greta Lee</actor>
+      <actor role="Bucky Ellis">James Brolin</actor>
+      <actor role="Pazuzu">John Cena</actor>
+      <actor role="Kelly">Rachel Dratch</actor>
+      <actor role="Denny">Heather Matarazzo</actor>
+      <actor role="Patrick Campbell">Dan Byrd</actor>
+      <actor role="Sam">Kate McKinnon</actor>
+      <actor role="Alex">Bobby Moynihan</actor>
+      <actor role="Actor">Adrian Martinez</actor>
+      <actor role="Deana Ellis">Dianne Wiest</actor>
+      <actor role="Mr. Geernt">Santino Fontana</actor>
+      <actor role="Jerry">Brian d'Arcy James</actor>
+      <actor role="Kim">Renée Elise Goldsberry</actor>
+      <actor role="Brianne">Emily Tarver</actor>
+      <actor role="Liz">Samantha Bee</actor>
+      <actor role="Actress">Britt Lower</actor>
+      <actor role="DJ">Jackie Tohn</actor>
+      <actor role="Party Guest #1">John Lutz</actor>
+      <actor role="Airport Bartender">Daniel Breaker</actor>
+      <actor role="Party Guest">April Szykeruk</actor>
+      <actor role="Softball Player">Kara Rosella</actor>
+      <actor role="Young Maura Ellis Age 10">Christa Beth Campbell</actor>
+      <actor role="Tan Guy">Ben Sinclair</actor>
+      <actor role="Pina Colada Umbrella Party Guest">James Zeiss</actor>
+      <actor role="Party Guest">Kelsey O'Brien</actor>
+      <actor role="Airport Traveler (uncredited)">Bill Walters</actor>
+      <actor role="Phil">Chris Parnell</actor>
+      <actor role="Greta">Greta Lee</actor>
+      <writer>Paula Pell</writer>
+      <producer>Jay Roach</producer>
+      <producer>Tina Fey</producer>
+    </credits>
+    <date>2015</date>
+    <category lang="en">movie</category>
+    <category lang="en">Comedy</category>
+    <url>http://www.themoviedb.org/movie/266294</url>
+    <episode-num system="themoviedb.org">movie/266294</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>5.8 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170825230000 +0200" stop="20170826010000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">The Confirmation</title>
+    <desc lang="sv">Walt (Clive Owen) är snickare och alkoholist som måste ta hand om sin åttaåriga son Anthony (Jaeden Liebrher), som han har en skakig relation till, när hans före detta fru Bonnie (Maria Bello) och hennes nya make (Kyle) reser till en katolsk ort. Både Walt och Anthony är ängsliga över att tillbringa tid tillsammans, i synnerhet efter den första dagen när hans bil går sönder, han blir utelåst från hemmet av hyresvärden (vilket leder till att Anthony krossar ett fönster för att ta sig in) och hans viktiga verktygslåda blir stulen. Walt och Anthony börjar jakten på den stulna verktygslådan och tar hjälp av reparatören och narkomanen Drake (Patton Oswalt). Den osannolika trion får handskas med motgångar och oväntade katastrofer. Under resans gång stöter de på gatusmarta Vaughn (Tim Blake Nelson) och den vänliga gubben Otto (Robert Forster). Genom missöden och missförstånd kommer Anthony och Walt närmare varandra, och hans son får en glimt av den man som hans pappa har potential att bli.</desc>
+    <credits>
+      <director>Bob Nelson</director>
+      <actor role="Walt">Clive Owen</actor>
+      <actor role="Anthony">Jaeden Lieberher</actor>
+      <actor role="Bonnie">Maria Bello</actor>
+      <actor role="Vaughn">Tim Blake Nelson</actor>
+      <actor role="Drake">Patton Oswalt</actor>
+      <actor role="Kyle">Matthew Modine</actor>
+      <actor role="Father Lyons">Stephen Tobolowsky</actor>
+      <actor role="Otto">Robert Forster</actor>
+      <actor role="Garry">Javad Ramezani</actor>
+      <actor role="Allen">Spencer Drever</actor>
+      <actor role="Tucker">Michael Eklund</actor>
+      <actor role="Trout">Ryan Robbins</actor>
+    </credits>
+    <date>2016</date>
+    <category lang="en">movie</category>
+    <category lang="en">Comedy</category>
+    <url>http://www.themoviedb.org/movie/347881</url>
+    <episode-num system="themoviedb.org">movie/347881</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>6.3 / 10</value>
+    </star-rating>
+  </programme>
+  <programme start="20170826010000 +0200" stop="20170826030000 +0200" channel="familyhd.film.viasat.se">
+    <title lang="sv">Mitt stora feta grekiska bröllop</title>
+    <desc lang="sv">Hela familjen Portokalos är oroade för Toula. Hon luktar vitlök, är fortfarande ogift vid 30 års ålder och arbetar på sina föräldrars grekiska restaurang. Toula svär dock att hon inte ska spendera resten av sitt liv på familjens matställe och hon är redo för förändring. Det är tyvärr inte hennes familj. Så när hon träffar och förälskar sig i Ian Miller, en högskollärare som är lång, stilig, vegetarian och Xeno (utlänning), vet hon inte riktigt hur hennes släkt kommer att reagera. Men när Ian friar är Toulas farhågor som bortblåsta och hon börjar bana vägen för sitt stora feta grekiska bröllop!</desc>
+    <credits>
+      <director>Joel Zwick</director>
+      <actor role="Toula">Nia Vardalos</actor>
+      <actor role="Ian Miller">John Corbett</actor>
+      <actor role="Maria Portokalos">Lainie Kazan</actor>
+      <actor role="Gus Portokalos">Michael Constantine</actor>
+      <actor role="Aunt Voula">Andrea Martin</actor>
+      <actor role="Angelo">Joey Fatone</actor>
+      <actor role="Nick Portokalos">Louis Mandylor</actor>
+      <actor role="Cousin Nikki">Gia Carides</actor>
+      <actor role="Toula as child">Christina Eleusiniotis</actor>
+      <actor role="Toula Teenager">Marita Zouravlioff</actor>
+      <actor role="Uncle Taki">Gerry Mendicino</actor>
+      <actor role="Yiayia">Bess Meisler</actor>
+      <actor role="Mrs. White">Jayne Eastwood</actor>
+      <actor role="Harriet Miller">Fiona Reid</actor>
+      <actor role="Rodney Miller">Bruce Gray</actor>
+      <actor role="Suitor">Frank Falcone</actor>
+      <writer>Nia Vardalos</writer>
+      <producer>Gary Goetzman</producer>
+      <producer>Tom Hanks</producer>
+      <producer>Rita Wilson</producer>
+    </credits>
+    <date>2002</date>
+    <category lang="en">movie</category>
+    <category lang="en">Comedy</category>
+    <category lang="en">Drama</category>
+    <category lang="en">Romance</category>
+    <url>http://www.themoviedb.org/movie/8346</url>
+    <episode-num system="themoviedb.org">movie/8346</episode-num>
+    <video>
+      <aspect>4:3</aspect>
+      <quality>HDTV</quality>
+    </video>
+    <star-rating>
+      <value>6.1 / 10</value>
+    </star-rating>
+  </programme>
+</tv>
