@@ -36,9 +36,9 @@
             // 
             // prevBtn
             // 
-            this.prevBtn.Location = new System.Drawing.Point(12, 322);
+            this.prevBtn.Location = new System.Drawing.Point(12, 213);
             this.prevBtn.Name = "prevBtn";
-            this.prevBtn.Size = new System.Drawing.Size(75, 23);
+            this.prevBtn.Size = new System.Drawing.Size(117, 58);
             this.prevBtn.TabIndex = 0;
             this.prevBtn.Text = "<----";
             this.prevBtn.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // selectBtn
             // 
-            this.selectBtn.Location = new System.Drawing.Point(93, 322);
+            this.selectBtn.Location = new System.Drawing.Point(135, 213);
             this.selectBtn.Name = "selectBtn";
-            this.selectBtn.Size = new System.Drawing.Size(75, 23);
+            this.selectBtn.Size = new System.Drawing.Size(117, 58);
             this.selectBtn.TabIndex = 0;
             this.selectBtn.Text = "Select";
             this.selectBtn.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(174, 322);
+            this.nextBtn.Location = new System.Drawing.Point(258, 213);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(75, 23);
+            this.nextBtn.Size = new System.Drawing.Size(117, 58);
             this.nextBtn.TabIndex = 0;
             this.nextBtn.Text = "---->";
             this.nextBtn.UseVisualStyleBackColor = true;
@@ -66,11 +66,13 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
+            this.textBox1.Location = new System.Drawing.Point(431, 12);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 304);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(899, 747);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "hallo";
             // 
             // Form1
             // 
