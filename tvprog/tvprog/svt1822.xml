@@ -1,0 +1,373 @@
+<tv generator-info-name="Taiga XMLTV" generator-info-url="http://xmltv.se">
+  <programme start="20170822051500 +0200" stop="20170822060000 +0200" channel="svt1.svt.se">
+    <title lang="sv">Fråga doktorn</title>
+    <desc lang="sv">
+    Höstens första gäst är Mia Törnblom, författare, föreläsare och utbildare i ledarskap. Hon menar att det går att träna upp sin självkänsla på samma sätt som man kan träna upp sin kondition. Som vanligt svarar Gunilla Hasselgren på tittarnas medicinska frågor och Suzanne Axell är programledare.
+    </desc>
+    <date>2017</date>
+    <category lang="en">series</category>
+    <category lang="en">Magazine</category>
+    <episode-num system="xmltv_ns">19 . 0/18 .</episode-num>
+    <episode-num system="onscreen">Episode 1 of 18 season 20</episode-num>
+    <video>
+    <aspect>16:9</aspect>
+    </video>
+    <audio>
+    <stereo>dolby digital</stereo>
+    </audio>
+  </programme>
+  <programme start="20170822060000 +0200" stop="20170822060500 +0200" channel="svt1.svt.se">
+    <title lang="sv">SVT Nyheter</title>
+    <date>2017</date>
+    <category lang="en">tvshow</category>
+    <category lang="en">News</category>
+    <episode-num system="xmltv_ns">2016 . 46/50 .</episode-num>
+    <episode-num system="onscreen">Episode 47 of 50 season 2017</episode-num>
+    </programme>
+    <programme start="20170822060500 +0200" stop="20170822063000 +0200" channel="svt1.svt.se">
+    <title lang="sv">Gomorron Sverige sammandrag</title>
+    <date>2017</date>
+    <category lang="en">series</category>
+    <category lang="en">Politics</category>
+    <category lang="en">Society</category>
+    <episode-num system="xmltv_ns">2016 . 45/50 .</episode-num>
+    <episode-num system="onscreen">Episode 46 of 50 season 2017</episode-num>
+    <video>
+    <aspect>16:9</aspect>
+    </video>
+  </programme>
+<programme start="20170822063000 +0200" stop="20170822063500 +0200" channel="svt1.svt.se">
+<title lang="sv">SVT Nyheter</title>
+<date>2017</date>
+<category lang="en">tvshow</category>
+<category lang="en">News</category>
+<episode-num system="xmltv_ns">2016 . 46/50 .</episode-num>
+<episode-num system="onscreen">Episode 47 of 50 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822063700 +0200" stop="20170822100000 +0200" channel="svt1.svt.se">
+<title lang="sv">Gomorron Sverige</title>
+<desc lang="sv">
+Dagsaktuella gäster i intervjuer, debatter och diskussioner i soffan varje kvart. Tips om mat och resor och recensioner av film och böcker m.m. SVT Nyheter varje halvtimme. Sportnytt kl 07.05, 08.05 och 09.05. Väder kl 07.10, 07.38, 08.13, 08.38, 09.13 och 09.35. Lokala nyheter kl 07.35, 08.10, 08.35 och 09.10. Läs text-tv sid 679.
+</desc>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Politics</category>
+<category lang="en">Society</category>
+<episode-num system="xmltv_ns">2016 . 46/50 .</episode-num>
+<episode-num system="onscreen">Episode 47 of 50 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822100000 +0200" stop="20170822104500 +0200" channel="svt1.svt.se">
+<title lang="sv">Fråga doktorn</title>
+<desc lang="sv">
+Höstens första gäst är Mia Törnblom, författare, föreläsare och utbildare i ledarskap. Hon menar att det går att träna upp sin självkänsla på samma sätt som man kan träna upp sin kondition. Som vanligt svarar Gunilla Hasselgren på tittarnas medicinska frågor och Suzanne Axell är programledare.
+</desc>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Magazine</category>
+<episode-num system="xmltv_ns">19 . 0/18 .</episode-num>
+<episode-num system="onscreen">Episode 1 of 18 season 20</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+<audio>
+<stereo>dolby digital</stereo>
+</audio>
+</programme>
+<programme start="20170822104500 +0200" stop="20170822110000 +0200" channel="svt1.svt.se">
+<title lang="sv">Jan och räven</title>
+<desc lang="sv">
+Med sin kamera ger sig naturfilmaren Jan Tandrup Petersen ut på jakt efter de vilda djuren i Danmarks fauna. Denna gång: den skygga räven.
+</desc>
+<date>2006</date>
+<category lang="en">series</category>
+<category lang="en">Nature</category>
+<episode-num system="xmltv_ns">2005 . 3/7 .</episode-num>
+<episode-num system="onscreen">Episode 4 of 7 season 2006</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822110000 +0200" stop="20170822114000 +0200" channel="svt1.svt.se">
+<title lang="sv">Uppfinnaren</title>
+<desc lang="sv">
+Tusenkonstnären Erik Alfred Tesaker har planer på att plantera ut fisk i tjärnen. Han funderar också på hur man löser problemet med tandkrämsrester. Drömtornsprojektet fortskrider, trots allt. Ansökan är inte godkänd ännu, men han hoppas på det bästa. Erik Alfred Tesaker följde sin dröm, sa upp sig från jobbet och flyttade ut på landet med sin familj. På gården Øystøl vill han skapa ett självförsörjande mekaniskt paradis för sig och sin familj, hustrun Ellen Marie och de tre barnen Selma (10), Alfred (8) och Tønnes (6).
+</desc>
+<date>2016</date>
+<category lang="en">series</category>
+<category lang="en">Lifestyle</category>
+<episode-num system="xmltv_ns">0 . 5/8 .</episode-num>
+<episode-num system="onscreen">Episode 6 of 8 season 1</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822114000 +0200" stop="20170822124000 +0200" channel="svt1.svt.se">
+<title lang="sv">Say something</title>
+<desc lang="sv">
+När Isabell var barn såg hon sin mamma bli misshandlad av pojkvännen. Det har präglat hennes uppväxt och nu vill Isabell berätta för sin mamma om upplevelserna. Om en ung tjej på väg mot vuxenlivet och hennes försök att försonas med det förflutna. UR.
+</desc>
+<date>2017</date>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822124000 +0200" stop="20170822133000 +0200" channel="svt1.svt.se">
+<title lang="sv">Norge från luften</title>
+<sub-title lang="sv">Gröda</sub-title>
+<desc lang="sv">
+En resa genom Norge - sett från luften. Livet spirar överallt i landskapet, till lands och till havs. Turen går denna gång bl.a. till äppelodling i Hardanger, fiske i Lofoten och skogsarbete i Hedmark och Oppland.
+</desc>
+<date>2016</date>
+<category lang="en">series</category>
+<category lang="en">Nature</category>
+<episode-num system="xmltv_ns">2015 . 2/6 .</episode-num>
+<episode-num system="onscreen">Episode 3 of 6 season 2016</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822133000 +0200" stop="20170822143000 +0200" channel="svt1.svt.se">
+<title lang="sv">Vi lagar bästa maten</title>
+<desc lang="sv">
+Doreen Månsson är programledare och Edward Blom enväldig smakdomare när tre familjelag tävlar om vem som lagar den bästa maten. Lagen består av en matlagningsbegåvad förälder som - utan att hjälpa till själv - ska coacha sitt vuxna barn att laga ett av familjens favoritrecept. En humoristisk matlagningstävling där familjedynamiken hamnar i fokus.
+</desc>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Quiz</category>
+<episode-num system="xmltv_ns">2016 . 0/6 .</episode-num>
+<episode-num system="onscreen">Episode 1 of 6 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822143000 +0200" stop="20170822153000 +0200" channel="svt1.svt.se">
+<title lang="sv">Duellen</title>
+<desc lang="sv">
+Tio barn i dragkamp mot Sveriges starkaste man eller en cyklist mot en ryttare till häst genom lerig skog. Vem vinner? Det gäller för lagen i studion och tv-publiken att tippa rätt vinnare i udda dueller. Du kan vara med och spela i SVT:s Duo-app.
+</desc>
+<credits>
+<presenter>Carolina Klüft</presenter>
+<presenter>Micke Leijnegard</presenter>
+</credits>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Quiz</category>
+<episode-num system="xmltv_ns">2016 . 0/8 .</episode-num>
+<episode-num system="onscreen">Episode 1 of 8 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822153000 +0200" stop="20170822155500 +0200" channel="svt1.svt.se">
+<title lang="sv">Gomorron Sverige sammandrag</title>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Politics</category>
+<category lang="en">Society</category>
+<episode-num system="xmltv_ns">2016 . 46/50 .</episode-num>
+<episode-num system="onscreen">Episode 47 of 50 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822155500 +0200" stop="20170822173000 +0200" channel="svt1.svt.se">
+<title lang="sv">Sommaren med Monika</title>
+<desc lang="sv">
+22 augusti skulle författaren Per Anders Fogelström fyllt 100 år. Med anledning av detta visar SVT Ingmar Bergmans Sommaren med Monika, som bygger på Fogelströms roman med samma namn. Monika och Harry flyr tristessen i sina hem och på arbetsplatsen och tillbringar en kort sommar av lycka i skärgården. Monika blir med barn och när de återvänder till stan gifter de sig. Deras heta kärlek från sommarens sorglösa månader utsätts för påfrestningar när vardagslivet tränger sig på. Foto: Gunnar Fischer.
+</desc>
+<credits>
+<director>Ingmar Bergman</director>
+<actor role="Monika">Harriet Andersson</actor>
+<actor role="Harry">Lars Ekborg</actor>
+<actor role="Harry's aunt">Dagmar Ebbesen</actor>
+<actor role="Monika's father">Åke Fridell</actor>
+<actor role="Monika's mother">Naemi Briese</actor>
+<actor role="Harry's friend at work">Åke Grönberg</actor>
+<actor role="Porcelain warehouse worker">Sigge Fürst</actor>
+<actor role="Lelle">John Harryson</actor>
+<writer>Per Anders Fogelström</writer>
+<producer>Allan Ekelund</producer>
+</credits>
+<date>1953</date>
+<category lang="en">movie</category>
+<category lang="en">Drama</category>
+<category lang="en">Romance</category>
+<url>http://www.themoviedb.org/movie/47735</url>
+<episode-num system="themoviedb.org">movie/47735</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+<star-rating>
+<value>7.6 / 10</value>
+</star-rating>
+</programme>
+<programme start="20170822173000 +0200" stop="20170822180000 +0200" channel="svt1.svt.se">
+<title lang="sv">Vem vet mest?</title>
+<desc lang="sv">
+Rickard Olsson leder de tävlande genom SVT:s frågesport som kan handla om allt från Abba till atomer. Förutom bred allmänbildning krävs också ett strategiskt tänkande.
+</desc>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Documentary</category>
+<category lang="en">Entertainment</category>
+<episode-num system="xmltv_ns">18 . 0/85 .</episode-num>
+<episode-num system="onscreen">Episode 1 of 85 season 19</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822180000 +0200" stop="20170822181300 +0200" channel="svt1.svt.se">
+<title lang="sv">Rapport</title>
+<date>2017</date>
+<category lang="en">tvshow</category>
+<category lang="en">News</category>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822181300 +0200" stop="20170822182500 +0200" channel="svt1.svt.se">
+<title lang="sv">Kulturnyheterna</title>
+<date>2017</date>
+<category lang="en">tvshow</category>
+<category lang="en">News</category>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822182500 +0200" stop="20170822183000 +0200" channel="svt1.svt.se">
+<title lang="sv">Sportnytt</title>
+<date>2017</date>
+<category lang="en">sports</category>
+<category lang="en">Sports</category>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822183000 +0200" stop="20170822184500 +0200" channel="svt1.svt.se">
+<title lang="sv">Lokala nyheter</title>
+<date>2017</date>
+<category lang="en">tvshow</category>
+<category lang="en">News</category>
+<episode-num system="xmltv_ns">2016 . 121/220 .</episode-num>
+<episode-num system="onscreen">Episode 122 of 220 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822184500 +0200" stop="20170822193000 +0200" channel="svt1.svt.se">
+<title lang="sv">Go'kväll</title>
+<desc lang="sv">
+Kattis Ahlström och Niklas Källner berättar om nya serien Arvinge okänd där de letar upp personer som inte visste att de hade ett arv som väntar på dem. Sensommartips för trädgården med Gunnel Carlson. Träningstips med Sofia Åhman. Reportage i serien Svenska Mästare. Programledare Inger Ljung Olsson.
+</desc>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Magazine</category>
+<episode-num system="xmltv_ns">2016 . 0/90 .</episode-num>
+<episode-num system="onscreen">Episode 1 of 90 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+<audio>
+<stereo>dolby digital</stereo>
+</audio>
+</programme>
+<programme start="20170822193000 +0200" stop="20170822195500 +0200" channel="svt1.svt.se">
+<title lang="sv">Rapport</title>
+<date>2017</date>
+<category lang="en">tvshow</category>
+<category lang="en">News</category>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822195500 +0200" stop="20170822200000 +0200" channel="svt1.svt.se">
+<title lang="sv">Lokala nyheter</title>
+<date>2017</date>
+<category lang="en">tvshow</category>
+<category lang="en">News</category>
+<episode-num system="xmltv_ns">2016 . 200/315 .</episode-num>
+<episode-num system="onscreen">Episode 201 of 315 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822200000 +0200" stop="20170822210000 +0200" channel="svt1.svt.se">
+<title lang="sv">Trädgårdstider</title>
+<desc lang="sv">
+Trädgårdsmästare John Taylor tar emot vännerna efter att själv skött om trädgården under sommaren. Inredaren Malin Persson provar växtfärgning på japanskt vis och det blir vegetariskt när kocken Tareq Taylor skördar i kökslandet. Pernilla Månsson Colt gör vad hon kan för att jaga bort mördarsniglarna innan Englands trädgårdsdrottning Penny Snell ska komma på besök.
+</desc>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Magazine</category>
+<episode-num system="xmltv_ns">2 . 0/2 .</episode-num>
+<episode-num system="onscreen">Episode 1 of 2 season 3</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822210000 +0200" stop="20170822220000 +0200" channel="svt1.svt.se">
+<title lang="sv">Per Anders Fogelström</title>
+<desc lang="sv">
+En film om en av Sveriges mest lästa författare någonsin, Per Anders Fogelström. Filmen skildrar den turbulenta barndomen, de exceptionella framgångarna med romaner som "Sommaren med Monika" och "Mina drömmars stad" och den livslånga gåta som kom att prägla Per Anders Fogelströms liv: hans fars plötsliga försvinnande. Medverkar gör Per Fogelström som för första gången offentligt berättar om sin pappa, författaren Susanna Alakoski, f.d. statsministern Ingvar Carlsson, kulturjournalisten Ulrika Knutson och författaren Göran Greider med flera. Per Anders Fogelström dog 1998 och i år är det 100 år sedan han föddes. En film av Anders Lundgren.
+</desc>
+<date>2017</date>
+<category lang="en">tvshow</category>
+<category lang="en">News</category>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170822220000 +0200" stop="20170823004000 +0200" channel="svt1.svt.se">
+<title lang="sv">Mina drömmars stad</title>
+<desc lang="sv">
+22 augusti skulle författaren Per Anders Fogelström fyllt 100 år och som en hyllning visar SVT denna film, efter hans roman med samma namn. På 1860-talet kommer föräldralöse tonåringen Henning till Stockholm för att söka arbete, men arbetslöshet, strejker och hungersnöd drar fram genom klasskampens Sverige. Han gifter sig med Lotten och de flyttar till ett hus på Åsöberget, som de delar med vännen Tummen och hans fru Matilda. Familjerna kämpar hårt för sin tillvaro och fattigdomen präglar deras liv.
+</desc>
+<credits>
+<director>Ingvar Skogsberg</director>
+<actor role="Henning Nilsson">Eddie Axberg</actor>
+<actor role="Lotten Blom">Britt-Louise Tillbom</actor>
+<actor role="Ture Tummen Lindgren">Kjell-Hugo Grandin</actor>
+<actor role="Matilda">Gunilla Larsson</actor>
+<actor role="Skräcken">Åke Wästersjö</actor>
+</credits>
+<date>1976</date>
+<category lang="en">movie</category>
+<category lang="en">Drama</category>
+<url>http://www.themoviedb.org/movie/337668</url>
+<episode-num system="themoviedb.org">movie/337668</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170823004000 +0200" stop="20170823004500 +0200" channel="svt1.svt.se">
+<title lang="sv">SVT Nyheter</title>
+<date>2017</date>
+<category lang="en">tvshow</category>
+<category lang="en">News</category>
+<episode-num system="xmltv_ns">2016 . 233/366 .</episode-num>
+<episode-num system="onscreen">Episode 234 of 366 season 2017</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+<programme start="20170823004500 +0200" stop="20170823011500 +0200" channel="svt1.svt.se">
+<title lang="sv">Trettiplus</title>
+<desc lang="sv">
+Trettiplus-indikation: Bli guilt-trippad av barnvakten, gå med i bokklubb för att verka intressant, hamna mitt i hetsiga amningsdebatter och berätta i detalj om när slemproppen gick. Bakom och framför Trettiplus står humorgruppen Stallet som består av Isabella Posse Boquist, Isabelle Riddez, Linn Mannheimer, Elin Thomasdotter Extor och Anni Tuikka.
+</desc>
+<date>2017</date>
+<category lang="en">series</category>
+<category lang="en">Comedy</category>
+<episode-num system="xmltv_ns">1 . 2/4 .</episode-num>
+<episode-num system="onscreen">Episode 3 of 4 season 2</episode-num>
+<video>
+<aspect>16:9</aspect>
+</video>
+</programme>
+</tv>
