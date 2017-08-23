@@ -30,10 +30,7 @@ namespace TVTableau
             SetURL(_date);
             GetResponseFromWebClient(_url);
             this.LblSVT1CurrentDay.Text = DateTime.Now.Date.ToString("M");
-            this.LbxSVT1Programmes.DisplayMember = "Header";
-
-            string urlPath = GetUrlFromDate(_date, Channels.SVT2);
-            MessageBox.Show(urlPath);
+            this.LbxProgrammes.DisplayMember = "Header";
         }
         
         private void SetURL(DateTime date)
@@ -49,10 +46,10 @@ namespace TVTableau
                 var response = _client.DownloadString(url);
                 _programmes = JsonConvert.DeserializeObject<RootObject>(response);
                 
-                this.LbxSVT1Programmes.Items.Clear();
+                this.LbxProgrammes.Items.Clear();
                 foreach (var programme in _programmes.JsonTv.Programmes)
                 {
-                    this.LbxSVT1Programmes.Items.Add(programme);
+                    this.LbxProgrammes.Items.Add(programme);
                 }
             }
             catch (Exception ex)
@@ -68,7 +65,7 @@ namespace TVTableau
             MessageBox.Show(programme.ToString(), programme.Title.ToString());
         }
 
-        private void BtnSVT1PreviousDay_Click(object sender, EventArgs e)
+        private void BtnPreviousDay_Click(object sender, EventArgs e)
         {
             _date = _date.AddDays(-1);
             SetURL(_date);
@@ -76,7 +73,7 @@ namespace TVTableau
             GetResponseFromWebClient(_url);
         }
 
-        private void BtnSVT1NextDay_Click(object sender, EventArgs e)
+        private void BtnNextDay_Click(object sender, EventArgs e)
         {
             _date = _date.AddDays(1);
             SetURL(_date);
@@ -84,11 +81,11 @@ namespace TVTableau
             GetResponseFromWebClient(_url);
         }
 
-        private void LbxSVT1Programmes_DoubleClick(object sender, EventArgs e)
+        private void LbxProgrammes_DoubleClick(object sender, EventArgs e)
         {
             var listbox = sender as ListBox;
             var selectedItem = listbox.SelectedItem as Programme;
-            this.TbxSVT1SelectedProgramme.Text = selectedItem.ToString();
+            this.TbxSelectedProgramme.Text = selectedItem.ToString();
         }
 
         private void BtnPreviousChannel_Click(object sender, EventArgs e)

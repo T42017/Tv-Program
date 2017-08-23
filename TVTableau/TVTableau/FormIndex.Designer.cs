@@ -30,10 +30,10 @@
         {
             this.PbxSVT1 = new System.Windows.Forms.PictureBox();
             this.LblSVT1CurrentDay = new System.Windows.Forms.Label();
-            this.BtnSVT1PreviousDay = new System.Windows.Forms.Button();
-            this.BtnSVT1NextDay = new System.Windows.Forms.Button();
-            this.LbxSVT1Programmes = new System.Windows.Forms.ListBox();
-            this.TbxSVT1SelectedProgramme = new System.Windows.Forms.TextBox();
+            this.BtnPreviousDay = new System.Windows.Forms.Button();
+            this.BtnNextDay = new System.Windows.Forms.Button();
+            this.LbxProgrammes = new System.Windows.Forms.ListBox();
+            this.TbxSelectedProgramme = new System.Windows.Forms.TextBox();
             this.BtnPreviousChannel = new System.Windows.Forms.Button();
             this.BtnNextChannel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbxSVT1)).BeginInit();
@@ -60,43 +60,43 @@
             this.LblSVT1CurrentDay.TabIndex = 3;
             this.LblSVT1CurrentDay.Text = "den 23 augusti";
             // 
-            // BtnSVT1PreviousDay
+            // BtnPreviousDay
             // 
-            this.BtnSVT1PreviousDay.Location = new System.Drawing.Point(301, 810);
-            this.BtnSVT1PreviousDay.Name = "BtnSVT1PreviousDay";
-            this.BtnSVT1PreviousDay.Size = new System.Drawing.Size(75, 51);
-            this.BtnSVT1PreviousDay.TabIndex = 4;
-            this.BtnSVT1PreviousDay.Text = "<";
-            this.BtnSVT1PreviousDay.UseVisualStyleBackColor = true;
-            this.BtnSVT1PreviousDay.Click += new System.EventHandler(this.BtnSVT1PreviousDay_Click);
+            this.BtnPreviousDay.Location = new System.Drawing.Point(301, 810);
+            this.BtnPreviousDay.Name = "BtnPreviousDay";
+            this.BtnPreviousDay.Size = new System.Drawing.Size(75, 51);
+            this.BtnPreviousDay.TabIndex = 4;
+            this.BtnPreviousDay.Text = "<";
+            this.BtnPreviousDay.UseVisualStyleBackColor = true;
+            this.BtnPreviousDay.Click += new System.EventHandler(this.BtnPreviousDay_Click);
             // 
-            // BtnSVT1NextDay
+            // BtnNextDay
             // 
-            this.BtnSVT1NextDay.Location = new System.Drawing.Point(567, 810);
-            this.BtnSVT1NextDay.Name = "BtnSVT1NextDay";
-            this.BtnSVT1NextDay.Size = new System.Drawing.Size(75, 51);
-            this.BtnSVT1NextDay.TabIndex = 5;
-            this.BtnSVT1NextDay.Text = ">";
-            this.BtnSVT1NextDay.UseVisualStyleBackColor = true;
-            this.BtnSVT1NextDay.Click += new System.EventHandler(this.BtnSVT1NextDay_Click);
+            this.BtnNextDay.Location = new System.Drawing.Point(567, 810);
+            this.BtnNextDay.Name = "BtnNextDay";
+            this.BtnNextDay.Size = new System.Drawing.Size(75, 51);
+            this.BtnNextDay.TabIndex = 5;
+            this.BtnNextDay.Text = ">";
+            this.BtnNextDay.UseVisualStyleBackColor = true;
+            this.BtnNextDay.Click += new System.EventHandler(this.BtnNextDay_Click);
             // 
-            // LbxSVT1Programmes
+            // LbxProgrammes
             // 
-            this.LbxSVT1Programmes.FormattingEnabled = true;
-            this.LbxSVT1Programmes.ItemHeight = 20;
-            this.LbxSVT1Programmes.Location = new System.Drawing.Point(12, 237);
-            this.LbxSVT1Programmes.Name = "LbxSVT1Programmes";
-            this.LbxSVT1Programmes.Size = new System.Drawing.Size(283, 624);
-            this.LbxSVT1Programmes.TabIndex = 6;
-            this.LbxSVT1Programmes.DoubleClick += new System.EventHandler(this.LbxSVT1Programmes_DoubleClick);
+            this.LbxProgrammes.FormattingEnabled = true;
+            this.LbxProgrammes.ItemHeight = 20;
+            this.LbxProgrammes.Location = new System.Drawing.Point(12, 237);
+            this.LbxProgrammes.Name = "LbxProgrammes";
+            this.LbxProgrammes.Size = new System.Drawing.Size(283, 624);
+            this.LbxProgrammes.TabIndex = 6;
+            this.LbxProgrammes.DoubleClick += new System.EventHandler(this.LbxProgrammes_DoubleClick);
             // 
-            // TbxSVT1SelectedProgramme
+            // TbxSelectedProgramme
             // 
-            this.TbxSVT1SelectedProgramme.Location = new System.Drawing.Point(301, 237);
-            this.TbxSVT1SelectedProgramme.Multiline = true;
-            this.TbxSVT1SelectedProgramme.Name = "TbxSVT1SelectedProgramme";
-            this.TbxSVT1SelectedProgramme.Size = new System.Drawing.Size(341, 567);
-            this.TbxSVT1SelectedProgramme.TabIndex = 7;
+            this.TbxSelectedProgramme.Location = new System.Drawing.Point(301, 237);
+            this.TbxSelectedProgramme.Multiline = true;
+            this.TbxSelectedProgramme.Name = "TbxSelectedProgramme";
+            this.TbxSelectedProgramme.Size = new System.Drawing.Size(341, 567);
+            this.TbxSelectedProgramme.TabIndex = 7;
             // 
             // BtnPreviousChannel
             // 
@@ -127,10 +127,10 @@
             this.ClientSize = new System.Drawing.Size(663, 879);
             this.Controls.Add(this.BtnNextChannel);
             this.Controls.Add(this.BtnPreviousChannel);
-            this.Controls.Add(this.TbxSVT1SelectedProgramme);
-            this.Controls.Add(this.LbxSVT1Programmes);
-            this.Controls.Add(this.BtnSVT1NextDay);
-            this.Controls.Add(this.BtnSVT1PreviousDay);
+            this.Controls.Add(this.TbxSelectedProgramme);
+            this.Controls.Add(this.LbxProgrammes);
+            this.Controls.Add(this.BtnNextDay);
+            this.Controls.Add(this.BtnPreviousDay);
             this.Controls.Add(this.LblSVT1CurrentDay);
             this.Controls.Add(this.PbxSVT1);
             this.Name = "FormIndex";
@@ -144,10 +144,10 @@
         #endregion
         private System.Windows.Forms.PictureBox PbxSVT1;
         private System.Windows.Forms.Label LblSVT1CurrentDay;
-        private System.Windows.Forms.Button BtnSVT1PreviousDay;
-        private System.Windows.Forms.Button BtnSVT1NextDay;
-        private System.Windows.Forms.ListBox LbxSVT1Programmes;
-        private System.Windows.Forms.TextBox TbxSVT1SelectedProgramme;
+        private System.Windows.Forms.Button BtnPreviousDay;
+        private System.Windows.Forms.Button BtnNextDay;
+        private System.Windows.Forms.ListBox LbxProgrammes;
+        private System.Windows.Forms.TextBox TbxSelectedProgramme;
         private System.Windows.Forms.Button BtnPreviousChannel;
         private System.Windows.Forms.Button BtnNextChannel;
     }
