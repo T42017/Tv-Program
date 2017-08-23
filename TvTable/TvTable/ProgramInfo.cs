@@ -8,18 +8,15 @@ namespace TvTable
 {
     class ProgramInfo
     {
-        public string ChannelName;
-        private string _title = "";
-        private string _programStart = "";
+        private string _title;
+        private string _programStart;
         public string Info;
 
-        public ProgramInfo(string title, string programStart, string channelName)
+        public ProgramInfo(string title, string programStart)
         {
             _title = title;
-            _programStart = programStart;
-            char[] trim = ".se".ToCharArray();           
-            ChannelName = channelName.Trim(trim);
-            Info = ChannelName + " : " + _title + " --- "  + _programStart;
+            _programStart = programStart;          
+            Info = _title + " --- "  + _programStart;
         }
               
     }

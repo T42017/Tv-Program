@@ -14,7 +14,8 @@ namespace TvTable
         public Channel(string overview, List<ProgramInfo> programs)
         {
             Programs = programs;
-            Overview = overview;
+            if (overview == null) Overview = "Channel overview not found.";
+            else Overview = overview;
         }
     }
 }
