@@ -9,3 +9,14 @@ c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Deb
 c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.csproj.GenerateResource.Cache
 c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.exe
 c:\users\usr\documents\visual studio 2017\Projects\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.pdb
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\bin\Debug\TvTablaNew.exe.config
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\bin\Debug\TvTablaNew.exe
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\bin\Debug\TvTablaNew.pdb
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\bin\Debug\Newtonsoft.Json.dll
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\bin\Debug\Newtonsoft.Json.xml
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.csprojResolveAssemblyReference.cache
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.Form1.resources
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.Properties.Resources.resources
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.csproj.GenerateResource.Cache
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.exe
+C:\GIT\Tv-Program\Tv-Program\TvTablaNew\TvTablaNew\obj\Debug\TvTablaNew.pdb
