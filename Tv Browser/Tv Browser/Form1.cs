@@ -36,7 +36,7 @@ namespace Tv_Browser
             }
 
             listBox1.SelectedIndex = 0;
-            dayChooser.SelectedIndex = 10;
+            dayChooser.SelectedIndex = 9;
 
             StartTimer();
         }
@@ -45,50 +45,51 @@ namespace Tv_Browser
         private void StartTimer()
         {
             time = new System.Windows.Forms.Timer();
-            time.Interval = 1000;
+            time.Interval = 500;
             time.Tick += new EventHandler(t_Tick);
             time.Enabled = true;
         }
 
         void t_Tick(object sender, EventArgs e)
         {
-            DateTime nextShow = GetNextShowTime();
-            var time = nextShow - DateTime.Now;
-            string formattedTimespan = time.ToString("hh\\:mm\\:ss");
+            TimeSpan nextShow = GetNextShowTime();
+            //var time = nextShow - DateTime.Now.TimeOfDay;
+            string formattedTimespan = nextShow.ToString("hh\\:mm\\:ss");
             timer.Text = formattedTimespan;
-            
-            
         }
 
-        private DateTime GetNextShowTime()
+        private TimeSpan GetNextShowTime()
         {
-            DateTime nextShowAiringTime = new DateTime(2000,10,1);
+            DateTime nextShowAiringTime = new DateTime(2020, 10, 1, 0, 0, 0);
+            var nextShowTime = nextShowAiringTime.TimeOfDay;
+            var timeNow =(DateTime.Now.ToString("yyyy-MM-dd"));
 
-            if (RemoteFileExists("http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + dayChooser.SelectedItem + ".xml.gz"))
+            if (RemoteFileExists("http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + timeNow + ".xml.gz"))
             {
-                
-                XDocument tvList = XDocument.Load("http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + dayChooser.SelectedItem + ".xml.gz");
-                var tempData = tvList.Descendants("tv");
-                var airingTimeDataStart = tempData.Elements("programme").ElementAt(timeIndex).Attribute("start").Value;
+                XDocument tvList = XDocument.Load("http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + timeNow + ".xml.gz");
 
                 for (int i = 0; i < amountOfShows; i++)
                 {
-                    var temptime = new DateTime(0,0,0,1,1,1);
-                    var temptime2 = temptime.TimeOfDay;
-                    var temp = tempData.Elements("programme").ElementAt(i).Attribute("start").Value;
-                    DateTime time = DateTimeOffset.ParseExact(temp, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
-                    var time1 = time.TimeOfDay;
-                    var time2 = DateTime.Now;
-                    //if((time2 ))
+                    var tempData = tvList.Descendants("tv");
+                    var airingTimeDataStart = tempData.Elements("programme").ElementAt(i).Attribute("start").Value;
+                    DateTime start = DateTimeOffset.ParseExact(airingTimeDataStart, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
+                    var timeToday = DateTime.Now;
 
+                    if ((start - timeToday) > nextShowTime)
+                    {
+                        if (i != 0)
+                        {
+                            var titleCurrentShow = tempData.Elements("programme").ElementAt(i - 1).Element("title").Value;
+                            currentlyOnAirLink.Text = titleCurrentShow;
+                        }
+                        var titleNextShow = tempData.Elements("programme").ElementAt(i).Element("title").Value;
+                        nextOnAirLink.Text = titleNextShow;
+                        nextShowTime = (start - timeToday);
+                        return nextShowTime;
+                    }
                 }
-
-
-                DateTime start = DateTimeOffset.ParseExact(airingTimeDataStart, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
-
-                return start;
             }
-            return nextShowAiringTime;
+            return nextShowTime;
         }
 
         private void tvChannelList_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,8 +99,6 @@ namespace Tv_Browser
             {
                 LoadContent();
             }
-
-
         }
 
         private void dayChooser_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,27 +118,20 @@ namespace Tv_Browser
         {
             try
             {
-                //Creating the HttpWebRequest
                 HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
-                //Setting the Request method HEAD, you can also use GET too.
                 request.Method = "HEAD";
-                //Getting the Web Response.
                 HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-                //Returns TRUE if the Status code == 200
                 response.Close();
                 return (response.StatusCode == HttpStatusCode.OK);
             }
             catch
             {
-                //Any exception will returns false.
                 return false;
             }
         }
 
         public void LoadContent()
         {
-
-            
             var url = "http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + dayChooser.SelectedItem + ".xml.gz";
 
             if (RemoteFileExists(url))
@@ -152,12 +144,10 @@ namespace Tv_Browser
                     if (timeIndex < amountOfShows - 1)
                     {
                         var title2 = tempData.Elements("programme").ElementAt(timeIndex + 1).Element("title").Value;
-                        nextOnAirLink.Text = title2;
                     }  
                     else
                     {
                         var title2 = tempData.Elements("programme").ElementAt(0).Element("title").Value;
-                        nextOnAirLink.Text = title2;
                     }
                     
                 }
@@ -178,15 +168,11 @@ namespace Tv_Browser
                 var airingTimeDataStop = tempData.Elements("programme").ElementAt(timeIndex).Attribute("stop").Value;
                 DateTime stop = DateTimeOffset.ParseExact(airingTimeDataStop, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
 
-
-
-
                 descriptionTextBox.Text = description;
                 episodeNumberLabel.Text = episodeNumber;
                 amountOfShows = tempData.Elements("programme").Count();
                 titleLabel.Text = title;
                 airingTime.Text = start.TimeOfDay + " - " + stop.TimeOfDay;
-                currentlyOnAirLink.Text = title;
             }
             else
             {
@@ -197,7 +183,6 @@ namespace Tv_Browser
                 airingTime.Text = " ";
                 subTitleLabel.Text = " ";
             }
-            
         }
 
         private void airingTime_TextChanged(object sender, EventArgs e)
