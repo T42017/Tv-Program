@@ -66,9 +66,24 @@ namespace Tv_Browser
 
             if (RemoteFileExists("http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + dayChooser.SelectedItem + ".xml.gz"))
             {
+                
                 XDocument tvList = XDocument.Load("http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + dayChooser.SelectedItem + ".xml.gz");
                 var tempData = tvList.Descendants("tv");
                 var airingTimeDataStart = tempData.Elements("programme").ElementAt(timeIndex).Attribute("start").Value;
+
+                for (int i = 0; i < amountOfShows; i++)
+                {
+                    var temptime = new DateTime(0,0,0,1,1,1);
+                    var temptime2 = temptime.TimeOfDay;
+                    var temp = tempData.Elements("programme").ElementAt(i).Attribute("start").Value;
+                    DateTime time = DateTimeOffset.ParseExact(temp, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
+                    var time1 = time.TimeOfDay;
+                    var time2 = DateTime.Now;
+                    //if((time2 ))
+
+                }
+
+
                 DateTime start = DateTimeOffset.ParseExact(airingTimeDataStart, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
 
                 return start;
