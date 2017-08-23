@@ -1,31 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace TvTableauForm
 {
 
     public class Rootobject
     {
-        public Jsontv jsontv { get; set; }
+        [JsonProperty(PropertyName = "jsontv")]
+        public Jsontv JsonTv { get; set; }
 
         public override string ToString()
         {
-            return jsontv.ToString();
+            return JsonTv.ToString();
         }
     }
 
     public class Jsontv
     {
-        public Programme[] programme { get; set; }
+        [JsonProperty(PropertyName = "programme")]
+        public Programme[] Program { get; set; }
 
         public override string ToString()
         {
-            return string.Join<Programme>("\r\n\r\n", programme);
+            return string.Join<Programme>("\r\n\r\n", Program);
         }
     }
 
@@ -71,79 +68,87 @@ namespace TvTableauForm
 
         }
 
-
-
         public override string ToString()
         {
+            var start = ConvertFromUnixTimestamp(double.Parse(Start));
+            var stop = ConvertFromUnixTimestamp(double.Parse(Stop));
             return $"Title: {Title}\r\n\r\n" +
-                   $"Description: {Description}\r\n\r\n" +
+                   $"{Description}\r\n\r\n" +
                    $"Episode: {Episode}\r\n" +
                    $"Category: {Category}\r\n" +
-                   "Starts: " + ConvertFromUnixTimestamp(double.Parse(Start)) + " \r\n" +
-                   "Ends: " + ConvertFromUnixTimestamp(double.Parse(Stop)) + " \r\n" +
-                   "__________________________________________________________";
+                   "Starts: " + start.ToString("hh:mm") + " \r\n" +
+                   "Ends: " + stop.ToString("hh:mm") + " \r\n" +
+                   "___________________________________";
         }
     }
 
     public class Desc
     {
-        public string sv { get; set; }
+        [JsonProperty(PropertyName = "sv")]
+        public string Sv { get; set; }
 
         public override string ToString()
         {
-                return sv;
+                return Sv;
         }
     }
 
     public class Video
     {
-        public string aspect { get; set; }
+        [JsonProperty(PropertyName = "aspect")]
+        public string Aspect { get; set; }
 
         public override string ToString()
         {
-            return aspect;
+            return Aspect;
         }
     }
 
     public class Episodenum
     {
-        public string xmltv_ns { get; set; }
-        public string onscreen { get; set; }
-        public string themoviedborg { get; set; }
+        [JsonProperty(PropertyName = "xmltv_ns")]
+        public string Episode { get; set; }
+        [JsonProperty(PropertyName = "onscreen")]
+        public string OnscreenEpisode { get; set; }
+        [JsonProperty(PropertyName = "themoviedborg")]
+        public string MovieUrl { get; set; }
 
         public override string ToString()
         {
-            return $"{onscreen}";
+            return $"{OnscreenEpisode}";
         }
     }
 
     public class Category
     {
-        public string[] en { get; set; }
+        [JsonProperty(PropertyName = "en")]
+        public string[] En { get; set; }
 
         public override string ToString()
         {
-            return string.Join(", ", en);
+            return string.Join(", ", En);
         }
     }
 
     public class Title
     {
-        public string sv { get; set; }
+        [JsonProperty(PropertyName = "sv")]
+        public string Sv { get; set; }
 
         public override string ToString()
         {
-            return sv;
+            return Sv;
         }
     }
 
     public class Subtitle
     {
-        public string sv { get; set; }
+        [JsonProperty(PropertyName = "sv")]
+        public string Sv { get; set; }
 
         public override string ToString()
         {
-            return sv;
+            return Sv;
         }
     }
 
