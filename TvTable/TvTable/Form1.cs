@@ -24,7 +24,7 @@ namespace TvTable
             InitializeComponent();
         }
 
-        static void htmlRetriever()
+        static void HtmlRetriever()
         {
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             HtmlWeb hw = new HtmlWeb();
@@ -36,112 +36,101 @@ namespace TvTable
             foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@href]"))
             {
                 string hrefValue = link.GetAttributeValue("href", string.Empty);
-                urlList.Add(hrefValue);
+                _urlList.Add(hrefValue);
             }
         }
 
-        static List<string> urlList = new List<string>();
-        static List<string> wantedUrlList = new List<string>();
-        static List<string> requestedUrlList = new List<string>();
+        static List<string> _urlList = new List<string>();
+        static List<string> _wantedUrlList = new List<string>();
+        static List<string> _requestedUrlList = new List<string>();
 
         List<Channel> _channels = new List<Channel>();
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            htmlRetriever();
+            HtmlRetriever();
 
-            foreach (var url in urlList)
+            foreach (var url in _urlList)
             {
                 if (url.Contains(".se"))
                 {
-                    wantedUrlList.Add(url);
+                    _wantedUrlList.Add(url);
                 }
             }         
  
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
+        private void SearchBtn_Click(object sender, EventArgs e)
         {
-            requestedUrlList.Clear();
-            InfoList.Items.Clear();
+            _requestedUrlList.Clear();
+            ChannelList.Items.Clear();
             
-            foreach (var url in wantedUrlList)
+            foreach (var url in _wantedUrlList)
             {
-                if (url.Contains(channelTbx.Text))
+                if (url.Contains(channelTbx.Text) && url.Contains(DateTime.Today.ToString("yy-MM-dd")))
                 {
-                    requestedUrlList.Add(url);
+                    _requestedUrlList.Add(url);
                 }
             }
 
-            foreach (string url in requestedUrlList)
+            foreach (string url in _requestedUrlList)
             {
                 var tempUrl = "http://xmltv.xmltv.se/" + url;
-                var reader = new XmlTextReader(tempUrl);
+                string channelOverview = url.Replace(".xml.gz", string.Empty);             
 
-                List<ProgramInfo> _programInfos = new List<ProgramInfo>();
-
-                List<string> titleList = new List<string>();
-                List<string> programStartList = new List<string>();
-                string channelOverview = null;
-
-                while (reader.Read())
-                {
-
-                    if (reader.NodeType == XmlNodeType.Element)
-                    {
-
-                        if (reader.Name == "title")
-                        {
-                            titleList.Add(reader.ReadInnerXml());
-                        }
-
-                        if (reader.Name == "programme")
-                        {
-
-                            string tmpStart = reader.GetAttribute("start");
-                            string tmpStop = reader.GetAttribute("stop");
-                            string tmpTime;
-
-                            tmpTime = tmpStart.Substring(8, 2) + ":" + tmpStart.Substring(10, 2) + " - " + tmpStop.Substring(8, 2) + ":" + tmpStop.Substring(10, 2);
-                            programStartList.Add(tmpTime);
-
-                            string programDate = tmpStart.Substring(4, 2) + "/" + tmpStart.Substring(6, 2);
-                            if (channelOverview == null)
-                            {
-                                channelOverview = "Channel: " + reader.GetAttribute("channel") + " --- Date: " +programDate;
-                            }
-
-                            
-
-                        }
-
-                    } 
-                    
-                }
-
-                for (int i = 0; i < titleList.Count; i++)
-                {
-                    _programInfos.Add(new ProgramInfo(titleList[i], programStartList[i]));
-                }
-                
-                _channels.Add(new Channel(channelOverview, _programInfos));
+                _channels.Add(new Channel(channelOverview, tempUrl));
             }
 
             foreach (Channel channel in _channels)
             {
-                InfoList.Items.Add(channel.Overview);
+                ChannelList.Items.Add(channel.Overview);
             }
         }
 
-        private void InfoList_SelectedIndexChanged(object sender, EventArgs e)
+        private void ChannelList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<ProgramInfo> tempInfos = _channels[InfoList.SelectedIndex].Programs;
+            ProgramList.Items.Clear();
+            List<ProgramInfo> _programInfos = new List<ProgramInfo>();
 
-            InfoList.Items.Clear();
-            foreach (var programInfo in tempInfos)
+            List<string> titleList = new List<string>();
+            List<string> programStartList = new List<string>();
+
+            var reader = new XmlTextReader(_channels[ChannelList.SelectedIndex].Url);
+
+            while (reader.Read())
             {
-                InfoList.Items.Add(programInfo.Info);
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+
+                    if (reader.Name == "title")
+                    {
+                        titleList.Add(reader.ReadInnerXml());
+                    }
+
+                    if (reader.Name == "programme")
+                    {
+
+                        string tmpStart = reader.GetAttribute("start");
+                        string tmpStop = reader.GetAttribute("stop");
+                        string tmpTime = tmpStart.Substring(8, 2) + ":" + tmpStart.Substring(10, 2) + " - " + tmpStop.Substring(8, 2) + ":" + tmpStop.Substring(10, 2);
+
+                        programStartList.Add(tmpTime);
+
+                        string programDate = tmpStart.Substring(4, 2) + "/" + tmpStart.Substring(6, 2);
+                    }
+
+                }
+
+            }
+            for (int i = 0; i < titleList.Count; i++)
+            {
+                _programInfos.Add(new ProgramInfo(titleList[i], programStartList[i]));
+            }
+
+            foreach (ProgramInfo programInfo in _programInfos)
+            {
+                ProgramList.Items.Add(programInfo.Info);
             }
         }
     }

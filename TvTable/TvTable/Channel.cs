@@ -9,13 +9,14 @@ namespace TvTable
     class Channel
     {
         public string Overview;
-        public List<ProgramInfo> Programs = new List<ProgramInfo>();
+        public string Url;
 
-        public Channel(string overview, List<ProgramInfo> programs)
+        public Channel(string overview, string url)
         {
-            Programs = programs;
             if (overview == null) Overview = "Channel overview not found.";
             else Overview = overview;
+
+            Url = url;
         }
     }
 }
