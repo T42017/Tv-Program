@@ -55,6 +55,7 @@ namespace TvTable
         static List<string> _requestedUrlList = new List<string>();
 
         List<Channel> _channels = new List<Channel>();
+        List<ProgramInfo> _programInfos = new List<ProgramInfo>();
 
 
 
@@ -106,6 +107,11 @@ namespace TvTable
             {
                 ChannelList.Items.Add(channel.Overview);
             }
+
+            if (ChannelList.Items.Count == 0)
+            {
+                MessageBox.Show("No channels found, sorry.");
+            }
         }
 
         private void buttonLeft_Click(object sender, EventArgs e)
@@ -138,6 +144,11 @@ namespace TvTable
             foreach (Channel channel in _channels)
             {
                 ChannelList.Items.Add(channel.Overview);
+            }
+
+            if (ChannelList.Items.Count == 0)
+            {
+                MessageBox.Show("No channels found, sorry.");
             }
         }
 
@@ -172,6 +183,10 @@ namespace TvTable
             {
                 ChannelList.Items.Add(channel.Overview);
             }
+            if (ChannelList.Items.Count == 0)
+            {
+                MessageBox.Show("No channels found, sorry.");
+            }
         }
 
 
@@ -179,26 +194,40 @@ namespace TvTable
         private void ChannelList_SelectedIndexChanged(object sender, EventArgs e)
         {
             ProgramList.Items.Clear();
-            List<ProgramInfo> _programInfos = new List<ProgramInfo>();
 
             List<string> titleList = new List<string>();
             List<string> programStartList = new List<string>();
             List<bool> isRunningList = new List<bool>();
 
+            List<Details> detailList = new List<Details>();
+
+            List<string> descriptionList = new List<string>(); 
+            
+            List<SubList> actorList = new List<SubList>();
+            List<string> actors = new List<string>();
+
+            List<SubList> categoryList = new List<SubList>();
+            List<string> categories = new List<string>();
+
             var reader = new XmlTextReader(_channels[ChannelList.SelectedIndex].Url);
 
             while (reader.Read())
-            {
+            {               
+
                 if (reader.NodeType == XmlNodeType.Element)
                 {
 
                     if (reader.Name == "title")
                     {
-                        titleList.Add(reader.ReadInnerXml());
+                        titleList.Add(reader.ReadInnerXml());                       
                     }
 
                     if (reader.Name == "programme")
                     {
+                        actorList.Add(new SubList(actors));
+                        actors.Clear();
+                        categoryList.Add(new SubList(categories));
+                        categories.Clear();
 
                         string tmpStart = reader.GetAttribute("start");
                         string tmpStop = reader.GetAttribute("stop");
@@ -214,17 +243,35 @@ namespace TvTable
 
                         string tmpTime = tmpStart + " - " + tmpStop;
                         programStartList.Add(tmpTime);
-                        string programDate = tmpStart + "/" + tmpStart;
 
 
+                    }
+
+                    if (reader.Name == "desc")
+                    {
+                        descriptionList.Add(reader.ReadInnerXml());
+                    }
+                    if (reader.Name == "actor")
+                    {
+                        actors.Add(reader.ReadInnerXml());
+                    }
+                    if (reader.Name == "category")
+                    {
+                        categories.Add(reader.ReadInnerXml());
                     }
 
                 }
 
             }
+
+            for (int i = 0; i < descriptionList.Count; i++)
+            {
+                detailList.Add(new Details(descriptionList[i], actorList[i].List, categoryList[i].List));
+            }
+
             for (int i = 0; i < titleList.Count; i++)
             {
-                _programInfos.Add(new ProgramInfo(titleList[i], programStartList[i], isRunningList[i]));
+                _programInfos.Add(new ProgramInfo(titleList[i], programStartList[i], isRunningList[i], _channels[ChannelList.SelectedIndex].Url, detailList[i]));
             }
 
             foreach (ProgramInfo programInfo in _programInfos)
@@ -237,6 +284,13 @@ namespace TvTable
             }
         }
 
-        
+        private void ProgramList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DetailsTbx.Text = String.Empty;
+            
+            DetailsTbx.Text = _programInfos[ProgramList.SelectedIndex].WriteDetails();
+        }
+
+       
     }
 }
