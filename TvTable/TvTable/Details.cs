@@ -8,11 +8,11 @@ namespace TvTable
 {
     class Details
     {
-        public string EpisodeDescription;
+        public List<string> EpisodeDescription;
         public List<string> ActorList;
         public List<string> CategoryList;
 
-        public Details(string episodeDescription, List<string> actorList, List<string> categoryList)
+        public Details(List<string> episodeDescription, List<string> actorList, List<string> categoryList)
         {
             EpisodeDescription = episodeDescription;
             ActorList = actorList;

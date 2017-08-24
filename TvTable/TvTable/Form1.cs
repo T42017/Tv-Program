@@ -110,7 +110,7 @@ namespace TvTable
 
             if (ChannelList.Items.Count == 0)
             {
-                MessageBox.Show("No channels found, sorry.");
+                MessageBox.Show("Tyvärr, inga kanaler funna...");
             }
         }
 
@@ -148,7 +148,7 @@ namespace TvTable
 
             if (ChannelList.Items.Count == 0)
             {
-                MessageBox.Show("No channels found, sorry.");
+                MessageBox.Show("Tyvärr, inga kanaler funna...");
             }
         }
 
@@ -185,7 +185,7 @@ namespace TvTable
             }
             if (ChannelList.Items.Count == 0)
             {
-                MessageBox.Show("No channels found, sorry.");
+                MessageBox.Show("Tyvärr, inga kanaler funna...");
             }
         }
 
@@ -201,7 +201,8 @@ namespace TvTable
 
             List<Details> detailList = new List<Details>();
 
-            List<string> descriptionList = new List<string>(); 
+            List<SubList> descriptionList = new List<SubList>();
+            List<string> descriptions = new List<string>(); 
             
             List<SubList> actorList = new List<SubList>();
             List<string> actors = new List<string>();
@@ -228,6 +229,8 @@ namespace TvTable
                         actors.Clear();
                         categoryList.Add(new SubList(categories));
                         categories.Clear();
+                        descriptionList.Add(new SubList(descriptions));
+                        descriptions.Clear();
 
                         string tmpStart = reader.GetAttribute("start");
                         string tmpStop = reader.GetAttribute("stop");
@@ -249,7 +252,7 @@ namespace TvTable
 
                     if (reader.Name == "desc")
                     {
-                        descriptionList.Add(reader.ReadInnerXml());
+                        descriptions.Add(reader.ReadInnerXml());
                     }
                     if (reader.Name == "actor")
                     {
@@ -266,7 +269,7 @@ namespace TvTable
 
             for (int i = 0; i < descriptionList.Count; i++)
             {
-                detailList.Add(new Details(descriptionList[i], actorList[i].List, categoryList[i].List));
+                detailList.Add(new Details(descriptionList[i].List, actorList[i].List, categoryList[i].List));
             }
 
             for (int i = 0; i < titleList.Count; i++)
