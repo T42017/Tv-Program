@@ -18,6 +18,10 @@ namespace TvTable
 {
     public partial class Form1 : Form
     {
+        static string currentDay = DateTime.Today.ToString("dd");
+        static string currentMonth = DateTime.Today.ToString("MM");
+        static string currentYear = DateTime.Today.ToString("yy");
+        static string currentDate = currentYear + "-" + currentMonth + "-" + currentDay;
 
         public Form1()
         {
@@ -57,27 +61,103 @@ namespace TvTable
                 {
                     _wantedUrlList.Add(url);
                 }
-            }         
- 
+            }
+
+            
+
         }
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
+            currentDay = DateTime.Today.ToString("dd");
+            currentMonth = DateTime.Today.ToString("MM");
+            currentYear = DateTime.Today.ToString("yy");
+            currentDate = currentYear + "-" + currentMonth + "-" + currentDay;
+
             _requestedUrlList.Clear();
+            ProgramList.Items.Clear();
             ChannelList.Items.Clear();
-            
+
+            foreach (var url in _wantedUrlList)
+            {                
+                if (url.Contains(channelTbx.Text) && url.Contains(currentDate))
+                {                   
+                    _requestedUrlList.Add(url);
+                }                
+            }
+
+            _channels.Clear();
+            foreach (string url in _requestedUrlList)
+            {
+                var tempUrl = "http://xmltv.xmltv.se/" + url;
+                string channelOverview = url.Replace(".xml.gz", string.Empty);
+                channelOverview = channelOverview.Replace("_", " ---- ");
+
+                _channels.Add(new Channel(channelOverview, tempUrl));
+            }
+
+            foreach (Channel channel in _channels)
+            {
+                ChannelList.Items.Add(channel.Overview);
+            }
+        }
+
+        private void buttonLeft_Click(object sender, EventArgs e)
+        {
+            currentDay = (int.Parse(currentDay) - 1).ToString();
+            currentDate = currentYear + "-" + currentMonth + "-" + currentDay;
+
+            _requestedUrlList.Clear();
+            ProgramList.Items.Clear();
+            ChannelList.Items.Clear();
+
             foreach (var url in _wantedUrlList)
             {
-                if (url.Contains(channelTbx.Text) && url.Contains(DateTime.Today.ToString("yy-MM-dd")))
+                if (url.Contains(channelTbx.Text) && url.Contains(currentDate))
                 {
                     _requestedUrlList.Add(url);
                 }
             }
 
+            _channels.Clear();
             foreach (string url in _requestedUrlList)
             {
                 var tempUrl = "http://xmltv.xmltv.se/" + url;
-                string channelOverview = url.Replace(".xml.gz", string.Empty);             
+                string channelOverview = url.Replace(".xml.gz", string.Empty);
+                channelOverview = channelOverview.Replace("_", " ---- ");
+
+                _channels.Add(new Channel(channelOverview, tempUrl));
+            }
+
+            foreach (Channel channel in _channels)
+            {
+                ChannelList.Items.Add(channel.Overview);
+            }
+        }
+
+        private void buttonRight_Click(object sender, EventArgs e)
+        {
+            currentDay = (int.Parse(currentDay) + 1).ToString();
+            currentDate = currentYear + "-" + currentMonth + "-" + currentDay;
+
+            _requestedUrlList.Clear();
+            ChannelList.Items.Clear();
+            ProgramList.Items.Clear();
+
+            foreach (var url in _wantedUrlList)
+            {
+                if (url.Contains(channelTbx.Text) && url.Contains(currentDate))
+                {
+                    _requestedUrlList.Add(url);
+                }
+            }
+
+            _channels.Clear();
+            foreach (string url in _requestedUrlList)
+            {
+                var tempUrl = "http://xmltv.xmltv.se/" + url;
+                string channelOverview = url.Replace(".xml.gz", string.Empty);
+                channelOverview = channelOverview.Replace("_", " ---- ");
 
                 _channels.Add(new Channel(channelOverview, tempUrl));
             }
@@ -133,5 +213,7 @@ namespace TvTable
                 ProgramList.Items.Add(programInfo.Info);
             }
         }
+
+        
     }
 }
