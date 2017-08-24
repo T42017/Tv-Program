@@ -15,10 +15,10 @@ namespace TVTableau
     public partial class FormIndex : Form
     {
         #region Private members
+        private readonly WebClient _client;
         private string _url;
         private DateTime _date;
-        private RootObject _programmes;
-        private readonly WebClient _client;
+        private Programme[] _programmes;
         private Channel _currentChannel;
         #endregion
 
@@ -32,24 +32,69 @@ namespace TVTableau
             _url = GetUrlFromDateAndChannel(_date, _currentChannel);
             GetResponseFromWebClient(_url);
             this.LblCurrentDay.Text = DateTime.Now.Date.ToString("M");
-            this.LbxProgrammes.DisplayMember = "Header";
             this.LbxProgrammes.DrawMode = DrawMode.OwnerDrawFixed;
+            foreach (var child in this.Controls)
+            {
+                if (!(child is Button button)) continue;
+                button.Click += (sender, e) => ReloadListBox();
+            }
         }
         #endregion
 
         #region Private methods
+
+        private void ReloadListBox()
+        {
+            this.LbxProgrammes.Items.Clear();
+            foreach (var programme in _programmes)
+            {
+                this.LbxProgrammes.Items.Add(programme);
+            }
+        }
+
+        private string GetBaseUrlFromEnum(Channel channel)
+        {
+            string url = string.Empty;
+            switch (channel)
+            {
+                case Channel.Svt1:
+                    url = "http://json.xmltv.se/svt1.svt.se_XXXXXXXXXX.js.gz";
+                    break;
+                case Channel.Svt2:
+                    url = "http://json.xmltv.se/svt2.svt.se_XXXXXXXXXX.js.gz";
+                    break;
+                case Channel.Tv3:
+                    url = "http://json.xmltv.se/tv3.se_XXXXXXXXXX.js.gz";
+                    break;
+                case Channel.Tv4:
+                    url = "http://json.xmltv.se/tv4.se_XXXXXXXXXX.js.gz";
+                    break;
+                case Channel.Kanal5:
+                    url = "http://json.xmltv.se/kanal5.se_XXXXXXXXXX.js.gz";
+                    break;
+                case Channel.Tv6:
+                    url = "http://json.xmltv.se/tv6.se_XXXXXXXXXX.js.gz";
+                    break;
+            }
+            return url;
+        }
+
+        private string GetUrlFromDateAndChannel(DateTime date, Channel channel)
+        {
+            string url = GetBaseUrlFromEnum(channel);
+            url = url.Replace("XXXXXXXXXX", date.Date.ToString("yyyy-MM-dd"));
+            return url;
+        }
+
         private void GetResponseFromWebClient(string url)
         {
             try
             {
                 var response = _client.DownloadString(url);
-                _programmes = JsonConvert.DeserializeObject<RootObject>(response);
+                var rootObject = JsonConvert.DeserializeObject<RootObject>(response);
+                _programmes = rootObject.JsonTv.Programmes;
 
-                this.LbxProgrammes.Items.Clear();
-                foreach (var programme in _programmes.JsonTv.Programmes)
-                {
-                    this.LbxProgrammes.Items.Add(programme);
-                }
+                ReloadListBox();
             }
             catch (Exception ex)
             {
@@ -86,43 +131,6 @@ namespace TVTableau
             this.PbxCurrentChannel.Image = Image.FromFile(imagePath);
         }
 
-        private string GetBaseUrlFromEnum(Channel channel)
-        {
-            string url = string.Empty;
-            // TODO: check HD channels
-            switch (channel)
-            {
-                case Channel.Svt1:
-                    url = "http://json.xmltv.se/svt1.svt.se_XXXXXXXXXX.js.gz";
-                    break;
-                case Channel.Svt2:
-                    url = "http://json.xmltv.se/svt2.svt.se_XXXXXXXXXX.js.gz";
-                    break;
-                case Channel.Tv3:
-                    url = "http://json.xmltv.se/tv3.se_XXXXXXXXXX.js.gz";
-                    break;
-                case Channel.Tv4:
-                    url = "http://json.xmltv.se/tv4.se_XXXXXXXXXX.js.gz";
-                    break;
-                case Channel.Kanal5:
-                    url = "http://json.xmltv.se/kanal5.se_XXXXXXXXXX.js.gz";
-                    break;
-                case Channel.Tv6:
-                    url = "http://json.xmltv.se/tv6.se_XXXXXXXXXX.js.gz";
-                    break;
-                default:
-                    break;
-            }
-            return url;
-        }
-
-        private string GetUrlFromDateAndChannel(DateTime date, Channel channel)
-        {
-            string url = GetBaseUrlFromEnum(channel);
-            url = url.Replace("XXXXXXXXXX", date.Date.ToString("yyyy-MM-dd"));
-            return url;
-        }
-
         private void AddDaysAndGetResponseFromWebClient(int amountOfDaysToAdd)
         {
             _date = _date.AddDays(amountOfDaysToAdd);
@@ -137,20 +145,21 @@ namespace TVTableau
         {
             e.DrawBackground();
             var fontStyle = FontStyle.Regular;
-            if (e.Index < 0 || e.Index >= _programmes.JsonTv.Programmes.Length) return;
-            var programme = this.LbxProgrammes.Items[e.Index] as Programme;
-            if (programme is null) return;
-            var programmeStart = Programme.ConvertFromUnixTimestampToDateTime(programme.Start);
-            var programmeEnd = Programme.ConvertFromUnixTimestampToDateTime(programme.Stop);
+            if (e.Index < 0 || e.Index >= _programmes.Length)
+                return;
 
-            var tod = _date.TimeOfDay;
+            if (!(this.LbxProgrammes.Items[e.Index] is Programme programme) || programme == null)
+                return;
 
-            if (tod >= programmeStart.TimeOfDay && tod <= programmeEnd.TimeOfDay && DateTime.Today.Date == programmeStart.Date)
+            var programmeStart = HelperMethods.ConvertFromUnixTimestampToDateTime(programme.Start);
+            var programmeEnd = HelperMethods.ConvertFromUnixTimestampToDateTime(programme.Stop);
+
+            var dateTimeOfDay = DateTime.Now.TimeOfDay;
+            if (DateTime.Today.Date == programmeStart.Date && dateTimeOfDay >= programmeStart.TimeOfDay && dateTimeOfDay <= programmeEnd.TimeOfDay)
             {
                 fontStyle = FontStyle.Bold;
             }
             e.Graphics.DrawString(programme.Header, new Font("Microsoft Sans Serif", 7, fontStyle), Brushes.Black, e.Bounds);
-            
             e.DrawFocusRectangle();
         }
 
@@ -182,6 +191,7 @@ namespace TVTableau
             _url = GetUrlFromDateAndChannel(_date, previousChannel);
             GetResponseFromWebClient(_url);
             ChangeImage();
+            TbxSelectedProgramme.Clear();
         }
 
         private void BtnNextChannel_Click(object sender, EventArgs e)
@@ -191,6 +201,7 @@ namespace TVTableau
             _url = GetUrlFromDateAndChannel(_date, nextChannel);
             GetResponseFromWebClient(_url);
             ChangeImage();
+            TbxSelectedProgramme.Clear();
         }
 
         private void PbxSwitchChannel_Click(object sender, EventArgs e)
@@ -237,5 +248,10 @@ namespace TVTableau
             Tv6 = 5
         }
         #endregion
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // TODO
+        }
     }
 }

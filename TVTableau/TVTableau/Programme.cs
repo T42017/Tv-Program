@@ -61,23 +61,7 @@ namespace TVTableau
 
         public string Header
         {
-            get { return $"{ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm")} - {ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm")} {Title}"; }
-        }
-
-        public static DateTime ConvertFromUnixTimestampToDateTime(string timestamp)
-        {
-            try
-            {
-                var unixStartTime = new DateTime(1970, 1, 1, 2, 0, 0, 0);
-                return unixStartTime.AddSeconds(double.Parse(timestamp));
-            }
-            catch (Exception)
-            {
-                const string message = "Error converting the date";
-                const string title = "Error";
-                MessageBox.Show(message, title);
-                throw new ArgumentException(message);
-            }
+            get { return $"{HelperMethods.ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm")} - {HelperMethods.ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm")} {Title}"; }
         }
 
         public override string ToString()
@@ -85,8 +69,8 @@ namespace TVTableau
             var title = Title?.ToString() ?? "No title";
             var description = Description?.ToString() ?? "No description";
             var episodeNum = EpisodeNumber?.ToString() ?? "No episode number";
-            var startTime = ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm");
-            var endTime = ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm");
+            var startTime = HelperMethods.ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm");
+            var endTime = HelperMethods.ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm");
             var date = Date ?? "No date";
             var subtitle = SubTitle?.ToString() ?? "No subtitle";
             var credits = Credits;

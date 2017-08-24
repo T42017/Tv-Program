@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIndex));
             this.PbxCurrentChannel = new System.Windows.Forms.PictureBox();
             this.LblCurrentDay = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             this.PbxTv3 = new System.Windows.Forms.PictureBox();
             this.PbxSvt2 = new System.Windows.Forms.PictureBox();
             this.PbxSvt1 = new System.Windows.Forms.PictureBox();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PbxCurrentChannel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxTv6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbxKanal5)).BeginInit();
@@ -206,6 +208,11 @@
             this.PbxSvt1.TabStop = false;
             this.PbxSvt1.Click += new System.EventHandler(this.PbxSwitchChannel_Click);
             // 
+            // Timer
+            // 
+            this.Timer.Interval = 60000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
             // FormIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -256,6 +263,7 @@
         private System.Windows.Forms.PictureBox PbxTv3;
         private System.Windows.Forms.PictureBox PbxSvt2;
         private System.Windows.Forms.PictureBox PbxSvt1;
+        private System.Windows.Forms.Timer Timer;
     }
 }
 
