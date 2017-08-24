@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
@@ -25,11 +26,59 @@ namespace tvprog
 
         private void ChangeDate()
         {
-            
+            string number = "svt1.svt.se_";
+            switch (comboBox1.SelectedItem.ToString())
+            {
+                case "SVT 1":
+                    number = "svt1.svt.se_";
+                    break;
+
+                case "SVT 2":
+                    number = "svt2.svt.se_";
+                    break;
+
+                case "TV3":
+                    number = "hd.tv3.se_";
+                    break;
+
+                case "TV4":
+                    number = "hd.tv4.se_";
+                    break;
+
+                case "Kanal 5":
+                    number = "hd.kanal5.se_";
+                    break;
+
+                case "TV6":
+                    number = "hd.tv6.se_";
+                    break;
+
+                case "TV3 Sport":
+                    number = "sport.tv3.se_";
+                    break;
+
+                case "Viasat Fotboll":
+                    number = "fotboll.viasat.se_";
+                    break;
+
+                case "Viasat Sport-Premium":
+                    number = "sportpremium.viasat.se_";
+                    break;
+
+               case "Viasat Hockey":
+                    number = "hockey.viasat.se_";
+                    break;
+
+                case "Viasat Series":
+                    number = "series.viasat.se_";
+                    break;
+            }
             var proginfo = new List<ProgramInformation>();
-            var number = comboBox1.SelectedItem;
+            //var number = comboBox1.SelectedItem;
+
+
             XmlDocument doc1 = new XmlDocument();
-            var xmlFragment = "http://xmltv.xmltv.se/"+ number +".svt.se_" + SelDateTime.ToShortDateString() + ".xml.gz";
+            var xmlFragment = "http://xmltv.xmltv.se/"+ number + SelDateTime.ToShortDateString() + ".xml.gz";
             var reader = new XmlTextReader(xmlFragment);
             var timeList = new List<string>();
             var titleList = new List<string>();

@@ -34,15 +34,16 @@
             this.tbxDateTime = new System.Windows.Forms.TextBox();
             this.lboxTitles = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnDaybwd
             // 
             this.btnDaybwd.AutoSize = true;
             this.btnDaybwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDaybwd.Location = new System.Drawing.Point(449, 711);
+            this.btnDaybwd.Location = new System.Drawing.Point(436, 761);
             this.btnDaybwd.Name = "btnDaybwd";
-            this.btnDaybwd.Size = new System.Drawing.Size(155, 30);
+            this.btnDaybwd.Size = new System.Drawing.Size(165, 30);
             this.btnDaybwd.TabIndex = 0;
             this.btnDaybwd.Text = "Go back one day";
             this.btnDaybwd.UseVisualStyleBackColor = true;
@@ -52,9 +53,9 @@
             // 
             this.btnCurdate.AutoSize = true;
             this.btnCurdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCurdate.Location = new System.Drawing.Point(644, 711);
+            this.btnCurdate.Location = new System.Drawing.Point(631, 761);
             this.btnCurdate.Name = "btnCurdate";
-            this.btnCurdate.Size = new System.Drawing.Size(155, 30);
+            this.btnCurdate.Size = new System.Drawing.Size(165, 30);
             this.btnCurdate.TabIndex = 1;
             this.btnCurdate.Text = "Go to current date";
             this.btnCurdate.UseVisualStyleBackColor = true;
@@ -64,7 +65,7 @@
             // 
             this.btnDayfwd.AutoSize = true;
             this.btnDayfwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDayfwd.Location = new System.Drawing.Point(839, 711);
+            this.btnDayfwd.Location = new System.Drawing.Point(826, 761);
             this.btnDayfwd.Name = "btnDayfwd";
             this.btnDayfwd.Size = new System.Drawing.Size(165, 30);
             this.btnDayfwd.TabIndex = 2;
@@ -84,31 +85,53 @@
             // 
             // lboxTitles
             // 
+            this.lboxTitles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lboxTitles.FormattingEnabled = true;
-            this.lboxTitles.ItemHeight = 16;
-            this.lboxTitles.Location = new System.Drawing.Point(449, 121);
+            this.lboxTitles.ItemHeight = 20;
+            this.lboxTitles.Location = new System.Drawing.Point(361, 109);
             this.lboxTitles.Name = "lboxTitles";
-            this.lboxTitles.Size = new System.Drawing.Size(555, 484);
+            this.lboxTitles.Size = new System.Drawing.Size(704, 624);
             this.lboxTitles.TabIndex = 6;
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "svt1",
-            "svt2"});
-            this.comboBox1.Location = new System.Drawing.Point(410, 52);
+            "SVT 1",
+            "SVT 2",
+            "TV3",
+            "TV4",
+            "Kanal 5",
+            "TV6",
+            "TV3 Sport",
+            "Viasat Fotboll",
+            "Viasat Sport-Premium",
+            "Viasat Hockey",
+            "Viasat Series"});
+            this.comboBox1.Location = new System.Drawing.Point(50, 109);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(244, 32);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.Form1_Load);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(660, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Time and Date";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1426, 803);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lboxTitles);
             this.Controls.Add(this.tbxDateTime);
@@ -131,6 +154,7 @@
         private System.Windows.Forms.Button btnDayfwd;
         private System.Windows.Forms.ListBox lboxTitles;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
