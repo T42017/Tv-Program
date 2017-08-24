@@ -213,11 +213,26 @@ namespace TvTable
             var reader = new XmlTextReader(_channels[ChannelList.SelectedIndex].Url);
 
             while (reader.Read())
-            {               
+            {
+                
+                if (reader.NodeType == XmlNodeType.EndElement)
+                {
+                    if (reader.Name == "programme")
+                    {
+                        actorList.Add(new SubList(actors));
+
+                        categoryList.Add(new SubList(categories));
+
+                        descriptionList.Add(new SubList(descriptions));
+                        actors.Clear();
+                        categories.Clear();
+                        descriptions.Clear();
+                    }
+                }
 
                 if (reader.NodeType == XmlNodeType.Element)
                 {
-
+                    
                     if (reader.Name == "title")
                     {
                         titleList.Add(reader.ReadInnerXml());                       
@@ -225,12 +240,7 @@ namespace TvTable
 
                     if (reader.Name == "programme")
                     {
-                        actorList.Add(new SubList(actors));
-                        actors.Clear();
-                        categoryList.Add(new SubList(categories));
-                        categories.Clear();
-                        descriptionList.Add(new SubList(descriptions));
-                        descriptions.Clear();
+                        
 
                         string tmpStart = reader.GetAttribute("start");
                         string tmpStop = reader.GetAttribute("stop");
@@ -260,10 +270,14 @@ namespace TvTable
                     }
                     if (reader.Name == "category")
                     {
-                        categories.Add(reader.ReadInnerXml());
+                        categories.Add(reader.Name);
                     }
+                   
 
                 }
+                
+                
+                
 
             }
 
