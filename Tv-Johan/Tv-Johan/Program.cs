@@ -16,7 +16,12 @@ namespace Tv_Johan
         static void Main(string[] args)
         {
 
-            String detarlunch,hour,minutes;
+
+          
+            
+
+
+            String Playing,hour,minutes;
             int hour1, minutes1,Totalshows,minutes2;
 
             hour = DateTime.Now.TimeOfDay.Hours.ToString();
@@ -32,6 +37,7 @@ namespace Tv_Johan
             List<String> Time = new List<string>();
             List<String> Ending = new List<string>();
             List<String> Starting = new List<string>();
+            List<String> desc = new List<string>();
             List<int> Startinghour = new List<int>();
             List<int> Startingmin = new List<int>();
             List<int> Endinghour = new List<int>();
@@ -44,7 +50,7 @@ namespace Tv_Johan
             XmlDocument TvSchedule = new XmlDocument();
             TvSchedule.Load("http://xmltv.xmltv.se/action.cmore.dk_2017-09-03.xml.gz");
 
-
+            Playing = "";
 
             XmlNodeList elemList = TvSchedule.GetElementsByTagName("title");
             
@@ -57,8 +63,8 @@ namespace Tv_Johan
                 Totalshows++;
                 
             }
-            elemList = TvSchedule.GetElementsByTagName("programme");
 
+            elemList = TvSchedule.GetElementsByTagName("programme");
             for (int i = 0; i < elemList.Count; i++)
             {
 
@@ -66,7 +72,7 @@ namespace Tv_Johan
                 Time[i] = Time[i].Substring(11, 49);
 
                 Starting.Add(Time[i]);
-                Starting[i] = Starting[i].Substring(15,2)+":"+Starting[i].Substring(18,2);
+                Starting[i] = Starting[i].Substring(15,2)+":"+Starting[i].Substring(17,2);
                 Startinghour.Add(int.Parse(Starting[i].Substring(0, 2)));
                 Startingmin.Add(int.Parse(Starting[i].Substring(3, 2)));
                 Startingtime.Add((Startinghour[i] * 60) + Startingmin[i]);
@@ -80,6 +86,54 @@ namespace Tv_Johan
 
             }
 
+            elemList = TvSchedule.GetElementsByTagName("desc");
+            for (int i = 0; i < elemList.Count; i++)
+            {
+
+                desc.Add(elemList[i].InnerXml);
+
+                
+
+            }
+
+            for (int i = 0; i < Totalshows; i++)
+            {
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(Titles[i] + " Börjar " +Starting[i]+" Slutar "+Ending[i]);
+
+
+                if(minutes2 > Startingtime[i] && minutes2 < Endingtime[i])
+                {
+                    
+                    Playing = "\nDet som spelar nu är : " + Titles[i]+"\n"+desc[i];
+                   
+                }
+                else if (i==Totalshows)
+                {
+                    
+                    Playing = "Nothing is playing right now";
+                    
+                }
+                else
+                {
+                   
+                }
+
+            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(Playing);
+
+
+            /*Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Press the left arrow to see yesterdays tv." +
+                " Press the Right arrow to see tomorrows tv.");
+            if (keypress.Key == ConsoleKey.LeftArrow)
+            {
+                
+            }\*
+
+
             /*foreach ( in TvSchedule)
             {  
                 Titles.Add(elements.ToString());
@@ -91,11 +145,6 @@ namespace Tv_Johan
             {
                 Time.Add(elements1.ToString());
             }*/
-
-
-
-            detarlunch = TvSchedule.ToString();
-
 
 
 
@@ -115,7 +164,7 @@ namespace Tv_Johan
             /*Console.WriteLine("Klockan är : "+detarlunch+"\nProgrammet som visas nu på Cmore Action är : "+"\nNästa program är : ");*/
             /*Console.WriteLine("Klockan  är " + hour + ":" + minutes + ":" + seconds + "\n";*/
 
-            Console.WriteLine();
+
 
             Console.ReadKey();
 
