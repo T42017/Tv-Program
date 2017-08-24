@@ -19,7 +19,6 @@ namespace Tv_Browser
         public int amountOfShows = 0;
         public Form1()
         {
-
             InitializeComponent();
 
             DateTime timeNow = DateTime.Today;
@@ -34,14 +33,12 @@ namespace Tv_Browser
                 dayChooser.Items.Add(oldestDay.ToString("yyyy-MM-dd"));
                 oldestDay = oldestDay.AddDays(1);
             }
-
             listBox1.SelectedIndex = 0;
             dayChooser.SelectedIndex = 9;
-
             StartTimer();
         }
 
-        System.Windows.Forms.Timer time = null;
+        private System.Windows.Forms.Timer time;
         private void StartTimer()
         {
             time = new System.Windows.Forms.Timer();
@@ -66,25 +63,41 @@ namespace Tv_Browser
 
             if (RemoteFileExists("http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + timeNow + ".xml.gz"))
             {
+                
                 XDocument tvList = XDocument.Load("http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + timeNow + ".xml.gz");
 
                 for (int i = 0; i < amountOfShows; i++)
                 {
                     var tempData = tvList.Descendants("tv");
-                    var airingTimeDataStart = tempData.Elements("programme").ElementAt(i).Attribute("start").Value;
-                    DateTime start = DateTimeOffset.ParseExact(airingTimeDataStart, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
-                    var timeToday = DateTime.Now;
-
-                    if ((start - timeToday) > nextShowTime)
+                    try
                     {
-                        if (i != 0)
+                        string airingTimeDataStart = tempData.Elements("programme").ElementAt(i).Attribute("start").Value;
+                        DateTime start = DateTimeOffset
+                            .ParseExact(airingTimeDataStart, "yyyyMMddHHmmss zzz",
+                                System.Globalization.CultureInfo.InvariantCulture).DateTime;
+                        var timeToday = DateTime.Now;
+                        if ((start - timeToday) > nextShowTime)
                         {
-                            var titleCurrentShow = tempData.Elements("programme").ElementAt(i - 1).Element("title").Value;
-                            currentlyOnAirLink.Text = titleCurrentShow;
+                            if (i - 1 == -1)
+                            {
+                                var titleCurrentShow = tempData.Elements("programme").ElementAt(amountOfShows - 1).Element("title")
+                                    .Value;
+                                currentlyOnAirLink.Text = titleCurrentShow;
+                            }
+                            else
+                            {
+                                var titleCurrentShow = tempData.Elements("programme").ElementAt(i - 1).Element("title")
+                                    .Value;
+                                currentlyOnAirLink.Text = titleCurrentShow;
+                            }
+                            var titleNextShow = tempData.Elements("programme").ElementAt(i).Element("title").Value;
+                            nextOnAirLink.Text = titleNextShow;
+                            nextShowTime = (start - timeToday);
+                            return nextShowTime;
                         }
-                        var titleNextShow = tempData.Elements("programme").ElementAt(i).Element("title").Value;
-                        nextOnAirLink.Text = titleNextShow;
-                        nextShowTime = (start - timeToday);
+                    }
+                    catch
+                    {
                         return nextShowTime;
                     }
                 }
@@ -94,7 +107,6 @@ namespace Tv_Browser
 
         private void tvChannelList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var temp = listBox1.SelectedItem;
             if (dayChooser.SelectedItem != null)
             {
                 LoadContent();
@@ -103,15 +115,7 @@ namespace Tv_Browser
 
         private void dayChooser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var temp = dayChooser.SelectedItem;
-
             LoadContent();
-
-        }
-
-        private void titlebox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private bool RemoteFileExists(string url)
@@ -134,60 +138,66 @@ namespace Tv_Browser
         {
             var url = "http://xmltv.xmltv.se/" + listBox1.SelectedItem + "_" + dayChooser.SelectedItem + ".xml.gz";
 
+            string Error = "No Info Exists, Sorry!";
+
             if (RemoteFileExists(url))
             {
                 XDocument tvList = XDocument.Load(url);
                 var tempData = tvList.Descendants("tv");
-                var title = tempData.Elements("programme").ElementAt(timeIndex).Element("title").Value;
-                if (timeIndex != 0)
+
+                amountOfShows = (tempData.Elements("programme")) == null ? 0 : tempData.Elements("programme").Count();
+
+                if (amountOfShows != 0)
                 {
-                    if (timeIndex < amountOfShows - 1)
-                    {
-                        var title2 = tempData.Elements("programme").ElementAt(timeIndex + 1).Element("title").Value;
-                    }  
-                    else
-                    {
-                        var title2 = tempData.Elements("programme").ElementAt(0).Element("title").Value;
-                    }
-                    
-                }
-                var description = tempData.Elements("programme").ElementAt(timeIndex).Element("desc").Value;
-                if (tempData.Elements("programme").ElementAt(timeIndex).Element("sub-title") != null)
-                {
-                    var subTitle = tempData.Elements("programme").ElementAt(timeIndex).Element("sub-title").Value;
+                    var title = (tempData.Elements("programme").ElementAt(timeIndex).Element("title")) == null
+                        ? " "
+                        : tempData.Elements("programme").ElementAt(timeIndex).Element("title").Value;
+                    titleLabel.Text = title;
+
+                    var description = tempData.Elements("programme").ElementAt(timeIndex).Element("desc") == null
+                        ? Error
+                        : tempData.Elements("programme").ElementAt(timeIndex).Element("desc").Value;
+                    descriptionTextBox.Text = description;
+
+                    var subTitle = tempData.Elements("programme").ElementAt(timeIndex).Element("sub-title") == null
+                        ? " "
+                        : tempData.Elements("programme").ElementAt(timeIndex).Element("sub-title").Value;
                     subTitleLabel.Text = subTitle;
+
+                    var hmm = tempData.Elements("programme").ElementAt(timeIndex).Elements().FirstOrDefault(e => e.Attribute("system") != null && e.Attribute("system").Value == "onscreen");
+
+                    episodeNumberLabel.Text = hmm != null ? tempData.Elements("programme").ElementAt(timeIndex).Elements().FirstOrDefault(e => e.Attribute("system") != null && e.Attribute("system").Value == "onscreen").Value : "Episode 0 season 0";
+
+                    var airingTimeDataStart = tempData.Elements("programme").ElementAt(timeIndex).Attribute("start")
+                        .Value;
+                    DateTime start = DateTimeOffset
+                        .ParseExact(airingTimeDataStart, "yyyyMMddHHmmss zzz",
+                            System.Globalization.CultureInfo.InvariantCulture).DateTime;
+                    var airingTimeDataStop = tempData.Elements("programme").ElementAt(timeIndex).Attribute("stop")
+                        .Value;
+                    DateTime stop = DateTimeOffset
+                        .ParseExact(airingTimeDataStop, "yyyyMMddHHmmss zzz",
+                            System.Globalization.CultureInfo.InvariantCulture).DateTime;
+
+                    airingTime.Text = start.TimeOfDay + " - " + stop.TimeOfDay;
                 }
                 else
                 {
+                    descriptionTextBox.Text = " ";
+                    episodeNumberLabel.Text = "Episode 0 season 0";
+                    titleLabel.Text = Error;
+                    airingTime.Text = " ";
                     subTitleLabel.Text = " ";
                 }
-                var episodeNumber = tempData.Elements("programme").ElementAt(timeIndex).Elements("episode-num")
-                    .ElementAt(1).Value;
-                var airingTimeDataStart = tempData.Elements("programme").ElementAt(timeIndex).Attribute("start").Value;
-                DateTime start = DateTimeOffset.ParseExact(airingTimeDataStart, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
-                var airingTimeDataStop = tempData.Elements("programme").ElementAt(timeIndex).Attribute("stop").Value;
-                DateTime stop = DateTimeOffset.ParseExact(airingTimeDataStop, "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
-
-                descriptionTextBox.Text = description;
-                episodeNumberLabel.Text = episodeNumber;
-                amountOfShows = tempData.Elements("programme").Count();
-                titleLabel.Text = title;
-                airingTime.Text = start.TimeOfDay + " - " + stop.TimeOfDay;
             }
             else
             {
-                string Error = "No Info Exists, Sorry!";
                 descriptionTextBox.Text = " ";
                 episodeNumberLabel.Text = "Episode 0 season 0";
                 titleLabel.Text = Error;
                 airingTime.Text = " ";
                 subTitleLabel.Text = " ";
             }
-        }
-
-        private void airingTime_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void nextTime_Click(object sender, EventArgs e)
@@ -217,24 +227,14 @@ namespace Tv_Browser
             LoadContent();
         }
 
-        private void descriptionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void currentlyOnAirLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            System.Diagnostics.Process.Start("http://google.com/search?q=" + currentlyOnAirLink.Text);
+        }
 
+        private void nextOnAirLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://google.com/search?q=" + nextOnAirLink.Text);
         }
     }
 }

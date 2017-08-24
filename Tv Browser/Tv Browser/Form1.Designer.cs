@@ -49,7 +49,9 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
             "travelchanneltv.se",
-            "comedycentral.tv"});
+            "comedycentral.tv",
+            "bongusto.tv",
+            "1.bluemovie.de"});
             this.listBox1.Location = new System.Drawing.Point(12, 11);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(109, 615);
@@ -94,7 +96,6 @@
             this.airingTime.Size = new System.Drawing.Size(324, 31);
             this.airingTime.TabIndex = 5;
             this.airingTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.airingTime.TextChanged += new System.EventHandler(this.airingTime_TextChanged);
             // 
             // descriptionTextBox
             // 
@@ -106,7 +107,6 @@
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(592, 463);
             this.descriptionTextBox.TabIndex = 7;
-            this.descriptionTextBox.TextChanged += new System.EventHandler(this.descriptionTextBox_TextChanged);
             // 
             // titleLabel
             // 
@@ -127,7 +127,6 @@
             this.subTitleLabel.Size = new System.Drawing.Size(115, 25);
             this.subTitleLabel.TabIndex = 10;
             this.subTitleLabel.Text = "episode title";
-            this.subTitleLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // episodeNumberLabel
             // 
@@ -170,7 +169,6 @@
             this.label2.Size = new System.Drawing.Size(191, 31);
             this.label2.TabIndex = 14;
             this.label2.Text = "Next On Air In:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // nextOnAirLink
             // 
@@ -182,6 +180,7 @@
             this.nextOnAirLink.TabStop = true;
             this.nextOnAirLink.Text = "Loading...";
             this.nextOnAirLink.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.nextOnAirLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.nextOnAirLink_LinkClicked);
             // 
             // timer
             // 
