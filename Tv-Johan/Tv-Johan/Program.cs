@@ -16,13 +16,10 @@ namespace Tv_Johan
         static void Main(string[] args)
         {
 
-
-          
-            
-
-
-            String Playing,hour,minutes;
-            int hour1, minutes1,Totalshows,minutes2;
+            String Playing, hour, minutes;
+            int hour1, minutes1, Totalshows, minutes2, day;
+            day = 03;
+            var adress1 = "http://xmltv.xmltv.se/action.cmore.dk_2017-09-0" + day.ToString() + ".xml.gz";
 
             hour = DateTime.Now.TimeOfDay.Hours.ToString();
             minutes = DateTime.Now.TimeOfDay.Minutes.ToString();
@@ -31,7 +28,7 @@ namespace Tv_Johan
             minutes1 = int.Parse(minutes);
 
             minutes2 = (hour1 * 60) + minutes1;
-            
+
 
             List<String> Titles = new List<string>();
             List<String> Time = new List<string>();
@@ -48,20 +45,21 @@ namespace Tv_Johan
             Totalshows = 0;
 
             XmlDocument TvSchedule = new XmlDocument();
-            TvSchedule.Load("http://xmltv.xmltv.se/action.cmore.dk_2017-09-03.xml.gz");
+
+            TvSchedule.Load(adress1);
 
             Playing = "";
 
             XmlNodeList elemList = TvSchedule.GetElementsByTagName("title");
-            
-            
+
+
             for (int i = 0; i < elemList.Count; i++)
             {
-                
+
                 Titles.Add(elemList[i].InnerXml);
-               
+
                 Totalshows++;
-                
+
             }
 
             elemList = TvSchedule.GetElementsByTagName("programme");
@@ -72,14 +70,14 @@ namespace Tv_Johan
                 Time[i] = Time[i].Substring(11, 49);
 
                 Starting.Add(Time[i]);
-                Starting[i] = Starting[i].Substring(15,2)+":"+Starting[i].Substring(17,2);
+                Starting[i] = Starting[i].Substring(15, 2) + ":" + Starting[i].Substring(17, 2);
                 Startinghour.Add(int.Parse(Starting[i].Substring(0, 2)));
                 Startingmin.Add(int.Parse(Starting[i].Substring(3, 2)));
                 Startingtime.Add((Startinghour[i] * 60) + Startingmin[i]);
 
 
                 Ending.Add(Time[i]);
-                Ending[i] = Ending[i].Substring(43, 2)+":"+ Ending[i].Substring(45, 2);
+                Ending[i] = Ending[i].Substring(43, 2) + ":" + Ending[i].Substring(45, 2);
                 Endinghour.Add(int.Parse(Ending[i].Substring(0, 2)));
                 Endingmin.Add(int.Parse(Ending[i].Substring(3, 2)));
                 Endingtime.Add((Endinghour[i] * 60) + Endingmin[i]);
@@ -92,7 +90,7 @@ namespace Tv_Johan
 
                 desc.Add(elemList[i].InnerXml);
 
-                
+
 
             }
 
@@ -100,74 +98,278 @@ namespace Tv_Johan
             {
 
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine(Titles[i] + " Börjar " +Starting[i]+" Slutar "+Ending[i]);
+                Console.WriteLine(Titles[i] + " Börjar " + Starting[i] + " Slutar " + Ending[i]);
 
 
-                if(minutes2 > Startingtime[i] && minutes2 < Endingtime[i])
+                if (minutes2 > Startingtime[i] && minutes2 < Endingtime[i])
                 {
-                    
-                    Playing = "\nDet som spelar nu är : " + Titles[i]+"\n"+desc[i];
-                   
+
+                    Playing = "\nDet som spelas nu är : " + Titles[i] + "\n" + desc[i];
+
                 }
-                else if (i==Totalshows)
+                else if (i == Totalshows)
                 {
-                    
+
                     Playing = "Nothing is playing right now";
-                    
+
                 }
                 else
                 {
-                   
+
                 }
 
             }
+
+
+            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(Playing);
 
 
-            /*Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ReadKey();
             Console.WriteLine("Press the left arrow to see yesterdays tv." +
-                " Press the Right arrow to see tomorrows tv.");
+                " Press the Right arrow to see tomorrows tv.\nPress the up and down arrows to change channel");
+            while (true) { 
+            ConsoleKeyInfo keypress;
+            keypress = Console.ReadKey();
             if (keypress.Key == ConsoleKey.LeftArrow)
             {
-                
-            }\*
+                {
+                    Totalshows = 0;
+                    Time.Clear(); Titles.Clear(); Ending.Clear(); Starting.Clear(); Ending.Clear();
+                    Startinghour.Clear(); Startingmin.Clear(); Startingtime.Clear(); Endinghour.Clear(); Endingmin.Clear(); Endingtime.Clear();
+                    Console.Clear();
+                    day = day - 1;
+                        if (day < 0)
+                        {
+                            day = 30;
+                        }
+                        if (day >= 10)
+                        {
+                        adress1 = "http://xmltv.xmltv.se/action.cmore.dk_2017-09-" + day.ToString() + ".xml.gz";
+                        }
+                        else
+                        {
+                        adress1 = "http://xmltv.xmltv.se/action.cmore.dk_2017-09-0" + day.ToString() + ".xml.gz";
+                        }
+
+                    
+                    TvSchedule.Load(adress1);
+                    elemList = TvSchedule.GetElementsByTagName("title");
 
 
-            /*foreach ( in TvSchedule)
-            {  
-                Titles.Add(elements.ToString());
-                i++;
+                    for (int i = 0; i < elemList.Count; i++)
+                    {
 
+                        Titles.Add(elemList[i].InnerXml);
+
+                        Totalshows++;
+
+                    }
+                    elemList = TvSchedule.GetElementsByTagName("programme");
+                    for (int i = 0; i < elemList.Count; i++)
+                    {
+
+                        Time.Add(elemList[i].OuterXml);
+                        Time[i] = Time[i].Substring(11, 49);
+
+                        Starting.Add(Time[i]);
+                        Starting[i] = Starting[i].Substring(15, 2) + ":" + Starting[i].Substring(17, 2);
+                        Startinghour.Add(int.Parse(Starting[i].Substring(0, 2)));
+                        Startingmin.Add(int.Parse(Starting[i].Substring(3, 2)));
+                        Startingtime.Add((Startinghour[i] * 60) + Startingmin[i]);
+
+
+                        Ending.Add(Time[i]);
+                        Ending[i] = Ending[i].Substring(43, 2) + ":" + Ending[i].Substring(45, 2);
+                        Endinghour.Add(int.Parse(Ending[i].Substring(0, 2)));
+                        Endingmin.Add(int.Parse(Ending[i].Substring(3, 2)));
+                        Endingtime.Add((Endinghour[i] * 60) + Endingmin[i]);
+
+                    }
+                    for (int i = 0; i < Totalshows; i++)
+                    {
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(Titles[i] + " Börjar " + Starting[i] + " Slutar " + Ending[i]);
+
+
+                    }
+                }
             }
-            
-            foreach (XmlElement elements1 in TvSchedule.GetElementsByTagName(""))
+            else if (keypress.Key == ConsoleKey.RightArrow)
             {
-                Time.Add(elements1.ToString());
-            }*/
+                Totalshows = 0;
+                Time.Clear(); Titles.Clear(); Ending.Clear(); Starting.Clear(); Ending.Clear();
+                Startinghour.Clear(); Startingmin.Clear(); Startingtime.Clear(); Endinghour.Clear(); Endingmin.Clear(); Endingtime.Clear();
+                Console.Clear();
+                day = day + 1;
+                    if (day >= 10)
+                    {
+                     adress1 = "http://xmltv.xmltv.se/action.cmore.dk_2017-09-" + day.ToString() + ".xml.gz";
+                    }
+                    else
+                    {
+                        adress1 = "http://xmltv.xmltv.se/action.cmore.dk_2017-09-0" + day.ToString() + ".xml.gz";
+                    }
+
+                    if (day > 30)
+                    {
+                        day = 1;
+                    }
+                    else
+                    {
+
+                    }
+
+                TvSchedule.Load(adress1);
+                elemList = TvSchedule.GetElementsByTagName("title");
 
 
+                for (int i = 0; i < elemList.Count; i++)
+                {
+
+                    Titles.Add(elemList[i].InnerXml);
+
+                    Totalshows++;
+
+                }
+                elemList = TvSchedule.GetElementsByTagName("programme");
+                for (int i = 0; i < elemList.Count; i++)
+                {
+
+                    Time.Add(elemList[i].OuterXml);
+                    Time[i] = Time[i].Substring(11, 49);
+
+                    Starting.Add(Time[i]);
+                    Starting[i] = Starting[i].Substring(15, 2) + ":" + Starting[i].Substring(17, 2);
+                    Startinghour.Add(int.Parse(Starting[i].Substring(0, 2)));
+                    Startingmin.Add(int.Parse(Starting[i].Substring(3, 2)));
+                    Startingtime.Add((Startinghour[i] * 60) + Startingmin[i]);
 
 
-            /*WebClient wc = new WebClient();
+                    Ending.Add(Time[i]);
+                    Ending[i] = Ending[i].Substring(43, 2) + ":" + Ending[i].Substring(45, 2);
+                    Endinghour.Add(int.Parse(Ending[i].Substring(0, 2)));
+                    Endingmin.Add(int.Parse(Ending[i].Substring(3, 2)));
+                    Endingtime.Add((Endinghour[i] * 60) + Endingmin[i]);
 
-            MemoryStream stream = new MemoryStream(wc.DownloadData("http://xmltv.xmltv.se/action.cmore.dk_2017-09-03.xml.gz"));
-            GZipStream uncompressed = new GZipStream(stream, CompressionMode.Decompress);
-            MemoryStream output = new MemoryStream();
-            uncompressed.CopyTo(output);
+                }
+                for (int i = 0; i < Totalshows; i++)
+                {
 
-            var data = output.ToArray();
-            var s = System.Text.Encoding.UTF8.GetString(data);
-
-            detarlunch = data.ToString();*/
-
-            /*Console.WriteLine("Klockan är : "+detarlunch+"\nProgrammet som visas nu på Cmore Action är : "+"\nNästa program är : ");*/
-            /*Console.WriteLine("Klockan  är " + hour + ":" + minutes + ":" + seconds + "\n";*/
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(Titles[i] + " Börjar " + Starting[i] + " Slutar " + Ending[i]);
 
 
+                }
+            }
+                   else if (keypress.Key == ConsoleKey.DownArrow)
+                    {
+                    Totalshows = 0;
+                    Time.Clear(); Titles.Clear(); Ending.Clear(); Starting.Clear(); Ending.Clear();
+                    Startinghour.Clear(); Startingmin.Clear(); Startingtime.Clear(); Endinghour.Clear(); Endingmin.Clear(); Endingtime.Clear();
+                    Console.Clear();
+                    adress1 = "http://xmltv.xmltv.se/cartoonnetwork.se_2017-09-0" + day.ToString() + ".xml.gz";
 
-            Console.ReadKey();
+                    TvSchedule.Load(adress1);
+                    elemList = TvSchedule.GetElementsByTagName("title");
 
+
+                    for (int i = 0; i < elemList.Count; i++)
+                    {
+
+                        Titles.Add(elemList[i].InnerXml);
+
+                        Totalshows++;
+
+                    }
+                    elemList = TvSchedule.GetElementsByTagName("programme");
+                    for (int i = 0; i < elemList.Count; i++)
+                    {
+
+                        Time.Add(elemList[i].OuterXml);
+                        Time[i] = Time[i].Substring(11, 49);
+
+                        Starting.Add(Time[i]);
+                        Starting[i] = Starting[i].Substring(15, 2) + ":" + Starting[i].Substring(17, 2);
+                        Startinghour.Add(int.Parse(Starting[i].Substring(0, 2)));
+                        Startingmin.Add(int.Parse(Starting[i].Substring(3, 2)));
+                        Startingtime.Add((Startinghour[i] * 60) + Startingmin[i]);
+
+
+                        Ending.Add(Time[i]);
+                        Ending[i] = Ending[i].Substring(43, 2) + ":" + Ending[i].Substring(45, 2);
+                        Endinghour.Add(int.Parse(Ending[i].Substring(0, 2)));
+                        Endingmin.Add(int.Parse(Ending[i].Substring(3, 2)));
+                        Endingtime.Add((Endinghour[i] * 60) + Endingmin[i]);
+
+                    }
+                    for (int i = 0; i < Totalshows; i++)
+                    {
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(Titles[i] + " Börjar " + Starting[i] + " Slutar " + Ending[i]);
+
+
+                    }
+
+                }
+
+                   else if (keypress.Key == ConsoleKey.UpArrow)
+                    {
+                    Totalshows = 0;
+                    Time.Clear(); Titles.Clear(); Ending.Clear(); Starting.Clear(); Ending.Clear();
+                    Startinghour.Clear(); Startingmin.Clear(); Startingtime.Clear(); Endinghour.Clear(); Endingmin.Clear(); Endingtime.Clear();
+                    Console.Clear();
+                    adress1 = "http://xmltv.xmltv.se/aljazeera.net_2017-09-0" + day.ToString() + ".xml.gz";
+                    TvSchedule.Load(adress1);
+                    elemList = TvSchedule.GetElementsByTagName("title");
+
+
+                    for (int i = 0; i < elemList.Count; i++)
+                    {
+
+                        Titles.Add(elemList[i].InnerXml);
+
+                        Totalshows++;
+
+                    }
+                    elemList = TvSchedule.GetElementsByTagName("programme");
+                    for (int i = 0; i < elemList.Count; i++)
+                    {
+
+                        Time.Add(elemList[i].OuterXml);
+                        Time[i] = Time[i].Substring(11, 49);
+
+                        Starting.Add(Time[i]);
+                        Starting[i] = Starting[i].Substring(15, 2) + ":" + Starting[i].Substring(17, 2);
+                        Startinghour.Add(int.Parse(Starting[i].Substring(0, 2)));
+                        Startingmin.Add(int.Parse(Starting[i].Substring(3, 2)));
+                        Startingtime.Add((Startinghour[i] * 60) + Startingmin[i]);
+
+
+                        Ending.Add(Time[i]);
+                        Ending[i] = Ending[i].Substring(43, 2) + ":" + Ending[i].Substring(45, 2);
+                        Endinghour.Add(int.Parse(Ending[i].Substring(0, 2)));
+                        Endingmin.Add(int.Parse(Ending[i].Substring(3, 2)));
+                        Endingtime.Add((Endinghour[i] * 60) + Endingmin[i]);
+
+                    }
+                    for (int i = 0; i < Totalshows; i++)
+                    {
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(Titles[i] + " Börjar " + Starting[i] + " Slutar " + Ending[i]);
+
+
+                    }
+                }
+
+                    Console.ReadKey();
+                  }
+                }
+            }
         }
-    }
-}
+    
+
