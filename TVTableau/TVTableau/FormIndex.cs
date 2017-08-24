@@ -14,38 +14,37 @@ namespace TVTableau
 {
     public partial class FormIndex : Form
     {
+        #region Private members
         private string _url;
         private DateTime _date;
         private RootObject _programmes;
-        private WebClient _client;
-        private Channels _currentChannel;
-        private int _index = 0;
+        private readonly WebClient _client;
+        private Channel _currentChannel;
+        #endregion
 
+        #region Constructors
         public FormIndex()
         {
             InitializeComponent();
             _client = new WebClient();
-            _date = DateTime.Now.Date;
-            _currentChannel = Channels.SVT1;
-            SetURL(_date);
+            _date = DateTime.Now;
+            _currentChannel = Channel.Svt1;
+            _url = GetUrlFromDateAndChannel(_date, _currentChannel);
             GetResponseFromWebClient(_url);
-            this.LblSVT1CurrentDay.Text = DateTime.Now.Date.ToString("M");
+            this.LblCurrentDay.Text = DateTime.Now.Date.ToString("M");
             this.LbxProgrammes.DisplayMember = "Header";
+            this.LbxProgrammes.DrawMode = DrawMode.OwnerDrawFixed;
         }
-        
-        private void SetURL(DateTime date)
-        {
-            var dateString = date.ToString("yyyy-MM-dd");
-            _url = $"http://json.xmltv.se/svt1.svt.se_{dateString}.js.gz";
-        }
+        #endregion
 
+        #region Private methods
         private void GetResponseFromWebClient(string url)
         {
             try
             {
                 var response = _client.DownloadString(url);
                 _programmes = JsonConvert.DeserializeObject<RootObject>(response);
-                
+
                 this.LbxProgrammes.Items.Clear();
                 foreach (var programme in _programmes.JsonTv.Programmes)
                 {
@@ -58,106 +57,58 @@ namespace TVTableau
             }
         }
 
-        private void BtnShowNext_Click(object sender, EventArgs e)
-        {
-            if (_index == _programmes.JsonTv.Programmes.Length) _index = 0;
-            var programme = _programmes.JsonTv.Programmes[_index++];
-            MessageBox.Show(programme.ToString(), programme.Title.ToString());
-        }
-
-        private void BtnPreviousDay_Click(object sender, EventArgs e)
-        {
-            _date = _date.AddDays(-1);
-            SetURL(_date);
-            this.LblSVT1CurrentDay.Text = _date.ToString("M");
-            GetResponseFromWebClient(_url);
-        }
-
-        private void BtnNextDay_Click(object sender, EventArgs e)
-        {
-            _date = _date.AddDays(1);
-            SetURL(_date);
-            this.LblSVT1CurrentDay.Text = _date.ToString("M");
-            GetResponseFromWebClient(_url);
-        }
-
-        private void LbxProgrammes_DoubleClick(object sender, EventArgs e)
-        {
-            var listbox = sender as ListBox;
-            var selectedItem = listbox.SelectedItem as Programme;
-            this.TbxSelectedProgramme.Text = selectedItem.ToString();
-        }
-
-        private void BtnPreviousChannel_Click(object sender, EventArgs e)
-        {
-            var previousChannel = _currentChannel == Channels.SVT1 ? Channels.TV6 : (Channels) ((int) _currentChannel - 1);
-            _currentChannel = previousChannel;
-            _url = GetUrlFromDate(_date, previousChannel);
-            GetResponseFromWebClient(_url);
-            ChangeImage();
-        }
-
-        private void BtnNextChannel_Click(object sender, EventArgs e)
-        {
-            var nextChannel = _currentChannel == Channels.TV6 ? Channels.SVT1 : (Channels)((int)_currentChannel + 1);
-            _currentChannel = nextChannel;
-            _url = GetUrlFromDate(_date, nextChannel);
-            GetResponseFromWebClient(_url);
-            ChangeImage();
-        }
-
         private void ChangeImage()
         {
             string imagePath = @"Resources\Images\";
             switch (_currentChannel)
             {
-                case Channels.SVT1:
+                case Channel.Svt1:
                     imagePath += "svt1.jpg";
                     break;
-                case Channels.SVT2:
+                case Channel.Svt2:
                     imagePath += "svt2.png";
                     break;
-                case Channels.TV3:
+                case Channel.Tv3:
                     imagePath += "tv3.png";
                     break;
-                case Channels.TV4:
+                case Channel.Tv4:
                     imagePath += "tv4.png";
                     break;
-                case Channels.Kanal5:
+                case Channel.Kanal5:
                     imagePath += "kanal5.jpg";
                     break;
-                case Channels.TV6:
+                case Channel.Tv6:
                     imagePath += "tv6.png";
                     break;
                 default:
                     return;
             }
-            this.PbxSVT1.Image = Image.FromFile(imagePath);
+            this.PbxCurrentChannel.Image = Image.FromFile(imagePath);
         }
 
-        private string GetBaseUrlFromEnum(Channels channel)
+        private string GetBaseUrlFromEnum(Channel channel)
         {
             string url = string.Empty;
             // TODO: check HD channels
             switch (channel)
             {
-                case Channels.SVT1:
+                case Channel.Svt1:
                     url = "http://json.xmltv.se/svt1.svt.se_XXXXXXXXXX.js.gz";
                     break;
-                case Channels.SVT2:
+                case Channel.Svt2:
                     url = "http://json.xmltv.se/svt2.svt.se_XXXXXXXXXX.js.gz";
                     break;
-                case Channels.TV3:
-                    url = "http://json.xmltv.se/hd.tv3.se_XXXXXXXXXX.js.gz";
+                case Channel.Tv3:
+                    url = "http://json.xmltv.se/tv3.se_XXXXXXXXXX.js.gz";
                     break;
-                case Channels.TV4:
-                    url = "http://json.xmltv.se/hd.tv4.se_XXXXXXXXXX.js.gz";
+                case Channel.Tv4:
+                    url = "http://json.xmltv.se/tv4.se_XXXXXXXXXX.js.gz";
                     break;
-                case Channels.Kanal5:
-                    url = "http://json.xmltv.se/hd.kanal5.se_XXXXXXXXXX.js.gz";
+                case Channel.Kanal5:
+                    url = "http://json.xmltv.se/kanal5.se_XXXXXXXXXX.js.gz";
                     break;
-                case Channels.TV6:
-                    url = "http://json.xmltv.se/hd.tv6.se_XXXXXXXXXX.js.gz";
+                case Channel.Tv6:
+                    url = "http://json.xmltv.se/tv6.se_XXXXXXXXXX.js.gz";
                     break;
                 default:
                     break;
@@ -165,21 +116,126 @@ namespace TVTableau
             return url;
         }
 
-        private string GetUrlFromDate(DateTime date, Channels channel)
+        private string GetUrlFromDateAndChannel(DateTime date, Channel channel)
         {
-            string baseString = GetBaseUrlFromEnum(channel);
-            baseString = baseString.Replace("XXXXXXXXXX", date.Date.ToString("yyyy-MM-dd"));
-            return baseString;
+            string url = GetBaseUrlFromEnum(channel);
+            url = url.Replace("XXXXXXXXXX", date.Date.ToString("yyyy-MM-dd"));
+            return url;
         }
-    }
 
-    public enum Channels
-    {
-        SVT1 = 0,
-        SVT2 = 1,
-        TV3 = 2,
-        TV4 = 3,
-        Kanal5 = 4,
-        TV6 = 5
+        private void AddDaysAndGetResponseFromWebClient(int amountOfDaysToAdd)
+        {
+            _date = _date.AddDays(amountOfDaysToAdd);
+            _url = GetUrlFromDateAndChannel(_date, _currentChannel);
+            this.LblCurrentDay.Text = _date.ToString("M");
+            GetResponseFromWebClient(_url);
+        }
+        #endregion
+
+        #region Event handlers
+        private void LbxProgrammes_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+            var fontStyle = FontStyle.Regular;
+            if (e.Index < 0 || e.Index >= _programmes.JsonTv.Programmes.Length) return;
+            var programme = this.LbxProgrammes.Items[e.Index] as Programme;
+            if (programme is null) return;
+            var programmeStart = Programme.ConvertFromUnixTimestampToDateTime(programme.Start);
+            var programmeEnd = Programme.ConvertFromUnixTimestampToDateTime(programme.Stop);
+
+            var tod = _date.TimeOfDay;
+
+            if (tod >= programmeStart.TimeOfDay && tod <= programmeEnd.TimeOfDay && DateTime.Today.Date == programmeStart.Date)
+            {
+                fontStyle = FontStyle.Bold;
+            }
+            e.Graphics.DrawString(programme.Header, new Font("Microsoft Sans Serif", 7, fontStyle), Brushes.Black, e.Bounds);
+            
+            e.DrawFocusRectangle();
+        }
+
+        private void BtnPreviousDay_Click(object sender, EventArgs e)
+        {
+            AddDaysAndGetResponseFromWebClient(-1);
+            TbxSelectedProgramme.Clear();
+        }
+
+        private void BtnNextDay_Click(object sender, EventArgs e)
+        {
+            AddDaysAndGetResponseFromWebClient(1);
+            TbxSelectedProgramme.Clear();
+        }
+
+        private void LbxProgrammes_DoubleClick(object sender, EventArgs e)
+        {
+            var listbox = sender as ListBox;
+            if (listbox == null) return;
+
+            var selectedItem = listbox.SelectedItem as Programme;
+            this.TbxSelectedProgramme.Text = selectedItem?.ToString();
+        }
+
+        private void BtnPreviousChannel_Click(object sender, EventArgs e)
+        {
+            var previousChannel = _currentChannel == Channel.Svt1 ? Channel.Tv6 : (Channel)((int)_currentChannel - 1);
+            _currentChannel = previousChannel;
+            _url = GetUrlFromDateAndChannel(_date, previousChannel);
+            GetResponseFromWebClient(_url);
+            ChangeImage();
+        }
+
+        private void BtnNextChannel_Click(object sender, EventArgs e)
+        {
+            var nextChannel = _currentChannel == Channel.Tv6 ? Channel.Svt1 : (Channel)((int)_currentChannel + 1);
+            _currentChannel = nextChannel;
+            _url = GetUrlFromDateAndChannel(_date, nextChannel);
+            GetResponseFromWebClient(_url);
+            ChangeImage();
+        }
+
+        private void PbxSwitchChannel_Click(object sender, EventArgs e)
+        {
+            if (!(sender is PictureBox pictureBox)) return;
+
+            switch (pictureBox.Name)
+            {
+                case "PbxSvt1":
+                    _currentChannel = Channel.Svt1;
+                    break;
+                case "PbxSvt2":
+                    _currentChannel = Channel.Svt2;
+                    break;
+                case "PbxTv3":
+                    _currentChannel = Channel.Tv3;
+                    break;
+                case "PbxTv4":
+                    _currentChannel = Channel.Tv4;
+                    break;
+                case "PbxKanal5":
+                    _currentChannel = Channel.Kanal5;
+                    break;
+                case "PbxTv6":
+                    _currentChannel = Channel.Tv6;
+                    break;
+                default:
+                    return;
+            }
+            _url = GetUrlFromDateAndChannel(_date, _currentChannel);
+            GetResponseFromWebClient(_url);
+            ChangeImage();
+        }
+        #endregion
+
+        #region Private enums
+        private enum Channel
+        {
+            Svt1 = 0,
+            Svt2 = 1,
+            Tv3 = 2,
+            Tv4 = 3,
+            Kanal5 = 4,
+            Tv6 = 5
+        }
+        #endregion
     }
 }

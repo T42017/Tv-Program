@@ -64,11 +64,11 @@ namespace TVTableau
             get { return $"{ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm")} - {ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm")} {Title}"; }
         }
 
-        private static DateTime ConvertFromUnixTimestampToDateTime(string timestamp)
+        public static DateTime ConvertFromUnixTimestampToDateTime(string timestamp)
         {
             try
             {
-                var unixStartTime = new DateTime(1970, 1, 1, 1, 0, 0, 0);
+                var unixStartTime = new DateTime(1970, 1, 1, 2, 0, 0, 0);
                 return unixStartTime.AddSeconds(double.Parse(timestamp));
             }
             catch (Exception)
@@ -85,11 +85,12 @@ namespace TVTableau
             var title = Title?.ToString() ?? "No title";
             var description = Description?.ToString() ?? "No description";
             var episodeNum = EpisodeNumber?.ToString() ?? "No episode number";
-            var startTime = ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm") ?? "No start time";
-            var endTime = ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm") ?? "No end time";
+            var startTime = ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm");
+            var endTime = ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm");
             var date = Date ?? "No date";
             var subtitle = SubTitle?.ToString() ?? "No subtitle";
-            return $"{title} ({date})\r\n{subtitle} ({episodeNum})\r\n{startTime} - {endTime}\r\n{description}";
+            var credits = Credits;
+            return $"{title} ({date})\r\n{subtitle} ({episodeNum})\r\n{startTime} - {endTime}\r\n{description}\r\nCast & crew:\r\n{credits}";
         }
     }
 
@@ -166,15 +167,7 @@ namespace TVTableau
             var writers = Writers != null ? string.Join<Writer>(", ", Writers) : "No writers";
             var producers = Producers != null ? string.Join<Producer>(", ", Producers) : "No producers";
             var actors = Actors != null ? string.Join<Actor>(", ", Actors) : "No actors";
-            return string.Join("; ", presenters + " (Presenters)", directors + " (Directors)", writers + " (Writers)", producers + " (Producers)", actors + " (Actors)");
-            return $"{presenters} ( Presenters); {directors} (Directors); {writers} (Writers); {producers} (Producers); {actors} (Actors)";
-            //var presenters = string.Join<Presenter>(", ", Presenters);
-            //var directors = string.Join<Director>(", ", Directors);
-            //var writers = string.Join<Writer>(", ", Writers);
-            //var producers = string.Join<Producer>(", ", Producers);
-            //var actors = string.Join<Actor>(", ", Actors);
-
-            return string.Join("; ", presenters, directors, writers, producers, actors);
+            return $"{presenters} ( Presenters)\r\n{directors} (Directors)\r\n{writers} (Writers)\r\n{producers} (Producers)\r\n{actors} (Actors)";
         }
     }
 
@@ -217,7 +210,7 @@ namespace TVTableau
         [JsonProperty(PropertyName = "role")]
         public string Role { get; set; }
 
-        public override string ToString() => $"Name: {Name ?? "No actor"}\r\nRole: {Role ?? "No role"}";
+        public override string ToString() => $"{Name}";
     }
 
     public class Rating
