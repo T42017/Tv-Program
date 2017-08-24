@@ -23,10 +23,14 @@ namespace TvTable
         static string currentYear = DateTime.Today.ToString("yy");
         static string currentDate = currentYear + "-" + currentMonth + "-" + currentDay;
 
+
+
         public Form1()
         {
             InitializeComponent();
         }
+
+
 
         static void HtmlRetriever()
         {
@@ -44,11 +48,14 @@ namespace TvTable
             }
         }
 
+
+
         static List<string> _urlList = new List<string>();
         static List<string> _wantedUrlList = new List<string>();
         static List<string> _requestedUrlList = new List<string>();
 
         List<Channel> _channels = new List<Channel>();
+
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -62,10 +69,9 @@ namespace TvTable
                     _wantedUrlList.Add(url);
                 }
             }
-
-            
-
         }
+
+
 
         private void SearchBtn_Click(object sender, EventArgs e)
         {
@@ -168,6 +174,8 @@ namespace TvTable
             }
         }
 
+
+
         private void ChannelList_SelectedIndexChanged(object sender, EventArgs e)
         {
             ProgramList.Items.Clear();
@@ -175,6 +183,7 @@ namespace TvTable
 
             List<string> titleList = new List<string>();
             List<string> programStartList = new List<string>();
+            List<bool> isRunningList = new List<bool>();
 
             var reader = new XmlTextReader(_channels[ChannelList.SelectedIndex].Url);
 
@@ -193,11 +202,21 @@ namespace TvTable
 
                         string tmpStart = reader.GetAttribute("start");
                         string tmpStop = reader.GetAttribute("stop");
-                        string tmpTime = tmpStart.Substring(8, 2) + ":" + tmpStart.Substring(10, 2) + " - " + tmpStop.Substring(8, 2) + ":" + tmpStop.Substring(10, 2);
 
+                        tmpStart = tmpStart.Substring(8, 2) + ":" + tmpStart.Substring(10, 2);
+                        tmpStop = tmpStop.Substring(8, 2) + ":" + tmpStop.Substring(10, 2);
+                        DateTime compareStart = new DateTime(2017, 01, 01, int.Parse(tmpStart.Substring(0,2)), int.Parse(tmpStart.Substring(3,2)), 0);
+                        DateTime compareStop = new DateTime(2017, 01, 01, int.Parse(tmpStop.Substring(0,2)), int.Parse(tmpStop.Substring(3,2)), 0);
+                        DateTime compareNow = new DateTime(2017, 01,01,DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+
+                        if(compareNow <= compareStop && compareNow >= compareStart) isRunningList.Add(true);
+                        else isRunningList.Add(false);
+
+                        string tmpTime = tmpStart + " - " + tmpStop;
                         programStartList.Add(tmpTime);
+                        string programDate = tmpStart + "/" + tmpStart;
 
-                        string programDate = tmpStart.Substring(4, 2) + "/" + tmpStart.Substring(6, 2);
+
                     }
 
                 }
@@ -205,11 +224,15 @@ namespace TvTable
             }
             for (int i = 0; i < titleList.Count; i++)
             {
-                _programInfos.Add(new ProgramInfo(titleList[i], programStartList[i]));
+                _programInfos.Add(new ProgramInfo(titleList[i], programStartList[i], isRunningList[i]));
             }
 
             foreach (ProgramInfo programInfo in _programInfos)
             {
+                if (programInfo.IsRunning)
+                {
+                    programInfo.Info += "   Is running now!";
+                }
                 ProgramList.Items.Add(programInfo.Info);
             }
         }

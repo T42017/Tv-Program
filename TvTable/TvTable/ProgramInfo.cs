@@ -11,12 +11,14 @@ namespace TvTable
         private string _title;
         private string _programStart;
         public string Info;
+        public bool IsRunning;
 
-        public ProgramInfo(string title, string programStart)
+        public ProgramInfo(string title, string programStart, bool isRunning)
         {
             _title = title;
             _programStart = programStart;          
             Info = _title + " --- "  + _programStart;
+            IsRunning = isRunning;
         }
               
     }
