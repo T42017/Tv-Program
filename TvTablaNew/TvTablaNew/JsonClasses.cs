@@ -53,7 +53,6 @@ namespace TvTablaNew
             return unixStartTime.AddSeconds(double.Parse(timestamp));
         }
 
-
         public override string ToString()
         {
             return title  + " (" + date + ") " +"\r\n" + 
@@ -61,7 +60,6 @@ namespace TvTablaNew
                    description + "\r\n" + "\r\n" + 
                    episodeNum + "\r\n" + 
                    rating + "\r\n" + "-----------------------" + "\r\n";
-            
         }
     }
 
@@ -126,10 +124,6 @@ namespace TvTablaNew
         public Producer[] producer { get; set; }
         public Writer[] writer { get; set; }
         public Actor[] actor { get; set; }
-
-       
-
-
     }
 
     public class Presenter

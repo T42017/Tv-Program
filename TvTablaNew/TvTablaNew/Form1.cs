@@ -26,8 +26,6 @@ namespace TvTablaNew
         public string PrevMessage = "No older tableaus to show";
         public string NextMessage = "No newer tableaus to show";
 
-
-
         public Form1()
         {
 
@@ -36,9 +34,6 @@ namespace TvTablaNew
             UrlSvtOne = "http://json.xmltv.se/svt1.svt.se_"+DateToday+".js.gz";
             UrlSvtTwo = "http://json.xmltv.se/svt2.svt.se_"+DateToday+".js.gz";
             UrlTvFour = "http://json.xmltv.se/tv4.se_"+DateToday+".js.gz";
-           
-            
-
 
             // Get data from Json.xmltv
             WebClient wc = new WebClient();
@@ -49,22 +44,21 @@ namespace TvTablaNew
             var svtTwoProgrames = JsonConvert.DeserializeObject<Rootobject>(svtTwoResponse);
             var tvFourProgrammes = JsonConvert.DeserializeObject<Rootobject>(tvFourResponse);
 
-            //Print data to textbox and label
-            rTbox_svt1.Text = svtOneProgrammes.ToString();
+            //Print data to textbox and label*************
+
+   /*SVT1*/rTbox_svt1.Text = svtOneProgrammes.ToString();
             lbl_svt1_date.Text = DateTime.Today.ToString("Den d MMMM");
 
-            rTbox_svt2.Text = svtTwoProgrames.ToString();
+   /*SVT2*/rTbox_svt2.Text = svtTwoProgrames.ToString();
             lbl_svt2_date.Text = DateTime.Today.ToString("Den d MMMM");
 
-            rTbox_tv4.Text = tvFourProgrammes.ToString();
+     /*TV4*/rTbox_tv4.Text = tvFourProgrammes.ToString();
             lbl_tv4_date.Text = DateTime.Today.ToString("Den d MMMM");
-
-           
-
 
         }
         
-        // SVT1 Buttons
+        // SVT1 Buttons***************
+        // SVT1 Prev
         private void btn_prev_Click(object sender, EventArgs e)
         {
             try
@@ -78,10 +72,7 @@ namespace TvTablaNew
                 var programmes = JsonConvert.DeserializeObject<Rootobject>(response);
 
                 rTbox_svt1.Text = programmes.ToString();
-
                 lbl_svt1_date.Text = DateTime.Today.AddDays(SvtOneCounter).ToString("Den d MMMM");
-               
-
             }
             catch (Exception exception)
             {
@@ -90,7 +81,7 @@ namespace TvTablaNew
                 SvtOneCounter++;
             }
         }
-
+        //SVT1 Next
         private void btn_next_Click(object sender, EventArgs e)
         {
             try
@@ -103,19 +94,17 @@ namespace TvTablaNew
                 string response = wc.DownloadString(UrlSvtOne);
                 var programmes = JsonConvert.DeserializeObject<Rootobject>(response);
 
-
-               
                 rTbox_svt1.Text = programmes.ToString();
                 lbl_svt1_date.Text = DateTime.Today.AddDays(SvtOneCounter).ToString("Den d MMMM");
             }
             catch (Exception exception)
             {
-               
                 MessageBox.Show(NextMessage + "!" + "\r\n" + "\r\n" + exception, exception.ToString());
                 SvtOneCounter--;
             }
         }
-        //SVT2
+        //SVT2 *************
+        //SVT2 Prev
         private void btn_svt2_prev_Click(object sender, EventArgs e)
         {
             try
@@ -133,17 +122,15 @@ namespace TvTablaNew
             }
             catch (Exception exception)
             {
-
                MessageBox.Show(PrevMessage + "!" + "\r\n" + "\r\n" + exception, exception.ToString());
                 SvtTwoCounter++;
             }
         }
-
+        //SVT2 Next
         private void btn_svt2_next_Click(object sender, EventArgs e)
         {
             try
             {
-
                 SvtTwoCounter++;
                 DateToday = DateTime.Today.AddDays(SvtTwoCounter).ToString("yyyy-MM-dd");
                 UrlSvtTwo = "http://json.xmltv.se/svt2.svt.se_"+DateToday+".js.gz";
@@ -162,7 +149,8 @@ namespace TvTablaNew
             }
         }
 
-        //TV4 Buttons
+        //TV4 Buttons***************************
+        //TV4 Prev
         private void btn_tv4_prev_Click(object sender, EventArgs e)
         {
             try
@@ -175,7 +163,6 @@ namespace TvTablaNew
                 string response = wc.DownloadString(UrlTvFour);
                 var programmes = JsonConvert.DeserializeObject<Rootobject>(response);
 
-                
                 rTbox_tv4.Text = programmes.ToString();
                 lbl_tv4_date.Text = DateTime.Today.AddDays(TvFourCounter).ToString("Den d MMMM");
 
@@ -187,7 +174,7 @@ namespace TvTablaNew
                 TvFourCounter++;
             }
         }
-
+        //TV4 Next
         private void btn_tv4_next_Click(object sender, EventArgs e)
         {
 
@@ -212,24 +199,5 @@ namespace TvTablaNew
 
             }
         }
-
-        
-
-
-
-        //private void CurrentProgramme()
-        //{
-        //    
-        //    var todayTime = DateTime.Now;
-        //    foreach (var programm in showsvt1table.jsontv.programme)
-        //    {
-        //        var programStart = Programme.ConvertFromUnixTimestampToDateTime(double.Parse(programm.start));
-        //    }
-        //}
-        //
-
-
-
-
     }
 }
