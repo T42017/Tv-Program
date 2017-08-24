@@ -20,16 +20,18 @@ namespace TV_program
         List<string> tvAvsnitt = new List<string>();
         List<string> tidStart = new List<string>();
         List<string> tidStop = new List<string>();
-      
-
+        bool inChannel = false;
+        bool isPress = false;
         int counter = 0;
         int tidCounter = 0;
+
         public Form1()
         {
           InitializeComponent();
             tvAvsnitt.Clear();
             var reader = new XmlTextReader("viaFilm.gz");
-          
+            Channels.standardScreen(textBox1);
+
             while (reader.Read())
             {
                 
@@ -42,8 +44,11 @@ namespace TV_program
                     else if (reader.Name == "programme")
                     {
                         DateTime start = DateTimeOffset.ParseExact(reader.GetAttribute("start"), "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
+
                         tidStart.Add(start.TimeOfDay.ToString());
+
                         DateTime stop = DateTimeOffset.ParseExact(reader.GetAttribute("stop"), "yyyyMMddHHmmss zzz", System.Globalization.CultureInfo.InvariantCulture).DateTime;
+
                         tidStop.Add(stop.TimeOfDay.ToString());
                     }
                     
@@ -53,13 +58,30 @@ namespace TV_program
         }
         private void selectBtn_Click(object sender, EventArgs e)
         {
-            Hours.HtmlRetriever();
-            for (int i = 0; i <= Hours.dwnlList.Count; i++)
+
+            isPress = true;
+            try
             {
-                Debug.WriteLine(Hours.dwnlList[i]);
-                textBox1.Text += Hours.dwnlList[i];
+                Hours.HtmlRetriever(textBox1.SelectedItem.ToString(), textBox1);
             }
-            
+            catch
+            {
+                Channels.standardScreen(textBox1);
+            }
+            if (isPress)
+            {
+                textBox1.Items.Clear();
+
+                for (int i = 0; i < Hours.dwnlList.Count; i++)
+                {
+                    Debug.WriteLine(Hours.dwnlList[i]);
+                    textBox1.Items.Add(Hours.dwnlList[i] + "\r\n");
+                }
+                isPress = false;
+                inChannel = true;
+            }
+            Hours.dwnlList.Clear();
+
         }
         private void nextBtn_Click(object sender, EventArgs e)
         {
@@ -69,16 +91,16 @@ namespace TV_program
             {
                 counter = 0;
                 tidCounter = 0;
-                textBox1.Text = tvAvsnitt[counter];
-                textBox1.Text += "\r\n" + tidStart[tidCounter];
-                textBox1.Text += " - " + tidStop[tidCounter];
+                textBox2.Text = tvAvsnitt[counter];
+                textBox2.Text += "\r\n" + tidStart[tidCounter];
+                textBox2.Text += " - " + tidStop[tidCounter];
             }
             else
             {
                 tidCounter += 1;
-                textBox1.Text = tvAvsnitt[counter];
-                textBox1.Text += "\r\n" + tidStart[tidCounter];
-                textBox1.Text += " - " + tidStop[tidCounter];
+                textBox2.Text = tvAvsnitt[counter];
+                textBox2.Text += "\r\n" + tidStart[tidCounter];
+                textBox2.Text += " - " + tidStop[tidCounter];
 
             }
         }
@@ -89,20 +111,35 @@ namespace TV_program
             {
                 counter = tvAvsnitt.Count -1;
                 tidCounter = tvAvsnitt.Count - 1;
-                textBox1.Text = tvAvsnitt[counter];
-                textBox1.Text += "\r\n" + tidStart[tidCounter];
-                textBox1.Text += " - " + tidStop[tidCounter];
+                textBox2.Text = tvAvsnitt[counter];
+                textBox2.Text += "\r\n" + tidStart[tidCounter];
+                textBox2.Text += " - " + tidStop[tidCounter];
 
             }
             else
             {
-            textBox1.Text = tvAvsnitt[counter];
+            textBox2.Text = tvAvsnitt[counter];
                 tidCounter -= 1;
-                textBox1.Text += "\r\n" + tidStart[tidCounter];
-                textBox1.Text += " - " + tidStop[tidCounter];
+                textBox2.Text += "\r\n" + tidStart[tidCounter];
+                textBox2.Text += " - " + tidStop[tidCounter];
 
             }
         }
 
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            Channels.standardScreen(textBox1);
+            inChannel = false;
+        }
+
+        private void textBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+            
+
+            
+        }
     }
 }

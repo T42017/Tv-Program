@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.prevBtn = new System.Windows.Forms.Button();
             this.selectBtn = new System.Windows.Forms.Button();
             this.nextBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.ListBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.backBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prevBtn
             // 
-            this.prevBtn.Location = new System.Drawing.Point(12, 213);
+            this.prevBtn.Location = new System.Drawing.Point(792, 691);
             this.prevBtn.Name = "prevBtn";
             this.prevBtn.Size = new System.Drawing.Size(117, 58);
             this.prevBtn.TabIndex = 0;
@@ -46,7 +49,7 @@
             // 
             // selectBtn
             // 
-            this.selectBtn.Location = new System.Drawing.Point(135, 213);
+            this.selectBtn.Location = new System.Drawing.Point(264, 691);
             this.selectBtn.Name = "selectBtn";
             this.selectBtn.Size = new System.Drawing.Size(117, 58);
             this.selectBtn.TabIndex = 0;
@@ -56,7 +59,7 @@
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(258, 213);
+            this.nextBtn.Location = new System.Drawing.Point(915, 691);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(117, 58);
             this.nextBtn.TabIndex = 0;
@@ -66,25 +69,45 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(431, 12);
-            this.textBox1.Multiline = true;
+            this.textBox1.FormattingEnabled = true;
+            this.textBox1.Location = new System.Drawing.Point(18, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(899, 747);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "hallo";
+            this.textBox1.Size = new System.Drawing.Size(363, 667);
+            this.textBox1.TabIndex = 3;
+            this.textBox1.SelectedIndexChanged += new System.EventHandler(this.textBox1_SelectedIndexChanged);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(419, 12);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(1012, 654);
+            this.textBox2.TabIndex = 4;
+            // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(18, 691);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(117, 58);
+            this.backBtn.TabIndex = 5;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1461, 761);
+            this.Controls.Add(this.backBtn);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.selectBtn);
             this.Controls.Add(this.prevBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Program";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,7 +117,9 @@
         private System.Windows.Forms.Button prevBtn;
         private System.Windows.Forms.Button selectBtn;
         private System.Windows.Forms.Button nextBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button backBtn;
+        internal System.Windows.Forms.ListBox textBox1;
     }
 }
 
