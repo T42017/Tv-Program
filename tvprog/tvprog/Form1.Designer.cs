@@ -28,80 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnDaybwd = new System.Windows.Forms.Button();
+            this.btnCurdate = new System.Windows.Forms.Button();
+            this.btnDayfwd = new System.Windows.Forms.Button();
+            this.tbxDateTime = new System.Windows.Forms.TextBox();
+            this.lboxTitles = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnDaybwd
             // 
-            this.button1.AutoSize = true;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(475, 714);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Go back one day";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDaybwd.AutoSize = true;
+            this.btnDaybwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDaybwd.Location = new System.Drawing.Point(449, 711);
+            this.btnDaybwd.Name = "btnDaybwd";
+            this.btnDaybwd.Size = new System.Drawing.Size(155, 30);
+            this.btnDaybwd.TabIndex = 0;
+            this.btnDaybwd.Text = "Go back one day";
+            this.btnDaybwd.UseVisualStyleBackColor = true;
+            this.btnDaybwd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnCurdate
             // 
-            this.button2.AutoSize = true;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(625, 714);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Go to current date";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCurdate.AutoSize = true;
+            this.btnCurdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCurdate.Location = new System.Drawing.Point(644, 711);
+            this.btnCurdate.Name = "btnCurdate";
+            this.btnCurdate.Size = new System.Drawing.Size(155, 30);
+            this.btnCurdate.TabIndex = 1;
+            this.btnCurdate.Text = "Go to current date";
+            this.btnCurdate.UseVisualStyleBackColor = true;
+            this.btnCurdate.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnDayfwd
             // 
-            this.button3.AutoSize = true;
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(786, 714);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Go one day forward";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnDayfwd.AutoSize = true;
+            this.btnDayfwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDayfwd.Location = new System.Drawing.Point(839, 711);
+            this.btnDayfwd.Name = "btnDayfwd";
+            this.btnDayfwd.Size = new System.Drawing.Size(165, 30);
+            this.btnDayfwd.TabIndex = 2;
+            this.btnDayfwd.Text = "Go one day forward";
+            this.btnDayfwd.UseVisualStyleBackColor = true;
+            this.btnDayfwd.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox1
+            // tbxDateTime
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(598, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(231, 34);
-            this.textBox1.TabIndex = 4;
+            this.tbxDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxDateTime.Location = new System.Drawing.Point(570, 42);
+            this.tbxDateTime.Name = "tbxDateTime";
+            this.tbxDateTime.ReadOnly = true;
+            this.tbxDateTime.Size = new System.Drawing.Size(286, 34);
+            this.tbxDateTime.TabIndex = 4;
+            this.tbxDateTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // lboxTitles
             // 
-            this.textBox2.Location = new System.Drawing.Point(475, 232);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(516, 364);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.lboxTitles.FormattingEnabled = true;
+            this.lboxTitles.ItemHeight = 16;
+            this.lboxTitles.Location = new System.Drawing.Point(449, 121);
+            this.lboxTitles.Name = "lboxTitles";
+            this.lboxTitles.Size = new System.Drawing.Size(555, 484);
+            this.lboxTitles.TabIndex = 6;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(1035, 133);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(354, 425);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1426, 803);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.lboxTitles);
+            this.Controls.Add(this.tbxDateTime);
+            this.Controls.Add(this.btnDayfwd);
+            this.Controls.Add(this.btnCurdate);
+            this.Controls.Add(this.btnDaybwd);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -112,11 +121,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnDaybwd;
+        private System.Windows.Forms.Button btnCurdate;
+        private System.Windows.Forms.TextBox tbxDateTime;
+        private System.Windows.Forms.Button btnDayfwd;
+        private System.Windows.Forms.ListBox lboxTitles;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

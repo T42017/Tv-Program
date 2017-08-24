@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
@@ -26,54 +27,221 @@ namespace tvprog
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            var proginfo = new List<ProgramInformation>();
+            XmlDocument doc1 = new XmlDocument ();
+            var reader = new XmlTextReader("http://xmltv.xmltv.se/svt1.svt.se_2017-08-24.xml.gz");
+            var timeList = new List<string>();
+            var titleList = new List<string>();
+            
 
-           // string contents = "";
-          //  using (var wc = new System.Net.WebClient())
-            //    contents = wc.DownloadString("http://xmltv.xmltv.se/svt1.svt.se_2017-08-22.xml.gz");
-
-           // var t = StringXmlSerializer.Deserialize<tv>(contents);
-
-            XDocument url = XDocument.Load("http://xmltv.xmltv.se/svt1.svt.se_2017-08-22.xml.gz");
-            Debug.WriteLine(url);
-
-
-            Debug.WriteLine("laddar svt1822.xml ....");
-         //   var tmp = ObjectXMLSerializer<tv>.Load("svt1822.xml");
-            var tmp = url;
-            foreach (var program in url)
+            while (reader.Read())
             {
-                textBox2.AppendText("mm \r\n");
-                Debug.WriteLine("nytt program:");
-                Debug.WriteLine(program.title);
-                Debug.WriteLine(program.start);
-                Debug.WriteLine(program.stop);
-                Debug.WriteLine(program.GetStartDateTime());
+                switch (reader.NodeType)
+                {
+                    case XmlNodeType.Element:
+                        if (reader.Name == "title")
+                        {
+                            titleList.Add(reader.ReadInnerXml());
+                        }
+                        if (reader.Name == "programme")
+                        {
+                            timeList.Add(reader.GetAttribute(0));
+                        }
+                        break;
+                }
             }
-            textBox1.Text = SelDateTime.ToString();
+            for (int i = 0; i < timeList.Count; i++)
+            {
+                string year = timeList[i].Remove(4);
+                string monthAndDay = timeList[i][4].ToString() + timeList[i][5] + "/" + timeList[i][6] + timeList[i][7];
+                string timeOfShow = timeList[i][8].ToString() + timeList[i][9] + ":" + timeList[i][10] + timeList[i][11];
+
+                timeList[i] = year + "  " + monthAndDay + " - " + timeOfShow;
+            }
+
+            for (int i = 0; i < titleList.Count; i++)
+            {
+                proginfo.Add(new ProgramInformation(titleList[i], timeList[i]));
+            }
+          //  int y = 0;
+            foreach (var programInformation in proginfo)
+            {
+                //groupBox1.Controls.Add(new Label()
+                //{
+                //    Text = programInformation.Info,
+                //    Location = new Point(10, 10 + y)
+                //});
+                //y += 25;
+                lboxTitles.Items.Add(programInformation.Info);
+            }
+            //textBox1.Text = SelDateTime.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             SelDateTime=SelDateTime.AddDays(-1);
-            textBox1.Text = SelDateTime.ToString();
+            tbxDateTime.Text = SelDateTime.ToString();
+
+            lboxTitles.Items.Clear();
+            var proginfo = new List<ProgramInformation>();
+            XmlDocument doc1 = new XmlDocument();
+            var timeList = new List<string>();
+            var titleList = new List<string>();
+            var readbwrd = new XmlTextReader("http://xmltv.xmltv.se/svt1.svt.se_2017-08-23.xml.gz");
+
+            while (readbwrd.Read())
+            {
+                switch (readbwrd.NodeType)
+                {
+                    case XmlNodeType.Element:
+                        if (readbwrd.Name == "title")
+                        {
+                            titleList.Add(readbwrd.ReadInnerXml());
+                        }
+                        if (readbwrd.Name == "programme")
+                        {
+                            timeList.Add(readbwrd.GetAttribute(0));
+                        }
+                        break;
+                }
+            }
+            for (int i = 0; i < timeList.Count; i++)
+            {
+                string year = timeList[i].Remove(4);
+                string monthAndDay = timeList[i][4].ToString() + timeList[i][5] + "/" + timeList[i][6] + timeList[i][7];
+                string timeOfShow = timeList[i][8].ToString() + timeList[i][9] + ":" + timeList[i][10] + timeList[i][11];
+
+                timeList[i] = year + "  " + monthAndDay + " - " + timeOfShow;
+            }
+
+            for (int i = 0; i < titleList.Count; i++)
+            {
+                proginfo.Add(new ProgramInformation(titleList[i], timeList[i]));
+            }
+            //int y = 0;
+            foreach (var programInformation in proginfo)
+            {
+                //groupBox1.Controls.Add(new Label()
+                //{
+                //    Text = programInformation.Info,
+                //    Location = new Point(10, 10 + y)
+                //});
+                //y += 25;
+                lboxTitles.Items.Add(programInformation.Info);
+            }
+            //textBox1.Text = SelDateTime.ToString();
         }
 
+    
         private void button3_Click(object sender, EventArgs e)
         {
             SelDateTime = SelDateTime.AddDays(+1);
-            textBox1.Text = SelDateTime.ToString();
+            tbxDateTime.Text = SelDateTime.ToString();
+            lboxTitles.Items.Clear();
+            var proginfo = new List<ProgramInformation>();
+            XmlDocument doc1 = new XmlDocument();
+            var timeList = new List<string>();
+            var titleList = new List<string>();
+            var readbwrd = new XmlTextReader("http://xmltv.xmltv.se/svt1.svt.se_2017-08-25.xml.gz");
+
+            while (readbwrd.Read())
+            {
+                switch (readbwrd.NodeType)
+                {
+                    case XmlNodeType.Element:
+                        if (readbwrd.Name == "title")
+                        {
+                            titleList.Add(readbwrd.ReadInnerXml());
+                        }
+                        if (readbwrd.Name == "programme")
+                        {
+                            timeList.Add(readbwrd.GetAttribute(0));
+                        }
+                        break;
+                }
+            }
+            for (int i = 0; i < timeList.Count; i++)
+            {
+                string year = timeList[i].Remove(4);
+                string monthAndDay = timeList[i][4].ToString() + timeList[i][5] + "/" + timeList[i][6] + timeList[i][7];
+                string timeOfShow = timeList[i][8].ToString() + timeList[i][9] + ":" + timeList[i][10] + timeList[i][11];
+
+                timeList[i] = year + "  " + monthAndDay + " - " + timeOfShow;
+            }
+
+            for (int i = 0; i < titleList.Count; i++)
+            {
+                proginfo.Add(new ProgramInformation(titleList[i], timeList[i]));
+            }
+            //int y = 0;
+            foreach (var programInformation in proginfo)
+            {
+                //groupBox1.Controls.Add(new Label()
+                //{
+                //    Text = programInformation.Info,
+                //    Location = new Point(10, 10 + y)
+                //});
+                //y += 25;
+                lboxTitles.Items.Add(programInformation.Info);
+            }
+            //textBox1.Text = SelDateTime.ToString();
         }
 
+    
         private void button2_Click(object sender, EventArgs e)
         {
             SelDateTime = DateTime.Now;
-            textBox1.Text = SelDateTime.ToString();
+            tbxDateTime.Text = SelDateTime.ToString();
+            lboxTitles.Items.Clear();
+            var proginfo = new List<ProgramInformation>();
+            XmlDocument doc1 = new XmlDocument();
+            var timeList = new List<string>();
+            var titleList = new List<string>();
+            var readbwrd = new XmlTextReader("http://xmltv.xmltv.se/svt1.svt.se_2017-08-24.xml.gz");
+
+            while (readbwrd.Read())
+            {
+                switch (readbwrd.NodeType)
+                {
+                    case XmlNodeType.Element:
+                        if (readbwrd.Name == "title")
+                        {
+                            titleList.Add(readbwrd.ReadInnerXml());
+                        }
+                        if (readbwrd.Name == "programme")
+                        {
+                            timeList.Add(readbwrd.GetAttribute(0));
+                        }
+                        break;
+                }
+            }
+            for (int i = 0; i < timeList.Count; i++)
+            {
+                string year = timeList[i].Remove(4);
+                string monthAndDay = timeList[i][4].ToString() + timeList[i][5] + "/" + timeList[i][6] + timeList[i][7];
+                string timeOfShow = timeList[i][8].ToString() + timeList[i][9] + ":" + timeList[i][10] + timeList[i][11];
+
+                timeList[i] = year + "  " + monthAndDay + " - " + timeOfShow;
+            }
+
+            for (int i = 0; i < titleList.Count; i++)
+            {
+                proginfo.Add(new ProgramInformation(titleList[i], timeList[i]));
+            }
+            //int y = 0;
+            foreach (var programInformation in proginfo)
+            {
+                //groupBox1.Controls.Add(new Label()
+                //{
+                //    Text = programInformation.Info,
+                //    Location = new Point(10, 10 + y)
+                //});
+                //y += 25;
+                lboxTitles.Items.Add(programInformation.Info);
+            }
+            //textBox1.Text = SelDateTime.ToString();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
     public class tv
