@@ -49,7 +49,7 @@ namespace TvTablaNew
 
         private static DateTime ConvertFromUnixTimestampToDateTime(string timestamp)
         {
-            var unixStartTime = new DateTime(1970, 1, 1, 1, 0 , 0, 0);
+            var unixStartTime = new DateTime(1970, 1, 1, 2, 0 , 0, 0);
             return unixStartTime.AddSeconds(double.Parse(timestamp));
         }
 
@@ -58,7 +58,8 @@ namespace TvTablaNew
         {
             return title  + " (" + date + ") " +"\r\n" + 
                    ConvertFromUnixTimestampToDateTime(start).TimeOfDay.ToString(@"hh\:mm") + " - " + ConvertFromUnixTimestampToDateTime(stop).TimeOfDay.ToString(@"hh\:mm") + "\r\n" + "\r\n" +
-                   description + "\r\n" +
+                   description + "\r\n" + "\r\n" + 
+                   episodeNum + "\r\n" + 
                    rating + "\r\n" + "-----------------------" + "\r\n";
             
         }
@@ -126,12 +127,7 @@ namespace TvTablaNew
         public Writer[] writer { get; set; }
         public Actor[] actor { get; set; }
 
-        //public override string ToString()
-        //{
-        //    return string.Join<Presenter>("\r\n", presenter) + string.Join<Commentator>("\r\n", commentator)
-        //        + string.Join<Director>("\r\n", director) + string.Join<Producer>("\r\n", producer) + string.Join<Writer>("\r\n", writer) 
-        //        + string.Join<Actor>("\r\n", actor);
-        //}
+       
 
 
     }
