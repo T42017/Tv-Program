@@ -33,6 +33,7 @@
             this.btnDayfwd = new System.Windows.Forms.Button();
             this.tbxDateTime = new System.Windows.Forms.TextBox();
             this.lboxTitles = new System.Windows.Forms.ListBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnDaybwd
@@ -90,11 +91,25 @@
             this.lboxTitles.Size = new System.Drawing.Size(555, 484);
             this.lboxTitles.TabIndex = 6;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "svt1",
+            "svt2"});
+            this.comboBox1.Location = new System.Drawing.Point(410, 52);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.Form1_Load);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1426, 803);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lboxTitles);
             this.Controls.Add(this.tbxDateTime);
             this.Controls.Add(this.btnDayfwd);
@@ -115,6 +130,7 @@
         private System.Windows.Forms.TextBox tbxDateTime;
         private System.Windows.Forms.Button btnDayfwd;
         private System.Windows.Forms.ListBox lboxTitles;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

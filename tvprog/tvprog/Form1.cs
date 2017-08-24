@@ -10,10 +10,12 @@ namespace tvprog
     public partial class Form1 : Form
     {
         public DateTime SelDateTime=DateTime.Now;
-
+        
         public Form1()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -23,9 +25,11 @@ namespace tvprog
 
         private void ChangeDate()
         {
+            
             var proginfo = new List<ProgramInformation>();
+            var number = comboBox1.SelectedItem;
             XmlDocument doc1 = new XmlDocument();
-            var xmlFragment = "http://xmltv.xmltv.se/svt1.svt.se_" + SelDateTime.ToShortDateString() + ".xml.gz";
+            var xmlFragment = "http://xmltv.xmltv.se/"+ number +".svt.se_" + SelDateTime.ToShortDateString() + ".xml.gz";
             var reader = new XmlTextReader(xmlFragment);
             var timeList = new List<string>();
             var titleList = new List<string>();
