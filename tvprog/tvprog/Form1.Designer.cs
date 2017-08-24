@@ -33,7 +33,6 @@
             this.btnDayfwd = new System.Windows.Forms.Button();
             this.tbxDateTime = new System.Windows.Forms.TextBox();
             this.lboxTitles = new System.Windows.Forms.ListBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SuspendLayout();
             // 
             // btnDaybwd
@@ -91,21 +90,11 @@
             this.lboxTitles.Size = new System.Drawing.Size(555, 484);
             this.lboxTitles.TabIndex = 6;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(1035, 133);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(354, 425);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1426, 803);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lboxTitles);
             this.Controls.Add(this.tbxDateTime);
             this.Controls.Add(this.btnDayfwd);
@@ -126,7 +115,6 @@
         private System.Windows.Forms.TextBox tbxDateTime;
         private System.Windows.Forms.Button btnDayfwd;
         private System.Windows.Forms.ListBox lboxTitles;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
