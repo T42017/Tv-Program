@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbxShowTvTableauSVT1 = new System.Windows.Forms.TextBox();
             this.btnPreviousSVT1 = new System.Windows.Forms.Button();
             this.btnNextSVT1 = new System.Windows.Forms.Button();
             this.lblDateSVT1 = new System.Windows.Forms.Label();
             this.btnTodaySVT1 = new System.Windows.Forms.Button();
-            this.tbxShowTvTableauSVT2 = new System.Windows.Forms.TextBox();
-            this.tbxShowTvTableauTV3 = new System.Windows.Forms.TextBox();
             this.btnPreviousDaySVT2 = new System.Windows.Forms.Button();
             this.btnPreviousDayTV3 = new System.Windows.Forms.Button();
             this.btnTodaySVT2 = new System.Windows.Forms.Button();
@@ -48,19 +45,13 @@
             this.pbxTV3 = new System.Windows.Forms.PictureBox();
             this.pbxSVT2 = new System.Windows.Forms.PictureBox();
             this.pbxSVT1 = new System.Windows.Forms.PictureBox();
+            this.rtbxShowTvTableauSvt1 = new System.Windows.Forms.RichTextBox();
+            this.rtbxShowTvTableauSvt2 = new System.Windows.Forms.RichTextBox();
+            this.rtbxShowTvTableauTv3 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxTV3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSVT2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSVT1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tbxShowTvTableauSVT1
-            // 
-            this.tbxShowTvTableauSVT1.Location = new System.Drawing.Point(12, 215);
-            this.tbxShowTvTableauSVT1.Multiline = true;
-            this.tbxShowTvTableauSVT1.Name = "tbxShowTvTableauSVT1";
-            this.tbxShowTvTableauSVT1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxShowTvTableauSVT1.Size = new System.Drawing.Size(355, 723);
-            this.tbxShowTvTableauSVT1.TabIndex = 1;
             // 
             // btnPreviousSVT1
             // 
@@ -100,24 +91,6 @@
             this.btnTodaySVT1.Text = "Today";
             this.btnTodaySVT1.UseVisualStyleBackColor = true;
             this.btnTodaySVT1.Click += new System.EventHandler(this.btnTodaySVT1_Click);
-            // 
-            // tbxShowTvTableauSVT2
-            // 
-            this.tbxShowTvTableauSVT2.Location = new System.Drawing.Point(373, 215);
-            this.tbxShowTvTableauSVT2.Multiline = true;
-            this.tbxShowTvTableauSVT2.Name = "tbxShowTvTableauSVT2";
-            this.tbxShowTvTableauSVT2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxShowTvTableauSVT2.Size = new System.Drawing.Size(355, 723);
-            this.tbxShowTvTableauSVT2.TabIndex = 7;
-            // 
-            // tbxShowTvTableauTV3
-            // 
-            this.tbxShowTvTableauTV3.Location = new System.Drawing.Point(734, 216);
-            this.tbxShowTvTableauTV3.Multiline = true;
-            this.tbxShowTvTableauTV3.Name = "tbxShowTvTableauTV3";
-            this.tbxShowTvTableauTV3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbxShowTvTableauTV3.Size = new System.Drawing.Size(355, 722);
-            this.tbxShowTvTableauTV3.TabIndex = 8;
             // 
             // btnPreviousDaySVT2
             // 
@@ -240,11 +213,44 @@
             this.pbxSVT1.TabIndex = 1;
             this.pbxSVT1.TabStop = false;
             // 
+            // rtbxShowTvTableauSvt1
+            // 
+            this.rtbxShowTvTableauSvt1.Location = new System.Drawing.Point(12, 215);
+            this.rtbxShowTvTableauSvt1.Name = "rtbxShowTvTableauSvt1";
+            this.rtbxShowTvTableauSvt1.ReadOnly = true;
+            this.rtbxShowTvTableauSvt1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbxShowTvTableauSvt1.Size = new System.Drawing.Size(355, 723);
+            this.rtbxShowTvTableauSvt1.TabIndex = 19;
+            this.rtbxShowTvTableauSvt1.Text = "";
+            // 
+            // rtbxShowTvTableauSvt2
+            // 
+            this.rtbxShowTvTableauSvt2.Location = new System.Drawing.Point(374, 216);
+            this.rtbxShowTvTableauSvt2.Name = "rtbxShowTvTableauSvt2";
+            this.rtbxShowTvTableauSvt2.ReadOnly = true;
+            this.rtbxShowTvTableauSvt2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbxShowTvTableauSvt2.Size = new System.Drawing.Size(354, 722);
+            this.rtbxShowTvTableauSvt2.TabIndex = 20;
+            this.rtbxShowTvTableauSvt2.Text = "";
+            // 
+            // rtbxShowTvTableauTv3
+            // 
+            this.rtbxShowTvTableauTv3.Location = new System.Drawing.Point(734, 216);
+            this.rtbxShowTvTableauTv3.Name = "rtbxShowTvTableauTv3";
+            this.rtbxShowTvTableauTv3.ReadOnly = true;
+            this.rtbxShowTvTableauTv3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbxShowTvTableauTv3.Size = new System.Drawing.Size(355, 722);
+            this.rtbxShowTvTableauTv3.TabIndex = 21;
+            this.rtbxShowTvTableauTv3.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 1041);
+            this.Controls.Add(this.rtbxShowTvTableauTv3);
+            this.Controls.Add(this.rtbxShowTvTableauSvt2);
+            this.Controls.Add(this.rtbxShowTvTableauSvt1);
             this.Controls.Add(this.lblDateTV3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -255,8 +261,6 @@
             this.Controls.Add(this.btnTodaySVT2);
             this.Controls.Add(this.btnPreviousDayTV3);
             this.Controls.Add(this.btnPreviousDaySVT2);
-            this.Controls.Add(this.tbxShowTvTableauTV3);
-            this.Controls.Add(this.tbxShowTvTableauSVT2);
             this.Controls.Add(this.pbxTV3);
             this.Controls.Add(this.pbxSVT2);
             this.Controls.Add(this.btnTodaySVT1);
@@ -264,7 +268,6 @@
             this.Controls.Add(this.btnNextSVT1);
             this.Controls.Add(this.btnPreviousSVT1);
             this.Controls.Add(this.pbxSVT1);
-            this.Controls.Add(this.tbxShowTvTableauSVT1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pbxTV3)).EndInit();
@@ -276,8 +279,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tbxShowTvTableauSVT1;
         private System.Windows.Forms.PictureBox pbxSVT1;
         private System.Windows.Forms.Button btnPreviousSVT1;
         private System.Windows.Forms.Button btnNextSVT1;
@@ -285,8 +286,6 @@
         private System.Windows.Forms.Button btnTodaySVT1;
         private System.Windows.Forms.PictureBox pbxSVT2;
         private System.Windows.Forms.PictureBox pbxTV3;
-        private System.Windows.Forms.TextBox tbxShowTvTableauSVT2;
-        private System.Windows.Forms.TextBox tbxShowTvTableauTV3;
         private System.Windows.Forms.Button btnPreviousDaySVT2;
         private System.Windows.Forms.Button btnPreviousDayTV3;
         private System.Windows.Forms.Button btnTodaySVT2;
@@ -297,6 +296,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblDateTV3;
+        private System.Windows.Forms.RichTextBox rtbxShowTvTableauSvt1;
+        private System.Windows.Forms.RichTextBox rtbxShowTvTableauSvt2;
+        private System.Windows.Forms.RichTextBox rtbxShowTvTableauTv3;
     }
 }
 

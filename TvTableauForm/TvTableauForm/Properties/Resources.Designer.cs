@@ -63,49 +63,9 @@ namespace TvTableauForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _200px_Svt2 {
-            get {
-                object obj = ResourceManager.GetObject("200px-Svt2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SVT1 {
-            get {
-                object obj = ResourceManager.GetObject("SVT1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap svt1_png {
-            get {
-                object obj = ResourceManager.GetObject("svt1-png", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap SVT11 {
             get {
                 object obj = ResourceManager.GetObject("SVT11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SVT2 {
-            get {
-                object obj = ResourceManager.GetObject("SVT2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +83,9 @@ namespace TvTableauForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TV3 {
+        internal static System.Drawing.Bitmap TV3_png {
             get {
-                object obj = ResourceManager.GetObject("TV3", resourceCulture);
+                object obj = ResourceManager.GetObject("TV3-png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +93,9 @@ namespace TvTableauForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TV3_png {
+        internal static System.Drawing.Bitmap TV3_png1 {
             get {
-                object obj = ResourceManager.GetObject("TV3-png", resourceCulture);
+                object obj = ResourceManager.GetObject("TV3-png1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

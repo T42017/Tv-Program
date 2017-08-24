@@ -22,7 +22,7 @@ namespace TvTableauForm
 
         public override string ToString()
         {
-            return string.Join<Programme>("\r\n\r\n", Program);
+            return string.Join<Programme>("", Program);
         }
     }
 
@@ -59,7 +59,7 @@ namespace TvTableauForm
         [JsonProperty(PropertyName = "rating")]
         public Rating Rating { get; set; }
 
-        private static DateTime ConvertFromUnixTimestamp(double timestamp)
+        public static DateTime ConvertFromUnixTimestamp(double timestamp)
         {
 
             var origin = new DateTime(1970, 1, 1, 2, 0, 0, 0);
@@ -78,7 +78,7 @@ namespace TvTableauForm
                    $"Category: {Category}\r\n" +
                    "Starts: " + start.ToString("hh:mm") + " \r\n" +
                    "Ends: " + stop.ToString("hh:mm") + " \r\n" +
-                   "___________________________________";
+                   "___________________________________\r\n";
         }
     }
 

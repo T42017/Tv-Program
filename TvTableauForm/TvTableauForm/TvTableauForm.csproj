@@ -85,28 +85,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SVT1.png" />
+    <None Include="Resources\TV2-png.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SVT2.png" />
+    <None Include="Resources\TV3-png.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\TV3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\svt1-png.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\200px-Svt2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TV2-png.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TV3-png.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SVT11.png" />
+    <None Include="Resources\SVT11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
