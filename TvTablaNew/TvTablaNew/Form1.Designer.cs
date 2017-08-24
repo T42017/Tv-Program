@@ -39,6 +39,10 @@
             this.rTbox_svt1 = new System.Windows.Forms.RichTextBox();
             this.rTbox_svt2 = new System.Windows.Forms.RichTextBox();
             this.rTbox_tv4 = new System.Windows.Forms.RichTextBox();
+            this.btn_svt2_next = new System.Windows.Forms.Button();
+            this.btn_svt2_prev = new System.Windows.Forms.Button();
+            this.lbl_svt2 = new System.Windows.Forms.Label();
+            this.lbl_svt2_date = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_svt1_date
@@ -47,9 +51,8 @@
             this.lbl_svt1_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_svt1_date.Location = new System.Drawing.Point(75, 41);
             this.lbl_svt1_date.Name = "lbl_svt1_date";
-            this.lbl_svt1_date.Size = new System.Drawing.Size(86, 13);
+            this.lbl_svt1_date.Size = new System.Drawing.Size(0, 13);
             this.lbl_svt1_date.TabIndex = 1;
-            this.lbl_svt1_date.Text = "Den xx xxxxxx";
             // 
             // lbl_svt1
             // 
@@ -110,9 +113,8 @@
             this.lbl_tv4_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_tv4_date.Location = new System.Drawing.Point(599, 41);
             this.lbl_tv4_date.Name = "lbl_tv4_date";
-            this.lbl_tv4_date.Size = new System.Drawing.Size(80, 13);
+            this.lbl_tv4_date.Size = new System.Drawing.Size(0, 13);
             this.lbl_tv4_date.TabIndex = 8;
-            this.lbl_tv4_date.Text = "Den xx xxxxx";
             // 
             // lbl_tv4
             // 
@@ -147,11 +149,56 @@
             this.rTbox_tv4.TabIndex = 12;
             this.rTbox_tv4.Text = "";
             // 
+            // btn_svt2_next
+            // 
+            this.btn_svt2_next.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_svt2_next.Location = new System.Drawing.Point(462, 36);
+            this.btn_svt2_next.Name = "btn_svt2_next";
+            this.btn_svt2_next.Size = new System.Drawing.Size(40, 23);
+            this.btn_svt2_next.TabIndex = 13;
+            this.btn_svt2_next.Text = ">";
+            this.btn_svt2_next.UseVisualStyleBackColor = true;
+            this.btn_svt2_next.Click += new System.EventHandler(this.btn_svt2_next_Click);
+            // 
+            // btn_svt2_prev
+            // 
+            this.btn_svt2_prev.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_svt2_prev.Location = new System.Drawing.Point(282, 36);
+            this.btn_svt2_prev.Name = "btn_svt2_prev";
+            this.btn_svt2_prev.Size = new System.Drawing.Size(40, 23);
+            this.btn_svt2_prev.TabIndex = 14;
+            this.btn_svt2_prev.Text = "<";
+            this.btn_svt2_prev.UseVisualStyleBackColor = true;
+            this.btn_svt2_prev.Click += new System.EventHandler(this.btn_svt2_prev_Click);
+            // 
+            // lbl_svt2
+            // 
+            this.lbl_svt2.AutoSize = true;
+            this.lbl_svt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_svt2.Location = new System.Drawing.Point(362, 9);
+            this.lbl_svt2.Name = "lbl_svt2";
+            this.lbl_svt2.Size = new System.Drawing.Size(84, 29);
+            this.lbl_svt2.TabIndex = 15;
+            this.lbl_svt2.Text = "SVT 2";
+            // 
+            // lbl_svt2_date
+            // 
+            this.lbl_svt2_date.AutoSize = true;
+            this.lbl_svt2_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_svt2_date.Location = new System.Drawing.Point(352, 41);
+            this.lbl_svt2_date.Name = "lbl_svt2_date";
+            this.lbl_svt2_date.Size = new System.Drawing.Size(0, 13);
+            this.lbl_svt2_date.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 595);
+            this.Controls.Add(this.lbl_svt2_date);
+            this.Controls.Add(this.lbl_svt2);
+            this.Controls.Add(this.btn_svt2_prev);
+            this.Controls.Add(this.btn_svt2_next);
             this.Controls.Add(this.rTbox_tv4);
             this.Controls.Add(this.rTbox_svt2);
             this.Controls.Add(this.rTbox_svt1);
@@ -182,6 +229,10 @@
         private System.Windows.Forms.RichTextBox rTbox_svt1;
         private System.Windows.Forms.RichTextBox rTbox_svt2;
         private System.Windows.Forms.RichTextBox rTbox_tv4;
+        private System.Windows.Forms.Button btn_svt2_next;
+        private System.Windows.Forms.Button btn_svt2_prev;
+        private System.Windows.Forms.Label lbl_svt2;
+        private System.Windows.Forms.Label lbl_svt2_date;
     }
 }
 
