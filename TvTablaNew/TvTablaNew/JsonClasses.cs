@@ -47,7 +47,7 @@ namespace TvTablaNew
         public Rating rating { get; set; }
         public string[] country { get; set; }
 
-        private static DateTime ConvertFromUnixTimestampToDateTime(string timestamp)
+        public static DateTime ConvertFromUnixTimestampToDateTime(string timestamp)
         {
             var unixStartTime = new DateTime(1970, 1, 1, 2, 0 , 0, 0);
             return unixStartTime.AddSeconds(double.Parse(timestamp));

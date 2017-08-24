@@ -33,19 +33,23 @@ namespace TvTablaNew
 
             // Get data from Json.xmltv
             WebClient wc = new WebClient();
-            string SvtOneResponse = wc.DownloadString(UrlSvtOne);
+            string svtOneResponse = wc.DownloadString(UrlSvtOne);
             // svt2
-            string TvFourResponse = wc.DownloadString(UrlTvFour);
-            var SvtOneProgrammes = JsonConvert.DeserializeObject<Rootobject>(SvtOneResponse);
+            string tvFourResponse = wc.DownloadString(UrlTvFour);
+            var svtOneProgrammes = JsonConvert.DeserializeObject<Rootobject>(svtOneResponse);
             //var tv2
-            var TvFourProgrammes = JsonConvert.DeserializeObject<Rootobject>(TvFourResponse);
+            var tvFourProgrammes = JsonConvert.DeserializeObject<Rootobject>(tvFourResponse);
 
             //Print data to textbox and label
-            tbox_svt1.Text = SvtOneProgrammes.ToString();
+            rTbox_svt1.Text = svtOneProgrammes.ToString();
             lbl_svt1_date.Text = DateTime.Today.ToString("Den d MMMM");
 
-            tbox_tv4.Text = TvFourProgrammes.ToString();
+            rTbox_tv4.Text = tvFourProgrammes.ToString();
             lbl_tv4_date.Text = DateTime.Today.ToString("Den d MMMM");
+
+           
+
+
         }
         
         // SVT1
@@ -61,9 +65,10 @@ namespace TvTablaNew
                 string response = wc.DownloadString(UrlSvtOne);
                 var programmes = JsonConvert.DeserializeObject<Rootobject>(response);
 
-                tbox_svt1.Text = programmes.ToString();
+                rTbox_svt1.Text = programmes.ToString();
 
                 lbl_svt1_date.Text = DateTime.Today.AddDays(Counter).ToString("Den d MMMM");
+               
 
             }
             catch (Exception exception)
@@ -88,7 +93,7 @@ namespace TvTablaNew
 
 
                
-                tbox_svt1.Text = programmes.ToString();
+                rTbox_svt1.Text = programmes.ToString();
                 lbl_svt1_date.Text = DateTime.Today.AddDays(Counter).ToString("Den d MMMM");
             }
             catch (Exception exception)
@@ -116,7 +121,7 @@ namespace TvTablaNew
                 var programmes = JsonConvert.DeserializeObject<Rootobject>(response);
 
                 
-                tbox_tv4.Text = programmes.ToString();
+                rTbox_tv4.Text = programmes.ToString();
                 lbl_tv4_date.Text = DateTime.Today.AddDays(Counter).ToString("Den d MMMM");
 
             }
@@ -140,7 +145,7 @@ namespace TvTablaNew
                 string response = wc.DownloadString(UrlTvFour);
                 var programmes = JsonConvert.DeserializeObject<Rootobject>(response);
 
-                tbox_tv4.Text = programmes.ToString();
+                rTbox_tv4.Text = programmes.ToString();
                 lbl_tv4_date.Text = DateTime.Today.AddDays(Counter).ToString("Den d MMMM");
             }
             catch (Exception exception)
@@ -151,6 +156,16 @@ namespace TvTablaNew
 
             }
         }
+
+       //private void CurrentProgramme()
+       //{
+       //    Rootobject test = new Rootobject();
+       //    var todayTime = DateTime.Now;
+       //    foreach (var programm in )
+       //    {
+       //        var programStart = Programme.ConvertFromUnixTimestampToDateTime(double.Parse());
+       //    }
+       //}
 
 
         
