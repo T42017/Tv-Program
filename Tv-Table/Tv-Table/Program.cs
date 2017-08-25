@@ -1,70 +1,52 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 using HtmlAgilityPack;
 
 namespace Tv_Table
 {
     class Program
     {
-        static public List<string> urlList = new List<string>();
+        static List<TvTableInfo> TtvTableInfos = new List<TvTableInfo>();
+
+        private static int _channelChoice;
+        private static bool _programIsRunning = true;
 
         static void Main(string[] args)
         {
             Console.WriteLine("Starting program...");
+            XmlHtml.urlCollector();
 
-            /*
-            XmlDocument Table1 = new XmlDataDocument();
-            
-            XmlTextReader reader = new XmlTextReader("http://xmltv.xmltv.se/tlcsverige.se_2017-09-02.xml.gz");
-
-            Table1.Load(reader);
-
-            XmlNodeList TitlesList;
-            XmlNodeList EpisodesList;
-            TitlesList = Table1.GetElementsByTagName("title");
-            EpisodesList = Table1.GetElementsByTagName("sub-title");
-
-            foreach (XmlNode xmlNode in TitlesList)
+            do
             {
-                Console.WriteLine(xmlNode.InnerText + "\n");
-            }
-            foreach (XmlNode xmlNode in EpisodesList)
-            {
-                Console.WriteLine(xmlNode.InnerText + "\n");
-            }
-            */
+                tryAgain:
+                Console.WriteLine("1. Svt1HD\n2. Svt2HD\n3. Kunskapskanalen\n4. Töm rutan\n5. Stäng programmet\n");
 
-            Console.ReadLine();
+                try
+                {
+                    _channelChoice = int.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("\nERROR! Felinmatning; försök igen.\n");
+                    goto tryAgain;
+                }
 
-            htmlRetriever();
+                var usr = new ChannelHandler(_channelChoice);
 
-            for (int i = 0; i < urlList.Count; i++)
-            {
-                Console.WriteLine(urlList[i]);
-            }
-
-            Console.ReadLine();
-        }
-
-        static void htmlRetriever()
-        {
-            HtmlDocument doc = new HtmlDocument();
-            HtmlWeb hw = new HtmlWeb();
-
-            string urlToTvTables = "http://xmltv.xmltv.se/";
-
-            doc = hw.Load(urlToTvTables);
-
-            foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@href]"))
-            {
-                string hrefValue = link.GetAttributeValue("href", string.Empty);
-                urlList.Add(hrefValue);
-            }
+                if (_channelChoice == 5)
+                {
+                    _programIsRunning = false;
+                }
+            } while (_programIsRunning);
         }
     }
 }
