@@ -10,6 +10,7 @@ namespace TV_program
 {
     public class Hours
     {
+        bool tra = false;
         public static void channelAdder(string whatWasSearched)
         {
             string xmlTable = "http://xmltv.xmltv.se";
@@ -31,6 +32,8 @@ namespace TV_program
         public static List<string> dwnlList = new List<string>();
         public static void HtmlRetriever(string searchChannel, ListBox text)
         {
+
+
             dwnlList.Clear();
             switch (searchChannel)
             {
@@ -46,6 +49,7 @@ namespace TV_program
                     break;
                 default:
                     Channels.standardScreen(text);
+                    
                     break;
 
             }
