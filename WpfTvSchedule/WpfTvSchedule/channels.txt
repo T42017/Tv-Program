@@ -1,0 +1,3 @@
+﻿kunskapskanalen:kunskapskanalen.svt.se
+svt1:svt1.svt.se
+svt24:svt24.svt.se
