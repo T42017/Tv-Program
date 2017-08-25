@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
 
@@ -50,12 +49,14 @@ namespace TvTableauForm
             //ProgramRightNow(Channel.Svt2);
             //ProgramRightNow(Channel.Tv3);
         }
+
         private enum Channel
         {
             Svt1,
             Svt2,
             Tv3
         }
+
         //private void ProgramRightNow(Channel channel)
         //{
         //    var today = DateTime.Now;
@@ -111,9 +112,6 @@ namespace TvTableauForm
         //            break;
         //    }
         //}
-
-
-        
 
         private void SetDayAndGetTableau(Channel channel, int amountOfDaysToAdd)
         {
@@ -202,7 +200,7 @@ namespace TvTableauForm
             {
 
                 MessageBox.Show(_error);
-                _dateSvt1 = _dateSvt1.AddDays(+1);
+                _dateSvt2 = _dateSvt2.AddDays(+1);
             }
         }
 

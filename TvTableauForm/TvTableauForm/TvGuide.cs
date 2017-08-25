@@ -78,7 +78,7 @@ namespace TvTableauForm
                    $"Category: {Category}\r\n" +
                    "Starts: " + start.ToString("hh:mm") + " \r\n" +
                    "Ends: " + stop.ToString("hh:mm") + " \r\n" +
-                   "___________________________________\r\n";
+                   "___________________________________";
         }
     }
 
@@ -154,78 +154,83 @@ namespace TvTableauForm
 
     public class Credits
     {
-        public Presenter[] presenter { get; set; }
-        public Director[] director { get; set; }
-        public Writer[] writer { get; set; }
-        public Producer[] producer { get; set; }
-        public Actor[] actor { get; set; }
+        [JsonProperty(PropertyName = "presenter")]
+        public Presenter[] Presenters { get; set; }
+        [JsonProperty(PropertyName = "director")]
+        public Director[] Directors { get; set; }
+        [JsonProperty(PropertyName = "writer")]
+        public Writer[] Writers { get; set; }
+        [JsonProperty(PropertyName = "producer")]
+        public Producer[] Producers { get; set; }
+        [JsonProperty(PropertyName = "actor")]
+        public Actor[] Actors { get; set; }
 
         public override string ToString()
         {
-            return $"Presenter: {presenter}\r\nDirector: {director}\r\nWriter: {writer}\r\nProducer: {producer}\r\nActor: {actor}\r\n";
+            return $"Presenter: {Presenters}\r\nDirector: {Directors}\r\nWriter: {Writers}\r\nProducer: {Producers}\r\nActor: {Actors}\r\n";
         }
     }
 
     public class Presenter
     {
-        public string name { get; set; }
+        
+        public string Name { get; set; }
 
         public override string ToString()
         {
-            return name;
+            return Name;
         }
     }
 
     public class Director
     {
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public override string ToString()
         {
-            return name;
+            return Name;
         }
     }
 
     public class Writer
     {
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public override string ToString()
         {
-            return name;
+            return Name;
         }
     }
 
     public class Producer
     {
-        public string name { get; set; }
+        public string Name { get; set; }
 
         public override string ToString()
         {
-            return name;
+            return Name;
         }
     }
 
     public class Actor
     {
-        public string name { get; set; }
-        public string role { get; set; }
+        public string Name { get; set; }
+        public string Role { get; set; }
 
         public override string ToString()
         {
-            return $"Name: {name}\r\nRole: {role}";
+            return $"Name: {Name}\r\nRole: {Role}";
         }
     }
 
     public class Rating
     {
-        public string stars { get; set; }
+        public string Stars { get; set; }
 
         public override string ToString()
         {
-            return stars;
+            return Stars;
         }
     }
 
 }
-
