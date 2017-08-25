@@ -50,7 +50,6 @@ namespace Tv_Browser
         void t_Tick(object sender, EventArgs e)
         {
             TimeSpan nextShow = GetNextShowTime();
-            //var time = nextShow - DateTime.Now.TimeOfDay;
             string formattedTimespan = nextShow.ToString("hh\\:mm\\:ss");
             timer.Text = formattedTimespan;
         }

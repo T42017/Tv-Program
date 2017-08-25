@@ -50,8 +50,10 @@
             this.listBox1.Items.AddRange(new object[] {
             "travelchanneltv.se",
             "comedycentral.tv",
-            "bongusto.tv",
-            "1.bluemovie.de"});
+            "svt1.svt.se",
+            "svt2.svt.se",
+            "discoverychannel.se",
+            "disneychannel.se"});
             this.listBox1.Location = new System.Drawing.Point(12, 11);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(109, 615);
@@ -132,7 +134,7 @@
             // 
             this.episodeNumberLabel.AutoSize = true;
             this.episodeNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.episodeNumberLabel.Location = new System.Drawing.Point(661, 102);
+            this.episodeNumberLabel.Location = new System.Drawing.Point(545, 125);
             this.episodeNumberLabel.Name = "episodeNumberLabel";
             this.episodeNumberLabel.Size = new System.Drawing.Size(184, 25);
             this.episodeNumberLabel.TabIndex = 11;
