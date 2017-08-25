@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TvTable
 {
-    class Details
+    struct Details
     {
         public List<string> EpisodeDescription;
         public List<string> ActorList;

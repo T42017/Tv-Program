@@ -224,9 +224,9 @@ namespace TvTable
                         categoryList.Add(new SubList(categories));
 
                         descriptionList.Add(new SubList(descriptions));
-                        actors.Clear();
-                        categories.Clear();
-                        descriptions.Clear();
+                        actors = new List<string>();
+                        categories = new List<string>();
+                        descriptions = new List<string>();
                     }
                 }
 
@@ -270,7 +270,7 @@ namespace TvTable
                     }
                     if (reader.Name == "category")
                     {
-                        categories.Add(reader.Name);
+                        categories.Add(reader.ReadInnerXml());
                     }
                    
 
