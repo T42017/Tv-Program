@@ -28,9 +28,11 @@ namespace TvTable
         public string WriteDetails()
         {
             string detailsToBeWritten = string.Empty;
+
+
             foreach (string desc in ProgramDetails.EpisodeDescription)
             {
-                detailsToBeWritten = desc + "\r\n\r\n" + "Skådespelare: \r\n";
+                detailsToBeWritten = "Beskrinving: \r\n" + desc + "\r\n\r\n" + "Skådespelare: \r\n";
 
             }
 

@@ -194,6 +194,7 @@ namespace TvTable
         private void ChannelList_SelectedIndexChanged(object sender, EventArgs e)
         {
             ProgramList.Items.Clear();
+            _programInfos.Clear();
 
             List<string> titleList = new List<string>();
             List<string> programStartList = new List<string>();
