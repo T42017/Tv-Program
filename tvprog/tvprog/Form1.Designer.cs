@@ -41,9 +41,10 @@
             // 
             this.btnDaybwd.AutoSize = true;
             this.btnDaybwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDaybwd.Location = new System.Drawing.Point(436, 761);
+            this.btnDaybwd.Location = new System.Drawing.Point(327, 618);
+            this.btnDaybwd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDaybwd.Name = "btnDaybwd";
-            this.btnDaybwd.Size = new System.Drawing.Size(165, 30);
+            this.btnDaybwd.Size = new System.Drawing.Size(126, 27);
             this.btnDaybwd.TabIndex = 0;
             this.btnDaybwd.Text = "Go back one day";
             this.btnDaybwd.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@
             // 
             this.btnCurdate.AutoSize = true;
             this.btnCurdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCurdate.Location = new System.Drawing.Point(631, 761);
+            this.btnCurdate.Location = new System.Drawing.Point(473, 618);
+            this.btnCurdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCurdate.Name = "btnCurdate";
-            this.btnCurdate.Size = new System.Drawing.Size(165, 30);
+            this.btnCurdate.Size = new System.Drawing.Size(134, 27);
             this.btnCurdate.TabIndex = 1;
             this.btnCurdate.Text = "Go to current date";
             this.btnCurdate.UseVisualStyleBackColor = true;
@@ -65,9 +67,10 @@
             // 
             this.btnDayfwd.AutoSize = true;
             this.btnDayfwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDayfwd.Location = new System.Drawing.Point(826, 761);
+            this.btnDayfwd.Location = new System.Drawing.Point(620, 618);
+            this.btnDayfwd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDayfwd.Name = "btnDayfwd";
-            this.btnDayfwd.Size = new System.Drawing.Size(165, 30);
+            this.btnDayfwd.Size = new System.Drawing.Size(143, 27);
             this.btnDayfwd.TabIndex = 2;
             this.btnDayfwd.Text = "Go one day forward";
             this.btnDayfwd.UseVisualStyleBackColor = true;
@@ -76,10 +79,11 @@
             // tbxDateTime
             // 
             this.tbxDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxDateTime.Location = new System.Drawing.Point(570, 42);
+            this.tbxDateTime.Location = new System.Drawing.Point(428, 34);
+            this.tbxDateTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxDateTime.Name = "tbxDateTime";
             this.tbxDateTime.ReadOnly = true;
-            this.tbxDateTime.Size = new System.Drawing.Size(286, 34);
+            this.tbxDateTime.Size = new System.Drawing.Size(216, 28);
             this.tbxDateTime.TabIndex = 4;
             this.tbxDateTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -87,10 +91,11 @@
             // 
             this.lboxTitles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lboxTitles.FormattingEnabled = true;
-            this.lboxTitles.ItemHeight = 20;
-            this.lboxTitles.Location = new System.Drawing.Point(361, 109);
+            this.lboxTitles.ItemHeight = 17;
+            this.lboxTitles.Location = new System.Drawing.Point(271, 89);
+            this.lboxTitles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lboxTitles.Name = "lboxTitles";
-            this.lboxTitles.Size = new System.Drawing.Size(704, 624);
+            this.lboxTitles.Size = new System.Drawing.Size(529, 497);
             this.lboxTitles.TabIndex = 6;
             // 
             // comboBox1
@@ -110,9 +115,10 @@
             "Viasat Sport-Premium",
             "Viasat Hockey",
             "Viasat Series"});
-            this.comboBox1.Location = new System.Drawing.Point(50, 109);
+            this.comboBox1.Location = new System.Drawing.Point(38, 89);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(244, 32);
+            this.comboBox1.Size = new System.Drawing.Size(184, 27);
             this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.Form1_Load);
             // 
@@ -120,17 +126,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(660, 19);
+            this.label1.Location = new System.Drawing.Point(495, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 20);
+            this.label1.Size = new System.Drawing.Size(101, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Time and Date";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1426, 803);
+            this.ClientSize = new System.Drawing.Size(1070, 652);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lboxTitles);
@@ -138,8 +145,9 @@
             this.Controls.Add(this.btnDayfwd);
             this.Controls.Add(this.btnCurdate);
             this.Controls.Add(this.btnDaybwd);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "TV-Schedule";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
