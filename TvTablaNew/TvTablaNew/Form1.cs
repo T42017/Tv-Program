@@ -15,7 +15,6 @@ namespace TvTablaNew
 {
     public partial class Form1 : Form
     {
-        //private Rootobject showsvt1table;
         public string UrlSvtOne = "";
         public string UrlSvtTwo = "";
         public string UrlTvFour = "";
@@ -76,7 +75,6 @@ namespace TvTablaNew
             }
             catch (Exception exception)
             {
-                
                 MessageBox.Show(PrevMessage, exception.ToString());
                 SvtOneCounter++;
             }
@@ -169,7 +167,6 @@ namespace TvTablaNew
             }
             catch (Exception exception)
             {
-                
                 MessageBox.Show(PrevMessage, exception.ToString());
                 TvFourCounter++;
             }
@@ -177,7 +174,6 @@ namespace TvTablaNew
         //TV4 Next
         private void btn_tv4_next_Click(object sender, EventArgs e)
         {
-
             try
             {
                 TvFourCounter++;
@@ -193,10 +189,8 @@ namespace TvTablaNew
             }
             catch (Exception exception)
             {
-
                 MessageBox.Show(NextMessage, exception.ToString());
                 TvFourCounter--;
-
             }
         }
     }
