@@ -35,9 +35,28 @@ namespace TVTableau
             this.LbxProgrammes.DrawMode = DrawMode.OwnerDrawFixed;
             foreach (var child in this.Controls)
             {
-                if (!(child is Button button)) continue;
+                if (!(child is Button button))
+                    continue;
                 button.Click += (sender, e) => ReloadListBox();
             }
+            this.BtnPreviousDay.Click += (sender, e) =>
+            {
+                if (!(sender is Button button))
+                    return;
+                if (!this.BtnNextDay.Enabled)
+                {
+                    this.BtnNextDay.Enabled = true;
+                }
+            };
+            this.BtnNextDay.Click += (sender, e) =>
+            {
+                if (!(sender is Button button))
+                    return;
+                if (!this.BtnPreviousDay.Enabled)
+                {
+                    this.BtnPreviousDay.Enabled = true;
+                }
+            };
         }
         #endregion
 
@@ -98,7 +117,7 @@ namespace TVTableau
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, ex.GetType().Name);
+                throw ex; // TODO
             }
         }
 
@@ -133,10 +152,23 @@ namespace TVTableau
 
         private void AddDaysAndGetResponseFromWebClient(int amountOfDaysToAdd)
         {
-            _date = _date.AddDays(amountOfDaysToAdd);
-            _url = GetUrlFromDateAndChannel(_date, _currentChannel);
-            this.LblCurrentDay.Text = _date.ToString("M");
-            GetResponseFromWebClient(_url);
+            //_date = _date.AddDays(amountOfDaysToAdd);
+            //_url = GetUrlFromDateAndChannel(_date, _currentChannel);
+            //this.LblCurrentDay.Text = _date.ToString("M");
+            //GetResponseFromWebClient(_url);
+
+            try
+            {
+                _date = _date.AddDays(amountOfDaysToAdd);
+                _url = GetUrlFromDateAndChannel(_date, _currentChannel);
+                this.LblCurrentDay.Text = _date.ToString("M");
+                GetResponseFromWebClient(_url);
+            }
+            catch (Exception ex)
+            {
+                throw ex; // TODO
+            }
+
         }
         #endregion
 
@@ -145,6 +177,7 @@ namespace TVTableau
         {
             e.DrawBackground();
             var fontStyle = FontStyle.Regular;
+
             if (e.Index < 0 || e.Index >= _programmes.Length)
                 return;
 
@@ -152,10 +185,12 @@ namespace TVTableau
                 return;
 
             var programmeStart = HelperMethods.ConvertFromUnixTimestampToDateTime(programme.Start);
-            var programmeEnd = HelperMethods.ConvertFromUnixTimestampToDateTime(programme.Stop);
+            var programmeEnd   = HelperMethods.ConvertFromUnixTimestampToDateTime(programme.Stop);
 
             var dateTimeOfDay = DateTime.Now.TimeOfDay;
-            if (DateTime.Today.Date == programmeStart.Date && dateTimeOfDay >= programmeStart.TimeOfDay && dateTimeOfDay <= programmeEnd.TimeOfDay)
+            if ((DateTime.Today.Date == programmeStart.Date) && 
+                (dateTimeOfDay >= programmeStart.TimeOfDay) && 
+                (dateTimeOfDay <= programmeEnd.TimeOfDay))
             {
                 fontStyle = FontStyle.Bold;
             }
@@ -165,20 +200,40 @@ namespace TVTableau
 
         private void BtnPreviousDay_Click(object sender, EventArgs e)
         {
-            AddDaysAndGetResponseFromWebClient(-1);
-            TbxSelectedProgramme.Clear();
+            //AddDaysAndGetResponseFromWebClient(-1);
+            //TbxSelectedProgramme.Clear();
+
+            try
+            {
+                AddDaysAndGetResponseFromWebClient(-1);
+                TbxSelectedProgramme.Clear();
+            }
+            catch (Exception)
+            {
+                this.BtnPreviousDay.Enabled = false; // Doesn't work quite right
+            }
         }
 
         private void BtnNextDay_Click(object sender, EventArgs e)
         {
-            AddDaysAndGetResponseFromWebClient(1);
-            TbxSelectedProgramme.Clear();
+            //AddDaysAndGetResponseFromWebClient(1);
+            //TbxSelectedProgramme.Clear();
+            try
+            {
+                AddDaysAndGetResponseFromWebClient(1);
+                TbxSelectedProgramme.Clear();
+            }
+            catch (Exception)
+            {
+                this.BtnNextDay.Enabled = false; // Doesn't work quite right
+            }
         }
 
         private void LbxProgrammes_DoubleClick(object sender, EventArgs e)
         {
             var listbox = sender as ListBox;
-            if (listbox == null) return;
+            if (listbox == null)
+                return;
 
             var selectedItem = listbox.SelectedItem as Programme;
             this.TbxSelectedProgramme.Text = selectedItem?.ToString();
@@ -189,7 +244,9 @@ namespace TVTableau
             var previousChannel = _currentChannel == Channel.Svt1 ? Channel.Tv6 : (Channel)((int)_currentChannel - 1);
             _currentChannel = previousChannel;
             _url = GetUrlFromDateAndChannel(_date, previousChannel);
+
             GetResponseFromWebClient(_url);
+
             ChangeImage();
             TbxSelectedProgramme.Clear();
         }
@@ -199,14 +256,17 @@ namespace TVTableau
             var nextChannel = _currentChannel == Channel.Tv6 ? Channel.Svt1 : (Channel)((int)_currentChannel + 1);
             _currentChannel = nextChannel;
             _url = GetUrlFromDateAndChannel(_date, nextChannel);
+            
             GetResponseFromWebClient(_url);
+            
             ChangeImage();
             TbxSelectedProgramme.Clear();
         }
 
         private void PbxSwitchChannel_Click(object sender, EventArgs e)
         {
-            if (!(sender is PictureBox pictureBox)) return;
+            if (!(sender is PictureBox pictureBox))
+                return;
 
             switch (pictureBox.Name)
             {
@@ -234,6 +294,7 @@ namespace TVTableau
             _url = GetUrlFromDateAndChannel(_date, _currentChannel);
             GetResponseFromWebClient(_url);
             ChangeImage();
+            this.TbxSelectedProgramme.Clear();
         }
         #endregion
 

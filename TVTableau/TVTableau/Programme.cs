@@ -61,7 +61,12 @@ namespace TVTableau
 
         public string Header
         {
-            get { return $"{HelperMethods.ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm")} - {HelperMethods.ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm")} {Title}"; }
+            get
+            {
+                var startTime = HelperMethods.ConvertFromUnixTimestampToDateTime(Start).TimeOfDay.ToString(@"hh\:mm");
+                var endTime   = HelperMethods.ConvertFromUnixTimestampToDateTime(Stop).TimeOfDay.ToString(@"hh\:mm");
+                return $"{startTime} - {endTime} {Title}";
+            }
         }
 
         public override string ToString()
@@ -74,7 +79,7 @@ namespace TVTableau
             var date = Date ?? "No date";
             var subtitle = SubTitle?.ToString() ?? "No subtitle";
             var credits = Credits;
-            return $"{title} ({date})\r\n{subtitle} ({episodeNum})\r\n{startTime} - {endTime}\r\n{description}\r\nCast & crew:\r\n{credits}";
+            return $"{title} ({date})\r\n\r\n{subtitle} ({episodeNum})\r\n\r\n{startTime} - {endTime}\r\n\r\n{description}\r\n\r\n{credits}";
         }
     }
 
@@ -146,12 +151,12 @@ namespace TVTableau
 
         public override string ToString()
         {
-            var presenters = Presenters != null ? string.Join<Presenter>(", ", Presenters) : "No presenters";
-            var directors = Directors != null ? string.Join<Director>(", ", Directors) : "No directors";
-            var writers = Writers != null ? string.Join<Writer>(", ", Writers) : "No writers";
-            var producers = Producers != null ? string.Join<Producer>(", ", Producers) : "No producers";
-            var actors = Actors != null ? string.Join<Actor>(", ", Actors) : "No actors";
-            return $"{presenters} ( Presenters)\r\n{directors} (Directors)\r\n{writers} (Writers)\r\n{producers} (Producers)\r\n{actors} (Actors)";
+            var presenters = Presenters != null ? "Presenters: " + string.Join<Presenter>(", ", Presenters) : "No presenters named";
+            var writers    = Writers    != null ? "Writers: "    + string.Join<Writer>   (", ", Writers)    : "No writers named";
+            var directors  = Directors  != null ? "Directors: "  + string.Join<Director> (", ", Directors)  : "No directors named";
+            var producers  = Producers  != null ? "Producers: "  + string.Join<Producer> (", ", Producers)  : "No producers named";
+            var actors     = Actors     != null ? "Actors: "     + string.Join<Actor>    (", ", Actors)     : "No actors named";
+            return string.Join("\r\n", presenters, writers, directors, producers, actors);
         }
     }
 
