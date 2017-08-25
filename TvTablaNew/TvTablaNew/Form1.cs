@@ -23,8 +23,8 @@ namespace TvTablaNew
         public int SvtOneCounter = 0;
         public int SvtTwoCounter = 0;
         public int TvFourCounter = 0;
-        public string PrevMessage = "No older tableaus to show";
-        public string NextMessage = "No newer tableaus to show";
+        public string PrevMessage = "No older tableaus to show!";
+        public string NextMessage = "No newer tableaus to show!";
 
         public Form1()
         {
@@ -77,7 +77,7 @@ namespace TvTablaNew
             catch (Exception exception)
             {
                 
-                MessageBox.Show(PrevMessage + "!" + "\r\n" + "\r\n" + exception, exception.ToString());
+                MessageBox.Show(PrevMessage, exception.ToString());
                 SvtOneCounter++;
             }
         }
@@ -99,7 +99,7 @@ namespace TvTablaNew
             }
             catch (Exception exception)
             {
-                MessageBox.Show(NextMessage + "!" + "\r\n" + "\r\n" + exception, exception.ToString());
+                MessageBox.Show(NextMessage, exception.ToString());
                 SvtOneCounter--;
             }
         }
@@ -122,7 +122,7 @@ namespace TvTablaNew
             }
             catch (Exception exception)
             {
-               MessageBox.Show(PrevMessage + "!" + "\r\n" + "\r\n" + exception, exception.ToString());
+               MessageBox.Show(PrevMessage, exception.ToString());
                 SvtTwoCounter++;
             }
         }
@@ -144,7 +144,7 @@ namespace TvTablaNew
             }
             catch (Exception exception)
             {
-                MessageBox.Show(NextMessage + "!" + "\r\n" + "\r\n" + exception, exception.ToString());
+                MessageBox.Show(NextMessage, exception.ToString());
                 SvtTwoCounter--;
             }
         }
@@ -170,7 +170,7 @@ namespace TvTablaNew
             catch (Exception exception)
             {
                 
-                MessageBox.Show(PrevMessage + "!" + "\r\n" + "\r\n" + exception, exception.ToString());
+                MessageBox.Show(PrevMessage, exception.ToString());
                 TvFourCounter++;
             }
         }
@@ -194,7 +194,7 @@ namespace TvTablaNew
             catch (Exception exception)
             {
 
-                MessageBox.Show(NextMessage+ "!" +  "\r\n" + "\r\n" + exception, exception.ToString());
+                MessageBox.Show(NextMessage, exception.ToString());
                 TvFourCounter--;
 
             }

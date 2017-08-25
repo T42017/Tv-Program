@@ -129,6 +129,7 @@
             // 
             this.rTbox_svt1.Location = new System.Drawing.Point(20, 65);
             this.rTbox_svt1.Name = "rTbox_svt1";
+            this.rTbox_svt1.ReadOnly = true;
             this.rTbox_svt1.Size = new System.Drawing.Size(220, 513);
             this.rTbox_svt1.TabIndex = 10;
             this.rTbox_svt1.Text = "";
@@ -137,6 +138,7 @@
             // 
             this.rTbox_svt2.Location = new System.Drawing.Point(282, 65);
             this.rTbox_svt2.Name = "rTbox_svt2";
+            this.rTbox_svt2.ReadOnly = true;
             this.rTbox_svt2.Size = new System.Drawing.Size(220, 513);
             this.rTbox_svt2.TabIndex = 11;
             this.rTbox_svt2.Text = "";
@@ -145,6 +147,7 @@
             // 
             this.rTbox_tv4.Location = new System.Drawing.Point(540, 65);
             this.rTbox_tv4.Name = "rTbox_tv4";
+            this.rTbox_tv4.ReadOnly = true;
             this.rTbox_tv4.Size = new System.Drawing.Size(220, 513);
             this.rTbox_tv4.TabIndex = 12;
             this.rTbox_tv4.Text = "";
